@@ -1,0 +1,749 @@
+﻿@inject UserService AdminUserSvc
+@{
+    // 🔔 Boshqa qurilmadan kirish so'rovlari soni (bildirishnoma belgisi uchun)
+    var pendingDevices = User.IsInRole(Roles.SuperAdmin) ? await AdminUserSvc.PendingDeviceRequestCountAsync() : 0;
+}
+<!DOCTYPE html>
+<html lang="@L.HtmlLang" data-lang="@L.Lang" data-title-key="@ViewData["TitleKey"]" data-title-suffix=" — Admin">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — Admin</title>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="~/css/app.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/engage.css" asp-append-version="true" />
+    <partial name="_I18nScripts" />
+   
+    <style>
+        :root {
+            --bg: #07080d;
+            --surface: #0d0f18;
+            --surface2: #131624;
+            --sidebar-w: 260px;
+            --border: rgba(255,255,255,0.07);
+            --red: #2447e6;
+            --red-dim: rgba(36,71,230,0.10);
+            --text: #e8eaf0;
+            --muted: #5a6080;
+            --success: #00e676;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ══ SIDEBAR ══ */
+        .adm-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-w);
+            height: 100vh;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        /* Logo */
+        .adm-logo {
+            padding: 28px 24px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .adm-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--red);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+            .adm-logo-icon svg {
+                width: 18px;
+                height: 18px;
+                color: #fff;
+            }
+
+        .adm-logo-text {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        .adm-logo-sub {
+            font-size: 0.6rem;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        /* Nav */
+        .adm-nav {
+            flex: 1;
+            padding: 20px 12px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .adm-nav-label {
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--muted);
+            padding: 8px 12px 6px;
+            margin-top: 8px;
+        }
+
+        .adm-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 14px;
+            border-radius: 4px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .adm-link:hover {
+                background: rgba(255,255,255,0.04);
+                color: var(--text);
+            }
+
+            .adm-link.active {
+                background: var(--red-dim);
+                color: #fff;
+                border: 1px solid rgba(36,71,230,0.18);
+            }
+
+                .adm-link.active::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 3px;
+                    height: 100%;
+                    background: var(--red);
+                    border-radius: 0 2px 2px 0;
+                }
+
+        .adm-link-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.04);
+            flex-shrink: 0;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+
+        .adm-link.active .adm-link-icon {
+            background: var(--red-dim);
+        }
+
+        .adm-link-text {
+            flex: 1;
+        }
+
+        .adm-link-badge {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            background: var(--red-dim);
+            color: var(--red);
+            border: 1px solid rgba(36,71,230,0.2);
+            padding: 2px 8px;
+            border-radius: 2px;
+        }
+
+        /* Divider */
+        .adm-nav-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 10px 0;
+        }
+
+        /* Logout */
+        .adm-link.logout {
+            color: rgba(239,68,68,0.7);
+        }
+
+            .adm-link.logout:hover {
+                background: var(--red-dim);
+                color: #ef4444;
+            }
+
+        /* Footer of sidebar */
+        .adm-sidebar-footer {
+            padding: 16px 20px;
+            border-top: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .adm-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .adm-user-avatar {
+            width: 34px;
+            height: 34px;
+            background: var(--red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 0.8rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .adm-user-name {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .adm-user-role {
+            font-size: 0.65rem;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* ══ TOPBAR ══ */
+        .adm-topbar {
+            position: fixed;
+            top: 0;
+            left: var(--sidebar-w);
+            right: 0;
+            height: 62px;
+            background: rgba(7,8,13,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            z-index: 90;
+        }
+
+        .adm-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .adm-breadcrumb-sep {
+            opacity: 0.3;
+        }
+
+        .adm-breadcrumb-current {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--text);
+            letter-spacing: 0.04em;
+        }
+
+        .adm-topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* 🔔 Qurilma so'rovlari bildirishnomasi */
+        .adm-dev-count {
+            margin-left: auto;
+            min-width: 20px;
+            height: 20px;
+            padding: 0 6px;
+            border-radius: 10px;
+            background: #f59e0b;
+            color: #111;
+            font-size: 0.7rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .adm-dev-count[hidden] { display: none; }
+        .adm-bell {
+            position: relative;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            border: 1px solid var(--border);
+            background: var(--surface2);
+            transition: all .2s;
+            flex-shrink: 0;
+        }
+        .adm-bell:hover { color: #fff; border-color: #f59e0b; }
+        .adm-bell svg { width: 18px; height: 18px; }
+        .adm-bell .adm-dev-count { position: absolute; top: -5px; right: -7px; margin: 0; }
+        .adm-bell.ring { color: #fbbf24; border-color: rgba(245,158,11,.5); }
+        .adm-bell.ring svg { animation: adm-ring 2.4s ease-in-out infinite; transform-origin: 50% 10%; }
+        @@keyframes adm-ring {
+            0%, 70%, 100% { transform: rotate(0); }
+            75% { transform: rotate(14deg); }
+            80% { transform: rotate(-12deg); }
+            85% { transform: rotate(8deg); }
+            90% { transform: rotate(-5deg); }
+        }
+        .adm-toast {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 300;
+            max-width: min(360px, calc(100vw - 40px));
+            background: var(--surface);
+            border: 1px solid rgba(245,158,11,.5);
+            border-left: 4px solid #f59e0b;
+            border-radius: 8px;
+            padding: 14px 16px;
+            color: var(--text);
+            box-shadow: 0 12px 40px rgba(0,0,0,.45);
+            font-size: .88rem;
+            text-decoration: none;
+            display: block;
+        }
+        .adm-toast:hover { color: #fff; }
+        @@media (prefers-reduced-motion: reduce) { .adm-bell.ring svg { animation: none; } }
+
+        .adm-status-dot {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.72rem;
+            color: var(--muted);
+        }
+
+            .adm-status-dot::before {
+                content: '';
+                width: 7px;
+                height: 7px;
+                background: var(--success);
+                border-radius: 50%;
+                box-shadow: 0 0 8px var(--success);
+                animation: pulse 2s infinite;
+            }
+
+        @@keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.4);
+            }
+        }
+
+        /* hamburger */
+        .adm-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            border: none;
+            background: transparent;
+        }
+
+            .adm-hamburger span {
+                display: block;
+                width: 22px;
+                height: 2px;
+                background: var(--text);
+                border-radius: 2px;
+                transition: all 0.3s;
+            }
+
+        /* ══ MAIN CONTENT ══ */
+        .adm-content {
+            margin-left: var(--sidebar-w);
+            padding-top: 62px;
+            min-height: 100vh;
+        }
+
+        /* ══ MOBILE OVERLAY ══ */
+        .adm-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 99;
+            backdrop-filter: blur(2px);
+        }
+
+        /* ══ SCROLLBAR ══ */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: rgba(255,255,255,0.2);
+            }
+
+        /* ══ RESPONSIVE ══ */
+        @@media (max-width: 900px) {
+            .adm-sidebar {
+                transform: translateX(-100%);
+            }
+
+                .adm-sidebar.open {
+                    transform: translateX(0);
+                }
+
+            .adm-overlay.open {
+                display: block;
+            }
+
+            .adm-topbar {
+                left: 0;
+                padding: 0 20px;
+            }
+
+            .adm-content {
+                margin-left: 0;
+            }
+
+            .adm-hamburger {
+                display: flex;
+            }
+        }
+
+        /* Til tugmalari */
+        .adm-topbar-right { display: flex; align-items: center; gap: 16px; }
+        .adm-lang { display: flex; gap: 4px; }
+        .adm-lang .lang-btn {
+            padding: 3px 9px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--surface2);
+            transition: all 0.2s;
+        }
+        .adm-lang .lang-btn:hover { border-color: rgba(255,255,255,0.3); }
+        .adm-lang .lang-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
+
+        /* Yuqori panel kichik ekranlarda: faqat menyu tugmasi, til va profil */
+        .adm-topbar > div:first-child { min-width: 0; }
+        .adm-breadcrumb { min-width: 0; overflow: hidden; white-space: nowrap; }
+        .adm-breadcrumb-current { overflow: hidden; text-overflow: ellipsis; }
+        @@media (max-width: 900px) {
+            .adm-status-dot { display: none; }
+        }
+        @@media (max-width: 640px) {
+            .adm-topbar { padding: 0 12px; gap: 8px; }
+            .adm-topbar-right { gap: 6px; }
+            .adm-breadcrumb { display: none; }
+        }
+        /* ═══ Sidebar — professional ko'rinish ═══ */
+        .adm-sidebar { background: linear-gradient(180deg, #0c0e17 0%, #090a12 100%); border-right: 1px solid rgba(255,255,255,0.06); box-shadow: 8px 0 40px rgba(0,0,0,.35); }
+        .adm-logo { padding: 22px 20px 18px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .adm-logo-icon { background: linear-gradient(135deg, #2447e6, #4f7cff); box-shadow: 0 8px 24px rgba(36,71,230,.35); border-radius: 12px; }
+        .adm-logo-text { letter-spacing: .08em; background: linear-gradient(90deg, #fff, #ffb4c0); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .adm-nav { padding: 10px 12px 18px; gap: 2px; }
+        .adm-nav-label { margin: 16px 10px 6px; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #6b7190; font-weight: 700; }
+        .adm-nav-label:first-child { margin-top: 6px; }
+        .adm-link { position: relative; display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-radius: 12px; color: #aeb3c7; font-weight: 600; font-size: 13.5px; transition: background .18s, color .18s, transform .18s; }
+        .adm-link:hover { background: rgba(255,255,255,0.045); color: #fff; transform: translateX(2px); }
+        .adm-link-icon { width: 34px; height: 34px; flex: 0 0 34px; display: grid; place-items: center; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.05); font-size: 0; transition: background .18s, border-color .18s, box-shadow .18s; }
+        .adm-link-icon svg { width: 18px; height: 18px; }
+        .adm-link:hover .adm-link-icon { border-color: rgba(255,255,255,0.12); }
+        .adm-link.active { background: linear-gradient(90deg, rgba(36,71,230,.16), rgba(36,71,230,.04)); color: #fff; }
+        .adm-link.active::before { left: -12px; top: 8px; bottom: 8px; width: 4px; border-radius: 0 4px 4px 0; background: linear-gradient(180deg, #2447e6, #4f7cff); box-shadow: 0 0 14px rgba(36,71,230,.7); }
+        .adm-link.active .adm-link-icon { background: linear-gradient(135deg, #2447e6, #4f7cff); border-color: transparent; color: #fff; box-shadow: 0 6px 18px rgba(36,71,230,.4); }
+        .adm-link .adm-dev-count { margin-left: auto; flex: 0 0 auto; }
+        .adm-link-text { flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.3; }
+        .adm-link.logout { margin-top: 4px; color: #ff8095; }
+        .adm-link.logout .adm-link-icon { background: rgba(239,68,68,.08); border-color: rgba(239,68,68,.2); }
+        .adm-nav-divider { margin: 12px 10px; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent); }
+        .adm-sidebar-footer { border-top: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.015); }
+        .adm-user-avatar { background: linear-gradient(135deg, #2447e6, #4f7cff); box-shadow: 0 6px 16px rgba(36,71,230,.35); }
+        .adm-nav::-webkit-scrollbar { width: 6px; }
+        .adm-nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,.08); border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+    <!-- OVERLAY -->
+    <div class="adm-overlay" id="overlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="adm-sidebar" id="sidebar">
+
+        <div class="adm-logo">
+            <div class="adm-logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+            </div>
+            <div>
+                <div class="adm-logo-text">AVTOTEST ARCHAZOR</div>
+                <div class="adm-logo-sub" data-i18n="admin.panel">@L["admin.panel"]</div>
+            </div>
+        </div>
+
+        <nav class="adm-nav">
+
+            <div class="adm-nav-label" data-i18n="admin.main">@L["admin.main"]</div>
+            <a asp-controller="Question" asp-action="Index1" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></span>
+                <span class="adm-link-text" data-i18n="admin.dashboard">@L["admin.dashboard"]</span>
+            </a>
+            <a asp-controller="Analytics" asp-action="Index" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span>
+                <span class="adm-link-text" data-i18n="admin.analytics">@L["admin.analytics"]</span>
+            </a>
+            <a asp-controller="Reports" asp-action="Index" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M12 5v13"/></svg></span>
+                <span class="adm-link-text" data-i18n="rep.title">@L["rep.title"]</span>
+            </a>
+
+            <a asp-controller="Arena" asp-action="Index" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span>
+                <span class="adm-link-text" data-i18n="ar.nav">@L["ar.nav"]</span>
+            </a>
+
+            <div class="adm-nav-label" data-i18n="admin.content">@L["admin.content"]</div>
+            <a asp-controller="Question" asp-action="Index" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg></span>
+                <span class="adm-link-text" data-i18n="admin.questions">@L["admin.questions"]</span>
+            </a>
+            <a asp-controller="Question" asp-action="Create" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
+                <span class="adm-link-text" data-i18n="admin.addQuestion">@L["admin.addQuestion"]</span>
+            </a>
+            <a asp-controller="Lessons" asp-action="Index" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="m17 10 5-3v10l-5-3z"/></svg></span>
+                <span class="adm-link-text" data-i18n="ls.adminTitle">@L["ls.adminTitle"]</span>
+            </a>
+            <a asp-controller="Live" asp-action="Manage" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><path d="M7.8 16.2a6 6 0 0 1 0-8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 19.1a10 10 0 0 1 0-14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></svg></span>
+                <span class="adm-link-text" data-i18n="lv.adminTitle">@L["lv.adminTitle"]</span>
+            </a>
+
+            <div class="adm-nav-label" data-i18n="admin.people">@L["admin.people"]</div>
+            <a asp-controller="Users" asp-action="Index" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                <span class="adm-link-text" data-i18n="admin.users">@L["admin.users"]</span>
+            </a>
+            <a asp-controller="Users" asp-action="Requests" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></span>
+                <span class="adm-link-text" data-i18n="reg.navShort" title="@L["reg.adminTitle"]">@L["reg.navShort"]</span>
+                <span class="adm-dev-count" data-reg-count hidden></span>
+            </a>
+            <a asp-controller="Messages" asp-action="Admin" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                <span class="adm-link-text" data-i18n="msg.title">@L["msg.title"]</span>
+                <span class="adm-dev-count" data-msg-count hidden></span>
+            </a>
+            <a asp-controller="Users" asp-action="Devices" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span>
+                <span class="adm-link-text" data-i18n="dev.title">@L["dev.title"]</span>
+                <span class="adm-dev-count" data-dev-count @(pendingDevices == 0 ? "hidden" : "")>@pendingDevices</span>
+            </a>
+
+            <div class="adm-nav-label" data-i18n="admin.finance">@L["admin.finance"]</div>
+            <a asp-controller="Billing" asp-action="Index" class="adm-link">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></span>
+                <span class="adm-link-text" data-i18n="bill.title">@L["bill.title"]</span>
+            </a>
+
+            <div class="adm-nav-divider"></div>
+            <a asp-controller="Auth" asp-action="Logout" class="adm-link logout">
+                <span class="adm-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg></span>
+                <span class="adm-link-text" data-i18n="admin.logout">@L["admin.logout"]</span>
+            </a>
+
+        </nav>
+
+        <div class="adm-sidebar-footer">
+            <div class="adm-user">
+                <div class="adm-user-avatar">@((User.Identity?.Name ?? "A").Substring(0, 1).ToUpperInvariant())</div>
+                <div>
+                    <div class="adm-user-name">@User.Identity?.Name</div>
+                    <div class="adm-user-role" data-i18n="admin.role">@L["admin.role"]</div>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- TOPBAR -->
+    <header class="adm-topbar">
+        <div style="display:flex; align-items:center; gap:16px;">
+            <button class="adm-hamburger" id="hamburger" aria-label="@L["admin.menu"]">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="adm-breadcrumb">
+                <span data-i18n="admin.admin">@L["admin.admin"]</span>
+                <span class="adm-breadcrumb-sep">/</span>
+                <span class="adm-breadcrumb-current" data-i18n="@ViewData["TitleKey"]">@ViewData["Title"]</span>
+            </div>
+        </div>
+        <div class="adm-topbar-right">
+            <a asp-controller="Users" asp-action="Devices" class="adm-bell @(pendingDevices > 0 ? "ring" : "")" data-dev-bell
+               title="@L["dev.title"]" data-i18n-title="dev.title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+                <span class="adm-dev-count" data-dev-count @(pendingDevices == 0 ? "hidden" : "")>@pendingDevices</span>
+            </a>
+            <partial name="_LangDropdown" />
+            <partial name="_UserMenu" />
+            <div class="adm-status-dot" data-i18n="admin.status">@L["admin.status"]</div>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="adm-content">
+        @RenderBody()
+    </main>
+
+    <script>
+        const sidebar   = document.getElementById("sidebar");
+        const overlay   = document.getElementById("overlay");
+        const hamburger = document.getElementById("hamburger");
+
+        function openSidebar() {
+            sidebar.classList.add("open");
+            overlay.classList.add("open");
+        }
+        function closeSidebar() {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("open");
+        }
+
+        hamburger.addEventListener("click", () => {
+            sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
+        });
+        overlay.addEventListener("click", closeSidebar);
+
+        // Active link — eng aniq mos keladigan bittasi (/Users/Devices da "Foydalanuvchilar" emas)
+        const links = document.querySelectorAll(".adm-link");
+        const path  = window.location.pathname.toLowerCase();
+        let best = null, bestLen = 0;
+        links.forEach(link => {
+            link.classList.remove("active");
+            const linkPath = link.href ? new URL(link.href).pathname.toLowerCase() : "";
+            if (linkPath.length > 1 && (path === linkPath || path.startsWith(linkPath + "/")) && linkPath.length > bestLen) {
+                best = link; bestLen = linkPath.length;
+            }
+        });
+        if (best) best.classList.add("active");
+
+        // 🔔 Yangi qurilma so'rovlarini kuzatish: har 20 soniyada tekshiriladi, yangisi kelsa — xabar chiqadi
+        (function () {
+            let last = @pendingDevices;
+            function show(n) {
+                document.querySelectorAll("[data-dev-count]").forEach(el => { el.textContent = n; el.hidden = n === 0; });
+                document.querySelectorAll("[data-dev-bell]").forEach(el => el.classList.toggle("ring", n > 0));
+                document.title = (n > 0 ? "(" + n + ") " : "") + document.title.replace(/^\(\d+\)\s*/, "");
+            }
+            function toast() {
+                const old = document.querySelector(".adm-toast");
+                if (old) old.remove();
+                const a = document.createElement("a");
+                a.className = "adm-toast";
+                a.href = "@Url.Action("Devices", "Users")";
+                a.setAttribute("role", "status");
+                a.setAttribute("data-i18n", "dev.toast");
+                a.textContent = "🔔 " + I18n.t("dev.toast");
+                document.body.appendChild(a);
+                setTimeout(() => a.remove(), 12000);
+            }
+            async function poll() {
+                if (document.hidden) return;
+                try {
+                    const r = await fetch("@Url.Action("PendingCount", "Users")", { headers: { Accept: "application/json" }, cache: "no-store" });
+                    if (!r.ok) return;
+                    const n = (await r.json()).count | 0;
+                    if (n > last) toast();
+                    last = n;
+                    show(n);
+                } catch (e) { }
+            }
+            show(last);
+            setInterval(poll, 20000);
+            document.addEventListener("visibilitychange", () => { if (!document.hidden) poll(); });
+        })();
+    </script>
+
+    <script src="~/js/ui.js" asp-append-version="true"></script>
+    <script src="~/js/chat.js" asp-append-version="true"></script>
+    <script>
+        Chat.badge("[data-msg-count]");
+        // Yangi ro'yxatdan o'tish arizalari soni
+        (function () {
+            function upd() {
+                if (document.hidden) return;
+                fetch("/Users/RequestCount", { credentials: "same-origin", cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
+                    .then(function (d) { if (!d) return; document.querySelectorAll("[data-reg-count]").forEach(function (el) { el.textContent = d.count; el.hidden = !d.count; }); }).catch(function () { });
+            }
+            upd(); setInterval(upd, 60000);
+        })();
+    </script>
+</body>
+</html>

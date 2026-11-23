@@ -1,0 +1,129 @@
+﻿@inject SubscriptionService Subs
+@* Foydalanuvchi kabineti: chap sidebar + yuqori panel (til, profil). Mobil ekranda sidebar chiqib keladigan menyu. *@
+@{
+    var action = ViewContext.RouteData.Values["action"]?.ToString() ?? "";
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString() ?? "";
+    // Faqat kabinet sahifalari (Mavzular/Jonli darslar ham "Index" — ular o'z bandini belgilaydi)
+    string Active(params string[] actions) =>
+        controller.Equals("Cabinet", StringComparison.OrdinalIgnoreCase) && actions.Contains(action, StringComparer.OrdinalIgnoreCase) ? "active" : "";
+    var activeMistakes = ViewData["ActiveMistakes"] as int? ?? 0;
+}
+<!DOCTYPE html>
+<html lang="@L.HtmlLang" data-lang="@L.Lang" data-title-key="@ViewData["TitleKey"]" data-title-suffix=" — AVTOTEST ARCHAZOR" data-lang-reload>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>@ViewData["Title"] — AVTOTEST ARCHAZOR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="~/css/app.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/engage.css" asp-append-version="true" />
+    <partial name="_I18nScripts" />
+</head>
+<body class="ca-body">
+    <aside class="ca-sidebar" id="caSidebar" aria-label="@L["nav.myCabinet"]">
+        <a class="ca-logo" asp-controller="Cabinet" asp-action="Index">
+            <img src="~/images/logo-96.png" alt="" />
+            <span><b>AVTOTEST ARCHAZOR</b><small data-i18n="nav.myCabinet">@L["nav.myCabinet"]</small></span>
+        </a>
+
+        <nav class="ca-nav">
+            <a class="ca-nav-link @Active("Index")" asp-controller="Cabinet" asp-action="Index">
+                @Icons.Grid <span data-i18n="cab.overview">@L["cab.overview"]</span>
+            </a>
+            <a class="ca-nav-link @Active("Results", "Attempt")" asp-controller="Cabinet" asp-action="Results">
+                @Icons.List <span data-i18n="cab.results">@L["cab.results"]</span>
+            </a>
+            <a class="ca-nav-link @Active("Mistakes")" asp-controller="Cabinet" asp-action="Mistakes">
+                @Icons.Alert <span data-i18n="cab.mistakes">@L["cab.mistakes"]</span>
+                @if (activeMistakes > 0)
+                {
+                    <span class="ca-nav-count">@(activeMistakes > 99 ? "99+" : activeMistakes)</span>
+                }
+            </a>
+            <a class="ca-nav-link @Active("Saved")" asp-controller="Cabinet" asp-action="Saved">
+                <span aria-hidden="true" style="width:18px;text-align:center;">★</span> <span data-i18n="sv.title">@L["sv.title"]</span>
+            </a>
+            <a class="ca-nav-link @Active("Daily")" asp-controller="Cabinet" asp-action="Daily">
+                <span aria-hidden="true" style="width:18px;text-align:center;">🧠</span> <span data-i18n="pr.title">@L["pr.title"]</span>
+            </a>
+            <a class="ca-nav-link @(controller.Equals("Arena", StringComparison.OrdinalIgnoreCase) ? "active" : "")" href="/Arena">
+                <span aria-hidden="true" style="width:18px;text-align:center;">🔥</span> <span data-i18n="ar.nav">@L["ar.nav"]</span>
+            </a>
+            <a class="ca-nav-link @Active("Rating")" asp-controller="Cabinet" asp-action="Rating">
+                <span aria-hidden="true" style="width:18px;text-align:center;">🏅</span> <span data-i18n="lg.navTitle">@L["lg.navTitle"]</span>
+            </a>
+            <a class="ca-nav-link @Active("Analysis")" asp-controller="Cabinet" asp-action="Analysis">
+                @Icons.Sparkles <span data-i18n="cab.analysis">@L["cab.analysis"]</span>
+            </a>
+            <a class="ca-nav-link @(controller.Equals("Messages", StringComparison.OrdinalIgnoreCase) ? "active" : "")" asp-controller="Messages" asp-action="Index">
+                <span aria-hidden="true" style="width:18px;text-align:center;">💬</span> <span data-i18n="msg.title">@L["msg.title"]</span>
+                <span class="ca-nav-count" data-msg-count hidden></span>
+            </a>
+
+            <div class="ca-nav-label" data-i18n="nav.tests">@L["nav.tests"]</div>
+            <a class="ca-nav-link @Active("Search")" asp-controller="Cabinet" asp-action="Search">
+                @Icons.Search <span data-i18n="sq.title">@L["sq.title"]</span>
+            </a>
+            <a class="ca-nav-link" asp-controller="Home" asp-action="Index">
+                @Icons.Home <span data-i18n="home.pageTitle">@L["home.pageTitle"]</span>
+            </a>
+            <a class="ca-nav-link" asp-controller="Test" asp-action="Index">
+                @Icons.Target <span data-i18n="nav.real">@L["nav.real"]</span>
+            </a>
+            <a class="ca-nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Topic" ? "active" : "")" asp-controller="Topic" asp-action="Index">
+                @Icons.Book <span data-i18n="nav.topics">@L["nav.topics"]</span>
+            </a>
+            <a class="ca-nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Live" ? "active" : "")" asp-controller="Live" asp-action="Index">
+                @Icons.Play <span data-i18n="lv.title">@L["lv.title"]</span>
+            </a>
+            @if (!User.IsInRole(Roles.SuperAdmin))
+            {
+                <a class="ca-nav-link @(controller.Equals("Pay", StringComparison.OrdinalIgnoreCase) ? "active" : "")" href="/Pay/My">
+                    @Icons.Shield <span data-i18n="pay.title">@L["pay.title"]</span>
+                </a>
+            }
+        </nav>
+
+        <div class="ca-side-cta">
+            <a class="ca-btn ca-btn-primary ca-btn-block" asp-controller="Home" asp-action="Index">
+                @Icons.Play <span data-i18n="cab.startTest">@L["cab.startTest"]</span>
+            </a>
+        </div>
+    </aside>
+    <div class="ca-overlay" aria-hidden="true"></div>
+
+    <div class="ca-main">
+        <header class="ca-topbar">
+            <button type="button" class="ui-burger ca-sidebar-toggle" data-sidebar-toggle aria-controls="caSidebar"
+                    aria-label="@L["nav.menu"]" title="@L["nav.menu"]">
+                @Icons.Menu
+            </button>
+            <div class="ca-topbar-title" data-i18n="@ViewData["TitleKey"]">@ViewData["Title"]</div>
+            <div class="ca-topbar-actions">
+                @if (!string.Equals(action, "Search", StringComparison.OrdinalIgnoreCase))
+                {
+                    <a class="ca-topbar-search" asp-controller="Cabinet" asp-action="Search" title="@L["sq.title"]" data-i18n-title="sq.title" aria-label="@L["sq.title"]">
+                        @Icons.Search <span data-i18n="sq.short">@L["sq.short"]</span>
+                    </a>
+                }
+                <partial name="_NotifyBell" />
+                <partial name="_LangDropdown" />
+                <partial name="_UserMenu" />
+            </div>
+        </header>
+
+        <main class="ca-content">
+            @RenderBody()
+        </main>
+    </div>
+
+    @Html.AntiForgeryToken()
+    <script src="~/js/ui.js" asp-append-version="true"></script>
+    <script src="~/js/chat.js" asp-append-version="true"></script>
+    <script>Chat.badge("[data-msg-count]");</script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

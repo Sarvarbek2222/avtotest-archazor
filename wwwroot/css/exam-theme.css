@@ -1,0 +1,279 @@
+/* ==========================================================================
+   AVTOTEST ARCHAZOR — test sahifalari dizayni (savol, javoblar, navigatsiya, natija).
+   _TestHeader orqali barcha test sahifalariga ulanadi va sahifa ichidagi eski uslublardan keyin yuklanadi,
+   shuning uchun bir xil selektorlar bilan ularni qayta belgilaydi. Test mantiqiga (JS) tegmaydi.
+   ========================================================================== */
+
+:root {
+    --ex-bg: #060a18;
+    --ex-surface: #0f1630;
+    --ex-surface-2: #151e3d;
+    --ex-surface-3: #1c2750;
+    --ex-border: rgba(130, 155, 255, 0.14);
+    --ex-border-strong: rgba(130, 155, 255, 0.32);
+    --ex-text: #eef1fb;
+    --ex-muted: #98a2c4;
+    --ex-brand: #2447e6;
+    --ex-brand-2: #4f7cff;
+    --ex-brand-soft: rgba(36, 71, 230, 0.18);
+    --ex-ok: #22c55e;
+    --ex-ok-soft: rgba(34, 197, 94, 0.16);
+    --ex-bad: #ef4444;
+    --ex-bad-soft: rgba(239, 68, 68, 0.16);
+    --ex-radius: 14px;
+    --ex-font: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+/* ─────────────── Fon va shrift ─────────────── */
+
+html, body {
+    background:
+        radial-gradient(1200px 600px at 85% -10%, rgba(36, 71, 230, 0.22), transparent 60%),
+        radial-gradient(900px 500px at -10% 110%, rgba(79, 124, 255, 0.12), transparent 60%),
+        var(--ex-bg) !important;
+    background-attachment: fixed !important;
+    color: var(--ex-text) !important;
+    font-family: var(--ex-font) !important;
+}
+
+/* ─────────────── Savol ─────────────── */
+
+#questionBox {
+    position: relative;
+    background: linear-gradient(180deg, var(--ex-surface-2), var(--ex-surface)) !important;
+    border: 1px solid var(--ex-border) !important;
+    border-radius: var(--ex-radius) !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    padding: 18px 22px !important;
+}
+
+    #questionBox::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, var(--ex-brand-2), var(--ex-brand));
+    }
+
+    #questionBox h3,
+    #questionText {
+        color: var(--ex-text) !important;
+        font-family: var(--ex-font) !important;
+        font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.35rem) !important;
+        font-weight: 600 !important;
+        line-height: 1.5 !important;
+        letter-spacing: 0.005em;
+    }
+
+/* ─────────────── Javob variantlari ─────────────── */
+
+.option-row {
+    margin-bottom: 10px !important;
+    border-radius: 12px;
+    border: 1px solid var(--ex-border);
+    background: var(--ex-surface);
+    overflow: hidden;
+    transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease, background-color .18s ease !important;
+}
+
+    .option-row:not(.answered):hover {
+        border-color: var(--ex-brand-2);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 22px rgba(36, 71, 230, 0.22);
+    }
+
+        .option-row:not(.answered):hover .option-text {
+            background: var(--ex-surface-2) !important;
+        }
+
+.option-btn {
+    min-width: 56px !important;
+    padding: 10px 12px !important;
+    background: linear-gradient(180deg, var(--ex-brand-2), var(--ex-brand)) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-family: var(--ex-font);
+    font-weight: 700 !important;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+.option-text {
+    background: transparent !important;
+    color: var(--ex-text) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 12px 16px !important;
+    font-family: var(--ex-font);
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+}
+
+.option-row.correct {
+    border-color: rgba(34, 197, 94, 0.7) !important;
+    background: var(--ex-ok-soft) !important;
+}
+
+    .option-row.correct .option-btn {
+        background: linear-gradient(180deg, #34d36b, #16a34a) !important;
+    }
+
+    .option-row.correct .option-text {
+        background: transparent !important;
+        color: #d9fbe5 !important;
+    }
+
+.option-row.incorrect {
+    border-color: rgba(239, 68, 68, 0.75) !important;
+    background: var(--ex-bad-soft) !important;
+}
+
+    .option-row.incorrect .option-btn {
+        background: linear-gradient(180deg, #f26464, #dc2626) !important;
+    }
+
+    .option-row.incorrect .option-text {
+        background: transparent !important;
+        color: #ffe1e1 !important;
+    }
+
+/* ─────────────── Rasm ─────────────── */
+
+.image-col > div,
+.image-container {
+    background: var(--ex-surface);
+    border: 1px solid var(--ex-border);
+    border-radius: var(--ex-radius);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    padding: 8px;
+}
+
+#questionImage {
+    border-radius: 10px;
+}
+
+/* ─────────────── Savollar navigatsiyasi ─────────────── */
+
+#questionNav button {
+    border-radius: 9px !important;
+    background: var(--ex-surface-2) !important;
+    color: var(--ex-text) !important;
+    border: 1px solid var(--ex-border) !important;
+    box-shadow: none !important;
+    font-family: var(--ex-font);
+    font-weight: 600;
+    transition: background-color .15s ease, border-color .15s ease, transform .15s ease;
+}
+
+    #questionNav button:hover {
+        background: var(--ex-surface-3) !important;
+        border-color: var(--ex-border-strong) !important;
+    }
+
+    #questionNav button.btn-primary {
+        background: var(--ex-brand-soft) !important;
+        border: 2px solid var(--ex-brand-2) !important;
+        color: #fff !important;
+        box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.22) !important;
+    }
+
+    #questionNav button.btn-success {
+        background: var(--ex-ok) !important;
+        border-color: var(--ex-ok) !important;
+        color: #04210f !important;
+    }
+
+    #questionNav button.btn-danger {
+        background: var(--ex-bad) !important;
+        border-color: var(--ex-bad) !important;
+        color: #fff !important;
+    }
+
+/* ─────────────── Yakunlash / Chiqish ─────────────── */
+
+.finish-btn,
+.exit-btn {
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    font-family: var(--ex-font);
+    font-weight: 700 !important;
+    letter-spacing: 0.01em;
+    transition: filter .15s ease, box-shadow .15s ease, background-color .15s ease !important;
+}
+
+.finish-btn {
+    background: linear-gradient(180deg, var(--ex-brand-2), var(--ex-brand)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #fff !important;
+    box-shadow: 0 10px 24px rgba(36, 71, 230, 0.35);
+}
+
+    .finish-btn:hover {
+        filter: brightness(1.1);
+    }
+
+.exit-btn {
+    background: transparent !important;
+    border: 1px solid rgba(239, 68, 68, 0.55) !important;
+    color: #ffb4b4 !important;
+}
+
+    .exit-btn:hover {
+        background: var(--ex-bad-soft) !important;
+    }
+
+/* ─────────────── Natija kartasi ─────────────── */
+
+#resultCard {
+    background: linear-gradient(180deg, var(--ex-surface-2), var(--ex-surface)) !important;
+    border: 1px solid var(--ex-border-strong) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55) !important;
+    color: var(--ex-text) !important;
+}
+
+    #resultCard.passed { border-top: 4px solid var(--ex-ok) !important; }
+    #resultCard.failed { border-top: 4px solid var(--ex-bad) !important; }
+
+    #resultCard .card-title {
+        font-weight: 800;
+        color: #fff;
+    }
+
+    #resultCard .btn {
+        border-radius: 10px;
+        font-weight: 600;
+        padding: 8px 16px;
+    }
+
+    #resultCard .btn-primary {
+        background: linear-gradient(180deg, var(--ex-brand-2), var(--ex-brand));
+        border-color: transparent;
+    }
+
+/* ─────────────── Javobni tasdiqlash oynasi ─────────────── */
+
+.ac-card {
+    background: linear-gradient(180deg, var(--ex-surface-2), var(--ex-surface)) !important;
+    border-color: var(--ex-border-strong) !important;
+}
+
+.ac-label::before {
+    background: var(--ex-brand-2) !important;
+    box-shadow: 0 0 0 4px rgba(79, 124, 255, 0.22) !important;
+}
+
+.ac-key {
+    background: linear-gradient(180deg, var(--ex-brand-2), var(--ex-brand)) !important;
+}
+
+/* ─────────────── Telefon ─────────────── */
+
+@media (max-width: 768px) {
+    #questionBox { padding: 14px 16px !important; }
+    .option-text { padding: 10px 12px !important; font-size: 0.95rem !important; }
+    .option-btn { min-width: 46px !important; }
+}

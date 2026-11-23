@@ -1,0 +1,922 @@
+﻿@{
+    Layout = null;
+    ViewData["TitleKey"] = "test.pageTitle";
+    ViewData["Title"] = L["test.pageTitle"];
+}
+
+<!DOCTYPE html>
+<html lang="@L.HtmlLang" data-lang="@L.Lang" data-title-key="test.pageTitle">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <partial name="_I18nScripts" />
+
+    <style>
+            /* 🔥 Til tugmalari */
+            .top-lang .lang-btn {
+                background-color: #111111;
+                color: #f0f0f0;
+                border: 1.5px solid #555555;
+                padding: 4px 10px;
+                margin: 0 2px;
+                font-weight: 700;
+                cursor: pointer;
+                border-radius: 3px;
+                transition: all 0.2s;
+            }
+
+                .top-lang .lang-btn:hover {
+                    background-color: #2a2a2a;
+                    color: #ffffff;
+                    border-color: #aaaaaa;
+                }
+
+                .top-lang .lang-btn.active {
+                    background-color: #ffffff !important;
+                    color: #000000 !important;
+                    border-color: #ffffff !important;
+                }
+
+            .top-lang.mx-auto {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .custom-nav {
+                background-color: #0a0a0a !important;
+                border-bottom: 1px solid #222222;
+            }
+
+            .logo-img {
+                border-radius: 80%;
+                height: 50px;
+                width: auto;
+                max-height: 60px;
+            }
+
+            .logo-text {
+                font-weight: 700;
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+                color: #ffffff;
+                white-space: nowrap;
+                text-shadow: 0 0 12px rgba(255,255,255,0.3);
+            }
+
+            body {
+                background-color: #080808;
+                color: #f0f0f0;
+            }
+
+                body a {
+                    color: white;
+                }
+
+                body .navbar,
+                body .card,
+                body .modal-content,
+                body .dropdown-menu {
+                    background-color: #0a0a0a;
+                    color: #f0f0f0;
+                    border-color: #2a2a2a;
+                }
+
+                body .form-control {
+                    background-color: #111111;
+                    color: #f0f0f0;
+                    border: 1px solid #444;
+                }
+
+                    body .form-control::placeholder {
+                        color: #bbbbbb;
+                    }
+
+                body .badge {
+                    background-color: #111111 !important;
+                }
+
+            nav {
+                color: #f0f0f0;
+            }
+
+            .home-only, .not-home {
+                background-color: #0a0a0a !important;
+            }
+
+            /* ── FOOTER ── */
+            footer {
+                border-top: 1px solid #222222;
+                padding: 40px 60px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #050505;
+            }
+
+            .nav-btn {
+                transition: all 0.2s ease;
+            }
+
+            @@media (max-width: 768px) {
+                footer {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    padding: 24px 20px;
+                    gap: 10px;
+                }
+
+                .logo-text {
+                    font-size: 1rem;
+                }
+
+                .logo-img {
+                    height: 38px;
+                }
+
+                .top-lang {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                    .top-lang .lang-btn {
+                        padding: 3px 8px;
+                        font-size: 0.8rem;
+                    }
+            }
+    </style>
+
+    <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #141414;
+                color: #f8f9fa;
+                font-family: Roboto, "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+                font-size: 16px;
+            }
+
+            .image-col {
+                padding-right: 105px;
+            }
+
+            #questionBox {
+                width: 100%;
+                margin: 0;
+                box-sizing: border-box;
+                background-color: #555;
+                color: white;
+            }
+
+                #questionBox h3 {
+                    color: white;
+                    text-align: center;
+                }
+
+            .option-row {
+                display: flex;
+                margin-bottom: 6px;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+
+                .option-row:not(.answered):hover .option-text {
+                    background-color: #3c4a3d99;
+                }
+
+                .option-row.answered {
+                    cursor: default;
+                }
+
+            .option-btn {
+                min-width: 50px;
+                padding: 4px 12px;
+                background-color: #1a547b;
+                color: #f8f9fa;
+                border-radius: 0;
+                border-style: solid;
+                border-width: 2px;
+                border-top-color: rgba(255,255,255,0.25);
+                border-left-color: rgba(255,255,255,0.25);
+                border-bottom-color: #000;
+                border-right-color: #000;
+                font-weight: bold;
+                user-select: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .option-text {
+                flex: 1 1 auto;
+                background-color: #3c4a3d;
+                color: #f8f9fa;
+                padding: 4px 14px;
+                border-radius: 0;
+                border-style: solid;
+                border-width: 2px;
+                border-top-color: rgba(255,255,255,0.25);
+                border-bottom-color: #000;
+                border-right-color: #000;
+                border-left: none;
+                font-size: 1rem;
+                line-height: 1.4;
+                font-weight: 400;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                transition: background-color 0.2s;
+            }
+
+            .option-row.correct .option-btn {
+                background-color: #1a7a1a !important;
+            }
+
+            .option-row.correct .option-text {
+                background-color: #4caf50 !important;
+                color: #000 !important;
+            }
+
+            .option-row.incorrect .option-btn {
+                background-color: #7a1a1a !important;
+            }
+
+            .option-row.incorrect .option-text {
+                background-color: #e53935 !important;
+                color: white !important;
+            }
+
+            .nav-wrapper {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 40px;
+            }
+
+            #questionNav {
+                display: grid !important;
+                grid-template-columns: repeat(20, 36px);
+                gap: 3px;
+                justify-content: center;
+                margin: 0 auto;
+            }
+
+                #questionNav button {
+                    border-radius: 0 !important;
+                    background-color: #3c4a3d !important;
+                    color: #f8f9fa !important;
+                    border-style: solid !important;
+                    border-width: 2px !important;
+                    border-top-color: #000 !important;
+                    border-left-color: #000 !important;
+                    border-bottom-color: rgba(255,255,255,0.35) !important;
+                    border-right-color: rgba(255,255,255,0.35) !important;
+                    width: 36px;
+                    height: 36px;
+                    flex-shrink: 0;
+                    padding: 0 !important;
+                    font-size: 12px !important;
+                }
+
+                    #questionNav button:hover {
+                        background-color: #3c4a3d99 !important;
+                    }
+
+                    #questionNav button.btn-success {
+                        background-color: #4caf50 !important;
+                        color: #000 !important;
+                    }
+
+                    #questionNav button.btn-danger {
+                        background-color: #e53935 !important;
+                    }
+
+                    #questionNav button.btn-primary {
+                        background-color: #2b362c !important;
+                        color: #f8f9fa !important;
+                        box-shadow: inset 3px 3px 6px rgba(0,0,0,0.75) !important;
+                    }
+
+            .finish-btn {
+                position: absolute;
+                right: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #3c4a3d;
+                color: #ffffff;
+                border: 2px solid #000;
+                border-radius: 0;
+                padding: 12px 26px;
+                font-size: 15px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+
+                .finish-btn:hover {
+                    background-color: #3c4a3d99;
+                }
+
+            .exit-btn {
+                position: absolute;
+                left: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #6c3a3a;
+                color: #ffffff;
+                border: 2px solid #000;
+                border-radius: 0;
+                padding: 12px 26px;
+                font-size: 15px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+
+                .exit-btn:hover {
+                    background-color: #6c3a3a99;
+                }
+
+            .container {
+                max-width: 100%;
+                width: auto; /* margin: 6px bilan 100% kenglik ekrandan chiqib ketmasin */
+                padding: 4px;
+                margin: 6px;
+                box-sizing: border-box;
+            }
+
+            /* Bootstrap .row manfiy chetlari (-12px) gorizontal aylantirish paydo qilmasin */
+            .container-fluid > .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            @@media (max-width:768px) {
+                .image-col {
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    margin-top: 16px;
+                }
+
+                    .image-col > div {
+                        height: 260px !important;
+                    }
+
+                .nav-wrapper {
+                    flex-direction: column;
+                    gap: 16px;
+                }
+
+                .finish-btn, .exit-btn {
+                    position: static;
+                    transform: none;
+                }
+
+                #questionNav {
+                    flex-wrap: wrap;
+                    gap: 2px;
+                    margin: 20px 8px 0 8px;
+                }
+            }
+
+            /* Telefon/planshet: 20 ustunli raqamlar qatori (~777px) ekranga sig'maydi — 10 ustunga o'tadi */
+            @@media (max-width: 860px) {
+                #questionNav {
+                    grid-template-columns: repeat(10, minmax(0, 36px));
+                    max-width: 100%;
+                }
+
+                    #questionNav button {
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: 1 / 1;
+                        min-width: 0;
+                    }
+            }
+    </style>
+    <style>
+        /* Javobni tasdiqlash kartasi (real imtihon) */
+        .ac-overlay {
+            position: fixed; inset: 0; z-index: 4000;
+            display: flex; align-items: center; justify-content: center; padding: 16px;
+            background: rgba(5, 8, 14, .74);
+            opacity: 0; transition: opacity .16s ease;
+        }
+        .ac-overlay[hidden] { display: none; }
+        .ac-overlay.show { opacity: 1; }
+        .ac-card {
+            width: 100%; max-width: 400px;
+            background: linear-gradient(180deg, #1b2130 0%, #141925 100%);
+            border: 1px solid rgba(255, 255, 255, .09);
+            border-radius: 16px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .55);
+            padding: 20px 20px 18px;
+            color: #e8ecf4;
+            transform: translateY(10px) scale(.97); transition: transform .18s ease;
+        }
+        .ac-overlay.show .ac-card { transform: none; }
+        .ac-label {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+            color: #8b95a8; margin-bottom: 12px;
+        }
+        .ac-label::before {
+            content: ""; width: 7px; height: 7px; border-radius: 50%;
+            background: #ff4d6a; box-shadow: 0 0 0 4px rgba(255, 77, 106, .18);
+        }
+        .ac-answer {
+            display: flex; align-items: stretch;
+            border-radius: 10px; overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .035);
+        }
+        .ac-key {
+            flex: 0 0 auto; min-width: 48px;
+            display: flex; align-items: center; justify-content: center;
+            background: #1f5d8c; color: #fff; font-weight: 800; font-size: 15px;
+        }
+        .ac-text {
+            padding: 12px 14px; font-size: 15px; line-height: 1.45; font-weight: 600;
+            max-height: 40vh; overflow-y: auto;
+        }
+        .ac-q { margin: 14px 2px 16px; font-size: 14px; color: #aab3c5; }
+        .ac-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .ac-btn {
+            height: 44px; border-radius: 10px; border: 1px solid transparent;
+            font-weight: 700; font-size: 15px; cursor: pointer;
+            transition: transform .08s ease, filter .15s ease, background .15s ease;
+        }
+        .ac-btn:active { transform: scale(.97); }
+        .ac-btn:focus-visible { outline: 2px solid #7cc4ff; outline-offset: 2px; }
+        .ac-no { background: rgba(255, 255, 255, .06); border-color: rgba(255, 255, 255, .12); color: #e8ecf4; }
+        .ac-no:hover { background: rgba(255, 255, 255, .11); }
+        .ac-yes { background: linear-gradient(180deg, #22c55e, #16a34a); color: #fff; box-shadow: 0 6px 18px rgba(34, 197, 94, .28); }
+        .ac-yes:hover { filter: brightness(1.08); }
+
+        /* Imtihon to'xtatilgan sabab (natija kartasida) */
+        .exam-end-reason {
+            margin: 0 auto 10px; padding: 8px 12px; border-radius: 8px; max-width: 340px;
+            background: rgba(255, 45, 74, .14); border: 1px solid rgba(255, 77, 106, .45);
+            color: #ffb3c0; font-weight: 700; font-size: 14px; line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <partial name="_TestHeader" />
+
+    <div class="container mt-4">
+        <div class="container-fluid p-0" style="margin-top:-22px;">
+
+            <div id="questionBox" class="p-3">
+                <h3 id="questionText" class="m-0 p-2">@L["test.loading"]</h3>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6" id="optionsContainer"></div>
+
+                <div class="col-md-6 image-col">
+                    <div style="width:100%; height:400px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                        <img id="questionImage" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; cursor:pointer;" src="" alt="@L["test.imageAlt"]" data-i18n-alt="test.imageAlt">
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-wrapper">
+                <button id="exitBtn" class="exit-btn" type="button" data-i18n="test.exit">@L["test.exit"]</button>
+                <div id="questionNav"></div>
+                <button id="finishBtn" class="finish-btn" type="button" data-i18n="test.finish">@L["test.finish"]</button>
+            </div>
+
+        </div>
+
+        <div id="resultCard" class="card text-center p-3" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); max-width:400px; width:90%; z-index:1000;">
+            <div class="card-body">
+                <h4 class="card-title" data-i18n="test.result">@L["test.result"]</h4>
+                <p id="resultText" class="card-text"></p>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <button id="reviewBtn" class="btn btn-primary m-1" data-i18n="test.review">@L["test.review"]</button>
+                    <button id="reviewErrorsBtn" class="btn btn-warning m-1" style="display:none;" data-i18n="test.reviewErrors">@L["test.reviewErrors"]</button>
+                    <button id="retryBtn" class="btn btn-danger m-1" data-i18n="test.retry">@L["test.retry"]</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="answerConfirm" class="ac-overlay" hidden>
+            <div class="ac-card" role="dialog" aria-modal="true" aria-labelledby="acLabel">
+                <div id="acLabel" class="ac-label" data-i18n="test.confirmLabel">@L["test.confirmLabel"]</div>
+                <div class="ac-answer">
+                    <div id="acKey" class="ac-key"></div>
+                    <div id="acText" class="ac-text"></div>
+                </div>
+                <div class="ac-q" data-i18n="test.confirmQuestion">@L["test.confirmQuestion"]</div>
+                <div class="ac-actions">
+                    <button id="acNo" type="button" class="ac-btn ac-no" data-i18n="test.confirmNo">@L["test.confirmNo"]</button>
+                    <button id="acYes" type="button" class="ac-btn ac-yes" data-i18n="test.confirmYes">@L["test.confirmYes"]</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="imageModal"style="display:none; position:fixed; z-index:5000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.92); align-items:center; justify-content:center;">
+            <span id="closeModal" style="position:absolute; top:16px; right:24px; font-size:40px; color:white; cursor:pointer; z-index:5001; line-height:1;">×</span>
+            <img id="modalImg" style="position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:92vw; height:90vh; object-fit:contain;">
+        </div>
+    </div>
+
+    <script>
+            let originalQuestions = [];
+            let questions = [];
+            let currentIndex = 0;
+            let answers = {};
+            let lastResult = null; // natija kartasi tanlangan tilda qayta chizilishi uchun
+            let shuffledOrders = {};
+            let isReviewMode = false;
+            let incorrectQuestionsGlobal = [];
+
+            // Real imtihon qoidalari: 25 daqiqa; ko'pi bilan 2 ta xato — 3-xatoda imtihon to'xtaydi (yiqildi)
+            const EXAM_SECONDS = 25 * 60;
+            const MAX_WRONG = 2;
+            let examMode = true;    // asosiy imtihon (xatolar ustida ishlashda — qoidalar va vaqt yo'q)
+            let examOver = false;   // imtihon tugadi — javob berib bo'lmaydi
+            let endReason = null;   // "time" | "mistakes" | null (o'zi yakunladi yoki hammasiga javob berdi)
+
+            function startExam() {
+                examMode = true;
+                examOver = false;
+                endReason = null;
+                TestTimer.start(EXAM_SECONDS, () => endExam("time"));
+            }
+
+            function wrongCount() {
+                return questions.filter(q => {
+                    if (answers[q.id] === undefined) return false;
+                    const sel = q.options.find(o => o.id == answers[q.id]);
+                    return !(sel && sel.isCorrect);
+                }).length;
+            }
+
+            function endExam(reason) {
+                if (examOver) return;
+                endReason = reason;
+                finishTest();
+            }
+
+            function shuffleArray(arr) {
+                const a = [...arr];
+                for (let i = a.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [a[i], a[j]] = [a[j], a[i]];
+                }
+                return a;
+            }
+
+            document.addEventListener("DOMContentLoaded", async () => {
+                await loadQuestions();
+                renderQuestion();
+                startExam();
+            });
+
+            async function loadQuestions() {
+                const res = await fetch('/Testforty/GetQuestions');
+                originalQuestions = await res.json();
+                questions = JSON.parse(JSON.stringify(originalQuestions)).slice(0, 20);
+                createNavigation();
+            }
+
+            // Tanlangan tildagi matn; tarjima bo'lmasa — o'zbek (lotin)
+            function getQuestionText(q) {
+                return I18n.pick(q.questionUZ, q.questionRU, q.questionUZK);
+            }
+
+            function getOptionText(o) {
+                return I18n.pick(o.textUZ, o.textRU, o.textUZK);
+            }
+
+            function getShuffledOptions(q) {
+                if ((answers[q.id] !== undefined || isReviewMode) && shuffledOrders[q.id]) {
+                    return shuffledOrders[q.id].map(i => q.options[i]);
+                }
+                const prev = shuffledOrders[q.id] ? [...shuffledOrders[q.id]] : null;
+                let indices;
+                let attempts = 0;
+                do {
+                    indices = shuffleArray(q.options.map((_, i) => i));
+                    attempts++;
+                    if (attempts > 20) break;
+                } while (prev && JSON.stringify(indices) === JSON.stringify(prev));
+                shuffledOrders[q.id] = indices;
+                return indices.map(i => q.options[i]);
+            }
+
+            function renderQuestion() {
+                if (!questions.length) return;
+                const q = questions[currentIndex];
+                document.getElementById("questionText").innerText = getQuestionText(q);
+
+                const image = document.getElementById("questionImage");
+                image.src = q.imageUrl ? "/uploads/" + q.imageUrl : "/images/archazor-car.jpg";
+
+                const container = document.getElementById("optionsContainer");
+                container.innerHTML = "";
+
+                const shuffled = getShuffledOptions(q);
+                const alreadyAnswered = answers[q.id] !== undefined || isReviewMode;
+
+                shuffled.forEach((o, index) => {
+                    const div = document.createElement("div");
+                    div.className = "option-row" + (alreadyAnswered ? " answered" : "");
+
+                    const wrapper = document.createElement("div");
+                    wrapper.style.display = "flex";
+                    wrapper.style.alignItems = "stretch";
+                    wrapper.style.width = "100%";
+
+                    const btn = document.createElement("div");
+                    btn.className = "option-btn";
+                    btn.innerText = "F" + (index + 1);
+
+                    const textDiv = document.createElement("div");
+                    textDiv.className = "option-text";
+                    textDiv.innerText = getOptionText(o);
+
+                    wrapper.appendChild(btn);
+                    wrapper.appendChild(textDiv);
+                    div.appendChild(wrapper);
+
+                    if (alreadyAnswered) {
+                        const selectedId = answers[q.id];
+                        if (selectedId !== undefined) {
+                            const selected = q.options.find(opt => opt.id == selectedId);
+                            if (selected) {
+                                if (selected.isCorrect) {
+                                    if (o.id === selected.id) div.classList.add("correct");
+                                } else {
+                                    if (o.id === selected.id) div.classList.add("incorrect");
+                                    if (o.isCorrect) div.classList.add("correct");
+                                }
+                            }
+                        } else {
+                            if (o.isCorrect) div.classList.add("correct");
+                        }
+                    } else {
+                        div.onclick = () => {
+                            askConfirm(q, o, index);
+                        };
+                    }
+
+                    container.appendChild(div);
+                });
+
+                updateNavigation();
+            }
+
+            function selectAnswer(q, o) {
+                if (answers[q.id] !== undefined || isReviewMode || examOver) return;
+                answers[q.id] = o.id;
+                renderQuestion();
+                updateNavigation();
+                // 3-xato — imtihon shu zahoti to'xtaydi
+                if (examMode && wrongCount() > MAX_WRONG) { endExam("mistakes"); return; }
+                checkAutoFinish();
+                setTimeout(() => {
+                    if (currentIndex < questions.length - 1 && !isReviewMode && !examOver) {
+                        currentIndex++;
+                        renderQuestion();
+                    }
+                }, 500);
+            }
+
+            // Javobni tasdiqlash kartasi: "Ha" — javob qabul qilinadi, "Yo'q" — boshqa variant tanlash mumkin
+            let pendingAnswer = null;
+
+            function askConfirm(q, o, index) {
+                if (answers[q.id] !== undefined || isReviewMode || examOver) return;
+                pendingAnswer = { q, o, index };
+                renderConfirm();
+                const box = document.getElementById("answerConfirm");
+                box.hidden = false;
+                requestAnimationFrame(() => box.classList.add("show"));
+                document.getElementById("acYes").focus();
+            }
+
+            function renderConfirm() {
+                if (!pendingAnswer) return;
+                document.getElementById("acKey").textContent = "F" + (pendingAnswer.index + 1);
+                document.getElementById("acText").textContent = getOptionText(pendingAnswer.o);
+            }
+
+            function closeConfirm(accept) {
+                const p = pendingAnswer;
+                pendingAnswer = null;
+                const box = document.getElementById("answerConfirm");
+                box.classList.remove("show");
+                box.hidden = true;
+                if (accept && p) selectAnswer(p.q, p.o);
+            }
+
+            document.getElementById("acYes").onclick = () => closeConfirm(true);
+            document.getElementById("acNo").onclick = () => closeConfirm(false);
+            document.getElementById("answerConfirm").onclick = function (e) {
+                if (e.target === this) closeConfirm(false);
+            };
+
+            document.getElementById("finishBtn").onclick = () => {
+                finishTest();
+            };
+
+            document.getElementById("exitBtn").onclick = () => {
+                window.location.href = "/Home/Index";
+            };
+
+            function createNavigation() {
+                const nav = document.getElementById("questionNav");
+                nav.innerHTML = "";
+                questions.forEach((q, i) => {
+                    const btn = document.createElement("button");
+                    btn.innerText = i + 1;
+                    btn.className = "btn btn-sm btn-outline-secondary";
+                    btn.onclick = () => { currentIndex = i; renderQuestion(); };
+                    nav.appendChild(btn);
+                });
+            }
+
+            function updateNavigation() {
+                document.querySelectorAll("#questionNav button").forEach((btn, i) => {
+                    btn.className = "btn btn-sm";
+                    if (i === currentIndex) btn.classList.add("btn-primary");
+                    const q = questions[i];
+                    if (answers[q.id] !== undefined) {
+                        const sel = q.options.find(o => o.id == answers[q.id]);
+                        btn.classList.add(sel && sel.isCorrect ? "btn-success" : "btn-danger");
+                    } else {
+                        if (isReviewMode) {
+                            btn.classList.add("btn-danger");
+                        } else {
+                            btn.classList.add("btn-outline-secondary");
+                        }
+                    }
+                });
+            }
+
+            function checkAutoFinish() {
+                if (Object.keys(answers).length === questions.length) finishTest();
+            }
+
+            function finishTest() {
+                if (pendingAnswer) closeConfirm(false);
+                if (examMode) {
+                    examOver = true;
+                    TestTimer.stop();
+                }
+                let correct = 0;
+                let skipped = 0;
+                incorrectQuestionsGlobal = [];
+
+                questions.forEach(q => {
+                    if (answers[q.id] !== undefined) {
+                        const sel = q.options.find(o => o.id == answers[q.id]);
+                        if (sel && sel.isCorrect) {
+                            correct++;
+                        } else {
+                            incorrectQuestionsGlobal.push(q);
+                        }
+                    } else {
+                        skipped++;
+                    }
+                });
+
+                let percentage = questions.length > 0 ? Math.round((correct / questions.length) * 100) : 0;
+                const resultCard = document.getElementById("resultCard");
+                resultCard.className = "card text-center p-3 " + (correct >= 18 ? "passed" : "failed");
+
+                lastResult = { correct, total: questions.length, percent: percentage, wrong: incorrectQuestionsGlobal.length, skipped, reason: examMode ? endReason : null };
+                renderResultText();
+
+                const errorBtn = document.getElementById("reviewErrorsBtn");
+                if (incorrectQuestionsGlobal.length > 0) {
+                    errorBtn.style.display = "inline-block";
+                } else {
+                    errorBtn.style.display = "none";
+                }
+
+                resultCard.style.display = "block";
+            }
+
+            document.getElementById("reviewErrorsBtn").onclick = () => {
+                if (incorrectQuestionsGlobal.length > 0) {
+                    // Xatolar ustida ishlash — mashq: vaqt va "3 ta xato" qoidasi yo'q
+                    examMode = false;
+                    examOver = false;
+                    TestTimer.hide();
+                    questions = JSON.parse(JSON.stringify(incorrectQuestionsGlobal));
+                    answers = {};
+                    shuffledOrders = {};
+                    currentIndex = 0;
+                    isReviewMode = false;
+                    document.getElementById("resultCard").style.display = "none";
+                    createNavigation();
+                    renderQuestion();
+                }
+            };
+
+            document.getElementById("reviewBtn").onclick = () => {
+                document.getElementById("resultCard").style.display = "none";
+                isReviewMode = true;
+                currentIndex = 0;
+                renderQuestion();
+            };
+
+            document.getElementById("retryBtn").onclick = () => {
+                questions = JSON.parse(JSON.stringify(originalQuestions)).slice(0, 20);
+                answers = {};
+                shuffledOrders = {};
+                currentIndex = 0;
+                isReviewMode = false;
+                document.getElementById("resultCard").style.display = "none";
+                createNavigation();
+                renderQuestion();
+                startExam();
+            };
+
+            document.addEventListener("keydown", function(e) {
+                if (pendingAnswer) {
+                    // Karta ochiq: Enter — Ha, Esc — Yo'q; boshqa tugmalar (F1..F4, strelkalar) ishlamaydi
+                    if (e.key === "Escape") { e.preventDefault(); closeConfirm(false); }
+                    else if (e.key === "Enter") { e.preventDefault(); closeConfirm(true); }
+                    else if (e.key !== "Tab") e.preventDefault();
+                    return;
+                }
+                if (e.key === "Escape") { document.getElementById("imageModal").style.display = "none"; return; }
+                if (e.key === "ArrowRight" && currentIndex < questions.length - 1) { currentIndex++; renderQuestion(); return; }
+                if (e.key === "ArrowLeft" && currentIndex > 0) { currentIndex--; renderQuestion(); return; }
+                if (e.key.startsWith("F") && e.key.length > 1) {
+                    if (isReviewMode || examOver) return;
+                    const fNum = parseInt(e.key.slice(1)) - 1;
+                    const q = questions[currentIndex];
+                    if (!q || answers[q.id] !== undefined) return;
+                    const order = shuffledOrders[q.id];
+                    if (order && order[fNum] !== undefined) {
+                        const o = q.options[order[fNum]];
+                        if (o) {
+                            e.preventDefault();
+                            askConfirm(q, o, fNum);
+                        }
+                    }
+                }
+            });
+
+            document.addEventListener("click", function(e) {
+                if (e.target && e.target.id === "questionImage") {
+                    document.getElementById("modalImg").src = e.target.src;
+                    document.getElementById("imageModal").style.display = "flex";
+                }
+            });
+
+            document.getElementById("closeModal").onclick = () => {
+                document.getElementById("imageModal").style.display = "none";
+            };
+
+            document.getElementById("imageModal").onclick = function(e) {
+                if (e.target === this) this.style.display = "none";
+            };
+
+            function renderResultText() {
+                if (!lastResult) return;
+                const r = lastResult;
+                const el = document.getElementById("resultText");
+                el.textContent = "";
+                // Imtihon nima sababdan to'xtagani (vaqt tugadi / 3-xato)
+                if (r.reason) {
+                    const why = document.createElement("div");
+                    why.className = "exam-end-reason";
+                    why.textContent = I18n.t(r.reason === "time" ? "test.endTime" : "test.endMistakes");
+                    el.appendChild(why);
+                }
+                [
+                    I18n.t("test.correct", { correct: r.correct, total: r.total, percent: r.percent }),
+                    I18n.t("test.wrong", { n: r.wrong }),
+                    I18n.t("test.skipped", { n: r.skipped })
+                ].forEach((line, i) => {
+                    if (i > 0) el.appendChild(document.createElement("br"));
+                    el.appendChild(document.createTextNode(line));
+                });
+            }
+
+            // Til almashtirilganda (sahifa qayta yuklanmaydi) — savol va natijani qayta chizamiz
+            document.addEventListener("i18n:change", () => {
+                renderQuestion();
+                renderResultText();
+                renderConfirm();
+            });
+    </script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

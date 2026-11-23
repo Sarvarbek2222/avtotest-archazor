@@ -1,0 +1,390 @@
+@model LessonEditModel
+@inject Microsoft.AspNetCore.DataProtection.IDataProtectionProvider Dp
+@{
+    Layout = "_AdminLayout";
+    ViewData["TitleKey"] = "ls.adminTitle";
+    ViewData["Title"] = L["ls.adminTitle"];
+    var l = Model.Lesson;
+    var t = l.Topic;
+    var enc = Uri.EscapeDataString(t);
+    string Fmt(int? s) => s is int v ? (v >= 3600 ? $"{v / 3600}:{v % 3600 / 60:00}:{v % 60:00}" : $"{v / 60}:{v % 60:00}") : "";
+    var isYt = l.VideoKind == VideoKinds.YouTube;
+    var msg = TempData["LsMsg"] as string;
+    var err = TempData["LsErr"] as string;
+}
+<link rel="stylesheet" href="~/css/learn.css" asp-append-version="true" />
+
+<div class="ca-body-embed">
+    <div class="ca-page-head">
+        <div style="min-width:0;">
+            <a class="ca-link" href="/Lessons/Topic?topic=@enc">← <span data-i18n-pick data-uz="@Topics.Display(t, Lang.Uz)" data-ru="@Topics.Display(t, Lang.Ru)" data-uzk="@t">@L.Topic(t)</span></a>
+            <h1 class="ca-h1" style="margin-top:8px;">@(l.Id > 0 ? (l.Title ?? L.Topic(t)) : L["ls.newVideo"])</h1>
+            <p class="ca-sub" data-i18n="ls.editSub2">@L["ls.editSub2"]</p>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            @if (l.Id > 0 && l.HasVideo)
+            {
+                <a class="ca-btn ca-btn-ghost" href="/Topic/Watch/@l.Id" target="_blank" rel="noopener">@Icons.Play <span data-i18n="ls.preview">@L["ls.preview"]</span></a>
+            }
+            @if (l.Id > 0)
+            {
+                <form method="post" action="/Lessons/Delete/@l.Id" onsubmit="return confirm(I18n.t('ls.deleteConfirm'))">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="ca-btn ca-btn-ghost" style="color:#ff8095;">🗑 <span data-i18n="ls.delete">@L["ls.delete"]</span></button>
+                </form>
+            }
+        </div>
+    </div>
+
+    @if (msg != null) { <div class="ca-alert ca-alert-info" data-i18n="@msg">@L[msg]</div> }
+    @if (err != null) { <div class="ca-alert" style="border-color:rgba(248,113,113,.5);color:#fecaca;" data-i18n="@err">@L[err]</div> }
+
+    <form method="post" action="/Lessons/Save" id="lessonForm">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id" value="@l.Id" />
+        <input type="hidden" name="videoRef" id="videoRef" value="@(isYt ? "" : l.VideoRef)" data-url="@(!isYt && l.HasVideo ? MediaController.VideoUrl(Dp, User, l.VideoRef!) : "")" />
+        <input type="hidden" name="durationSeconds" id="durationSeconds" value="@l.DurationSeconds" />
+
+        <div class="ae-layout">
+            <div class="ca-stack">
+                <div class="ca-card">
+                    <div class="ca-card-head"><h3 class="ca-card-title" data-i18n="ls.videoSource">@L["ls.videoSource"]</h3></div>
+                    <div class="ae-seg" role="radiogroup">
+                        <label><input type="radio" name="videoKind" value="file" @(isYt ? "" : "checked") /><span data-i18n="ls.srcFile">@L["ls.srcFile"]</span></label>
+                        <label><input type="radio" name="videoKind" value="youtube" @(isYt ? "checked" : "") /><span>YouTube</span></label>
+                    </div>
+
+                    <div id="srcFile" @(isYt ? "hidden" : "")>
+                        <label class="ae-drop" id="drop">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m17 8-5-5-5 5" /><path d="M12 3v12" /></svg>
+                            <b data-i18n="ls.dropTitle">@L["ls.dropTitle"]</b>
+                            <span class="ca-small" data-i18n="ls.dropSub">@L["ls.dropSub"]</span>
+                            <input type="file" id="fileInput" accept="video/mp4,video/webm,video/quicktime,.mp4,.webm,.m4v,.mov" hidden />
+                        </label>
+                        <div class="ae-up" id="up" hidden>
+                            <div class="ae-up-top"><b id="upName"></b><span id="upStat"></span></div>
+                            <div class="ae-up-bar"><i id="upBar"></i></div>
+                            <div style="display:flex;gap:8px;margin-top:10px;">
+                                <button type="button" class="ca-btn ca-btn-ghost ca-btn-sm" id="upCancel" data-i18n="ls.cancel">@L["ls.cancel"]</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="srcYt" @(isYt ? "" : "hidden")>
+                        <input class="ca-input" type="url" name="youTubeUrl" id="ytUrl" value="@(isYt ? "https://youtu.be/" + l.VideoRef : "")"
+                               placeholder="https://www.youtube.com/watch?v=..." style="width:100%;" />
+                        <p class="ca-muted ca-small" data-i18n="ls.ytHint">@L["ls.ytHint"]</p>
+                    </div>
+
+                    <div style="margin-top:14px;" id="previewWrap" @(l.HasVideo ? "" : "hidden")>
+                        <div id="preview"></div>
+                        <p class="ca-muted ca-small" style="margin-top:8px;" data-i18n="ls.previewHint">@L["ls.previewHint"]</p>
+                    </div>
+                </div>
+
+                <div class="ca-card">
+                    <div class="ca-card-head"><h3 class="ca-card-title" data-i18n="ls.details">@L["ls.details"]</h3></div>
+                    <label class="ca-small ca-muted" for="mainTopic" data-i18n="ls.fTopic">@L["ls.fTopic"]</label>
+                    <select class="ca-input" id="mainTopic" name="topic" style="width:100%;margin:4px 0 12px;">
+                        @foreach (var tc in Model.TopicCounts)
+                        {
+                            <option value="@tc.Topic" selected="@(tc.Topic == t)">@L.Topic(tc.Topic)</option>
+                        }
+                    </select>
+                    <label class="ca-small ca-muted" for="title" data-i18n="ls.fTitle">@L["ls.fTitle"]</label>
+                    <input class="ca-input" id="title" name="title" maxlength="200" value="@l.Title" style="width:100%;margin:4px 0 12px;" placeholder="@L.Topic(t)" />
+                    <label class="ca-small ca-muted" for="description" data-i18n="ls.fDesc">@L["ls.fDesc"]</label>
+                    <textarea class="ca-input" id="description" name="description" rows="5" style="width:100%;margin-top:4px;">@l.Description</textarea>
+                    <label style="display:flex;align-items:center;gap:10px;margin-top:14px;cursor:pointer;">
+                        <input type="checkbox" name="isPublished" value="true" @(l.IsPublished ? "checked" : "") style="width:18px;height:18px;accent-color:#22c55e;" />
+                        <span><b data-i18n="ls.fPublish">@L["ls.fPublish"]</b><br /><span class="ca-small ca-muted" data-i18n="ls.fPublishHint">@L["ls.fPublishHint"]</span></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="ae-sticky">
+                <div class="ca-card">
+                    <div class="ca-card-head">
+                        <div>
+                            <h3 class="ca-card-title"><span data-i18n="ls.pickedTitle">@L["ls.pickedTitle"]</span> <span class="ca-badge" id="pickedSum"></span></h3>
+                            <p class="ca-card-sub" data-i18n="ls.pickedHint">@L["ls.pickedHint"]</p>
+                        </div>
+                    </div>
+
+                    <details class="ae-picker" id="picker" @(Model.Questions.Count == 0 ? "open" : "")>
+                        <summary class="ca-btn ca-btn-ghost ca-btn-sm">+ <span data-i18n="ls.addQuestions">@L["ls.addQuestions"]</span></summary>
+                        <div class="ae-picker-body">
+                            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                <select class="ca-input" id="pkTopic" style="flex:1;min-width:180px;">
+                                    @foreach (var tc in Model.TopicCounts)
+                                    {
+                                        <option value="@tc.Topic" selected="@(tc.Topic == t)">@L.Topic(tc.Topic) (@tc.Count)</option>
+                                    }
+                                </select>
+                                <input class="ca-input" id="pkSearch" type="search" placeholder="@L["ls.pkSearch"]" data-i18n-placeholder="ls.pkSearch" style="flex:1;min-width:140px;" />
+                            </div>
+                            <label class="ca-small" style="display:inline-flex;gap:6px;align-items:center;margin:8px 0;cursor:pointer;"><input type="checkbox" id="pkAll" /> <span data-i18n="users.selectAll">@L["users.selectAll"]</span></label>
+                            <div class="ae-pk-list" id="pkList"></div>
+                        </div>
+                    </details>
+
+                    <div class="ae-rows" id="rows">
+                        @foreach (var q in Model.Questions)
+                        {
+                            <div class="ae-row ae-row-x @(q.StartSeconds != null ? "has-time" : "")" data-qid="@q.Id" data-topic="@q.Topic">
+                                <span class="ae-row-n">@q.Number</span>
+                                @if (!string.IsNullOrEmpty(q.ImageUrl))
+                                {
+                                    <img src="/uploads/@q.ImageUrl" alt="" loading="lazy" />
+                                }
+                                else
+                                {
+                                    <span class="ae-noimg"></span>
+                                }
+                                <span class="ae-row-t" title="@q.Text">@q.Text<small class="ae-row-topic">@(q.Topic == null ? "" : L.Topic(q.Topic))</small></span>
+                                <input type="hidden" name="chQuestion" value="@q.Id" />
+                                <input class="ae-time" name="chTime" value="@Fmt(q.StartSeconds)" placeholder="m:ss" inputmode="numeric" />
+                                <button type="button" class="ae-set" title="@L["ls.setNow"]" data-i18n-title="ls.setNow">@Icons.Clock</button>
+                                <button type="button" class="ae-set" data-remove title="×">×</button>
+                            </div>
+                        }
+                    </div>
+                    <p class="ca-muted ca-small" id="rowsEmpty" @(Model.Questions.Count > 0 ? "hidden" : "") data-i18n="ls.noPicked">@L["ls.noPicked"]</p>
+
+                    <div class="ca-card-head" style="margin-top:18px;">
+                        <div>
+                            <h3 class="ca-card-title" style="font-size:.92rem;" data-i18n="ls.extraTitle">@L["ls.extraTitle"]</h3>
+                            <p class="ca-card-sub" data-i18n="ls.extraHint">@L["ls.extraHint"]</p>
+                        </div>
+                        <button type="button" class="ca-btn ca-btn-ghost ca-btn-sm" id="addExtra">+ <span data-i18n="ls.add">@L["ls.add"]</span></button>
+                    </div>
+                    <div class="ae-rows" id="extra">
+                        @foreach (var x in Model.Extra)
+                        {
+                            <div class="ae-row has-time" style="grid-template-columns:minmax(0,1fr) 92px 38px 34px;">
+                                <input class="ca-input" name="xTitle" value="@x.Title" maxlength="300" />
+                                <input class="ae-time" name="xTime" value="@Fmt(x.StartSeconds)" placeholder="m:ss" />
+                                <button type="button" class="ae-set" title="@L["ls.setNow"]">@Icons.Clock</button>
+                                <button type="button" class="ae-set" data-remove title="×">×</button>
+                            </div>
+                        }
+                    </div>
+
+                    <button type="submit" class="ca-btn ca-btn-primary ca-btn-block" style="margin-top:18px;">@Icons.Check <span data-i18n="ls.save">@L["ls.save"]</span></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="~/js/player.js" asp-append-version="true"></script>
+<script>
+    (function () {
+        var form = document.getElementById("lessonForm");
+        var token = form.querySelector('input[name="__RequestVerificationToken"]').value;
+        var refEl = document.getElementById("videoRef"), durEl = document.getElementById("durationSeconds");
+        var player = null;
+
+        function ytId(s) {
+            s = (s || "").trim();
+            if (/^[A-Za-z0-9_-]{11}$/.test(s)) return s;
+            var m = s.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|live\/|shorts\/|v\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+            return m ? m[1] : null;
+        }
+        function kind() { return form.querySelector('input[name="videoKind"]:checked').value; }
+
+        // Oldindan ko'rish pleeri: vaqtni bo'limlarga qo'yish uchun
+        function buildPreview() {
+            var wrap = document.getElementById("previewWrap"), box = document.getElementById("preview");
+            var k = kind(), opt = null;
+            if (k === "file" && refEl.value && refEl.dataset.url) opt = { kind: "file", src: refEl.dataset.url };
+            if (k === "youtube" && ytId(document.getElementById("ytUrl").value)) opt = { kind: "youtube", ytId: ytId(document.getElementById("ytUrl").value) };
+            var fresh = document.createElement("div");
+            fresh.id = "preview";
+            box.replaceWith(fresh);
+            player = null;
+            wrap.hidden = !opt;
+            if (!opt) return;
+            opt.onReady = function (d) { if (d > 0) durEl.value = Math.round(d); };
+            player = new LessonPlayer(fresh, opt);
+        }
+
+        form.querySelectorAll('input[name="videoKind"]').forEach(function (r) {
+            r.addEventListener("change", function () {
+                document.getElementById("srcFile").hidden = kind() !== "file";
+                document.getElementById("srcYt").hidden = kind() !== "youtube";
+                buildPreview();
+            });
+        });
+        document.getElementById("ytUrl").addEventListener("change", buildPreview);
+
+        // ── Bo'limlar: "hozirgi vaqt" tugmasi, kiritilgan vaqtni tekshirish ──
+        function fmt(sec) { return LessonPlayerFmt(sec); }
+        document.addEventListener("click", function (e) {
+            var set = e.target.closest(".ae-set");
+            if (!set) return;
+            if (set.hasAttribute("data-remove")) { set.closest(".ae-row").remove(); summary(); syncPicker(); return; }
+            if (!player) { alert(I18n.t("ls.needVideo")); return; }
+            var row = set.closest(".ae-row");
+            var input = row.querySelector(".ae-time");
+            input.value = fmt(player.time());
+            row.classList.add("has-time");
+        });
+        document.addEventListener("input", function (e) {
+            if (!e.target.classList.contains("ae-time")) return;
+            e.target.closest(".ae-row").classList.toggle("has-time", /^\d{1,2}(:\d{1,2}){0,2}$/.test(e.target.value.trim()));
+        });
+        // Vaqt ustiga ikki marta bosish — videoni shu joyga o'tkazish
+        document.addEventListener("dblclick", function (e) {
+            if (!e.target.classList.contains("ae-time") || !player) return;
+            var parts = e.target.value.split(":").map(Number), s = 0;
+            parts.forEach(function (p) { s = s * 60 + (p || 0); });
+            player.seek(s);
+        });
+        document.getElementById("addExtra").addEventListener("click", function () {
+            var row = document.createElement("div");
+            row.className = "ae-row";
+            row.style.gridTemplateColumns = "minmax(0,1fr) 92px 38px 34px";
+            row.innerHTML = '<input class="ca-input" name="xTitle" maxlength="300" placeholder="' + I18n.t("ls.extraPh") + '" />' +
+                '<input class="ae-time" name="xTime" placeholder="m:ss" /><button type="button" class="ae-set">⏱</button><button type="button" class="ae-set" data-remove>×</button>';
+            document.getElementById("extra").appendChild(row);
+            row.querySelector("input").focus();
+        });
+
+        // ── Video faylni bo'laklab yuklash (768 KB) ──
+        var CHUNK = 768 * 1024, cancelled = false;
+        var drop = document.getElementById("drop"), fileInput = document.getElementById("fileInput");
+        ["dragenter", "dragover"].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add("over"); }); });
+        ["dragleave", "drop"].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove("over"); }); });
+        drop.addEventListener("drop", function (e) { if (e.dataTransfer.files[0]) upload(e.dataTransfer.files[0]); });
+        fileInput.addEventListener("change", function () { if (fileInput.files[0]) upload(fileInput.files[0]); });
+        document.getElementById("upCancel").addEventListener("click", function () { cancelled = true; });
+
+        function hexId() {
+            var a = new Uint8Array(16); crypto.getRandomValues(a);
+            return Array.prototype.map.call(a, function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
+        }
+        function mb(n) { return (n / 1048576).toFixed(1) + " MB"; }
+
+        async function send(url, body) {
+            for (var attempt = 0; attempt < 5; attempt++) {
+                try {
+                    var r = await fetch(url, { method: "POST", credentials: "same-origin", headers: { "RequestVerificationToken": token }, body: body });
+                    if (r.ok) return r.json();
+                    if (r.status < 500) throw new Error((await r.json().catch(function () { return {}; })).error || r.status);
+                } catch (e) { if (attempt === 4 || /offset|size|type|id/.test(e.message)) throw e; }
+                await new Promise(function (res) { setTimeout(res, 1000 * (attempt + 1)); });
+            }
+        }
+
+        async function upload(file) {
+            var ext = (file.name.split(".").pop() || "").toLowerCase();
+            if (["mp4", "webm", "m4v", "mov"].indexOf(ext) < 0) { alert(I18n.t("ls.errType")); return; }
+            cancelled = false;
+            var id = hexId(), up = document.getElementById("up"), bar = document.getElementById("upBar"), stat = document.getElementById("upStat");
+            document.getElementById("upName").textContent = file.name;
+            up.hidden = false;
+            var started = Date.now();
+            try {
+                for (var offset = 0, index = 0; offset < file.size; offset += CHUNK, index++) {
+                    if (cancelled) throw new Error("cancel");
+                    var fd = new FormData();
+                    fd.append("id", id); fd.append("index", index); fd.append("offset", offset);
+                    fd.append("chunk", file.slice(offset, offset + CHUNK), "chunk");
+                    await send("/Lessons/UploadChunk", fd);
+                    var done = Math.min(file.size, offset + CHUNK), sec = (Date.now() - started) / 1000;
+                    var speed = done / Math.max(sec, 0.5), left = (file.size - done) / speed;
+                    bar.style.width = (done / file.size * 100) + "%";
+                    stat.textContent = mb(done) + " / " + mb(file.size) + " · " + mb(speed) + "/s · " + I18n.t("ls.left", { t: fmt(left) });
+                }
+                var fd2 = new FormData();
+                fd2.append("id", id); fd2.append("name", file.name); fd2.append("size", file.size);
+                var res = await send("/Lessons/UploadComplete", fd2);
+                refEl.value = res.name;
+                refEl.dataset.url = res.url;
+                stat.textContent = "✓ " + I18n.t("ls.uploaded");
+                buildPreview();
+            } catch (e) {
+                stat.textContent = e.message === "cancel" ? I18n.t("ls.cancelled") : I18n.t("ls.uploadFailed");
+                bar.style.width = "0";
+            }
+        }
+
+        // Yuklash davom etayotganda sahifadan chiqib ketmaslik
+        window.addEventListener("beforeunload", function (e) {
+            var up = document.getElementById("up");
+            if (!up.hidden && /MB\/s/.test(document.getElementById("upStat").textContent)) { e.preventDefault(); e.returnValue = ""; }
+        });
+
+        // ── Savol tanlagich: mavzu → savollar (belgilash = videoga qo'shish) ──
+        var rows = document.getElementById("rows"), pkList = document.getElementById("pkList");
+        var pkTopic = document.getElementById("pkTopic"), pkSearch = document.getElementById("pkSearch"), pkAll = document.getElementById("pkAll");
+        var pkData = [];
+        function picked() { var m = {}; rows.querySelectorAll(".ae-row-x").forEach(function (r) { m[r.dataset.qid] = r; }); return m; }
+        function summary() {
+            var rs = rows.querySelectorAll(".ae-row-x"), topics = {};
+            rs.forEach(function (r) { topics[r.dataset.topic || "?"] = 1; });
+            document.getElementById("pickedSum").textContent = I18n.t("ls.pickedSum", { n: rs.length, m: Object.keys(topics).length });
+            document.getElementById("rowsEmpty").hidden = rs.length > 0;
+        }
+        function addRow(q) {
+            var row = document.createElement("div");
+            row.className = "ae-row ae-row-x"; row.dataset.qid = q.id; row.dataset.topic = q.topic || "";
+            row.innerHTML = '<span class="ae-row-n"></span>' + (q.img ? '<img alt="" loading="lazy" />' : '<span class="ae-noimg"></span>') +
+                '<span class="ae-row-t"><small class="ae-row-topic"></small></span><input type="hidden" name="chQuestion" />' +
+                '<input class="ae-time" name="chTime" placeholder="m:ss" inputmode="numeric" /><button type="button" class="ae-set">⏱</button><button type="button" class="ae-set" data-remove>×</button>';
+            row.querySelector(".ae-row-n").textContent = q.n;
+            if (q.img) row.querySelector("img").src = "/uploads/" + q.img;
+            var tt = row.querySelector(".ae-row-t"); tt.insertBefore(document.createTextNode(q.text), tt.firstChild); tt.title = q.text;
+            row.querySelector(".ae-row-topic").textContent = pkTopic.options[pkTopic.selectedIndex].text.replace(/\s*\(\d+\)$/, "");
+            row.querySelector('input[name="chQuestion"]').value = q.id;
+            rows.appendChild(row);
+        }
+        function renderPicker() {
+            var m = picked(), s = pkSearch.value.trim().toLowerCase();
+            pkList.textContent = "";
+            pkData.filter(function (q) { return !s || q.text.toLowerCase().indexOf(s) >= 0 || String(q.n) === s; }).forEach(function (q) {
+                var lab = document.createElement("label");
+                lab.className = "ae-pk";
+                lab.innerHTML = '<input type="checkbox" /><b></b><span></span>';
+                var cb = lab.querySelector("input"); cb.checked = !!m[q.id]; cb.dataset.qid = q.id;
+                lab.querySelector("b").textContent = q.n;
+                lab.querySelector("span").textContent = q.text;
+                cb.addEventListener("change", function () {
+                    var cur = picked()[q.id];
+                    if (cb.checked && !cur) addRow(q);
+                    if (!cb.checked && cur) cur.remove();
+                    summary();
+                });
+                pkList.appendChild(lab);
+            });
+            pkAll.checked = false;
+        }
+        function syncPicker() { var m = picked(); pkList.querySelectorAll("input[data-qid]").forEach(function (cb) { cb.checked = !!m[cb.dataset.qid]; }); }
+        function loadTopic() {
+            pkList.innerHTML = '<p class="ca-muted ca-small">…</p>';
+            fetch("/Lessons/TopicQuestions?topic=" + encodeURIComponent(pkTopic.value), { credentials: "same-origin" })
+                .then(function (r) { return r.json(); }).then(function (d) { pkData = d; renderPicker(); });
+        }
+        pkTopic.addEventListener("change", loadTopic);
+        pkSearch.addEventListener("input", renderPicker);
+        pkAll.addEventListener("change", function () {
+            pkList.querySelectorAll("input[data-qid]").forEach(function (cb) { if (cb.checked !== pkAll.checked) { cb.checked = pkAll.checked; cb.dispatchEvent(new Event("change")); } });
+        });
+        document.getElementById("picker").addEventListener("toggle", function () { if (this.open && !pkData.length) loadTopic(); });
+        if (document.getElementById("picker").open) loadTopic();
+        summary();
+
+        buildPreview();
+    })();
+</script>
+<style>
+    .ae-picker { margin-bottom: 12px; }
+    .ae-picker-body { margin-top: 10px; padding: 12px; border-radius: 12px; background: var(--ca-surface-2); border: 1px solid var(--ca-border); }
+    .ae-pk-list { max-height: 340px; overflow-y: auto; display: grid; gap: 2px; }
+    .ae-pk { display: grid; grid-template-columns: 20px 30px 1fr; gap: 8px; align-items: start; padding: 6px 8px; border-radius: 8px; cursor: pointer; font-size: 13px; line-height: 1.35; }
+    .ae-pk:hover { background: var(--ca-surface-3); }
+    .ae-pk b { color: var(--ca-muted); text-align: right; }
+    .ae-pk input { width: 16px; height: 16px; accent-color: var(--ca-brand); margin-top: 2px; }
+    .ae-row-x { grid-template-columns: 32px 56px minmax(0, 1fr) 92px 38px 34px !important; }
+    .ae-row-topic { display: block; color: var(--ca-muted); font-size: 11px; margin-top: 2px; }
+</style>

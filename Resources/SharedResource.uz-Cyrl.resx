@@ -1,0 +1,4473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  O'zbek (kirill). Dastlab lotin matnidan avtomatik o'girilgan — kerak bo'lsa qo'lda tuzating.
+  Kalit (name) — kodda ishlatiladigan nom, <value> — shu tildagi matn.
+  {n} kabi joylar parametrlar — tarjimada o'zgartirmang. HTML teglar (<br>, <span>) saqlanishi kerak.
+-->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="lang.uz" xml:space="preserve">
+    <value>UZB</value>
+  </data>
+  <data name="lang.uzk" xml:space="preserve">
+    <value>УЗБ</value>
+  </data>
+  <data name="lang.ru" xml:space="preserve">
+    <value>РУ</value>
+  </data>
+  <data name="lang.uz.full" xml:space="preserve">
+    <value>Ўзбекча (лотин)</value>
+  </data>
+  <data name="lang.uzk.full" xml:space="preserve">
+    <value>Ўзбекча (кирилл)</value>
+  </data>
+  <data name="lang.ru.full" xml:space="preserve">
+    <value>Русча</value>
+  </data>
+  <data name="lang.choose" xml:space="preserve">
+    <value>Тилни танланг</value>
+  </data>
+  <data name="nav.q20" xml:space="preserve">
+    <value>20 савол</value>
+  </data>
+  <data name="nav.q40" xml:space="preserve">
+    <value>40 савол</value>
+  </data>
+  <data name="nav.q80" xml:space="preserve">
+    <value>80 савол</value>
+  </data>
+  <data name="nav.q100" xml:space="preserve">
+    <value>100 савол</value>
+  </data>
+  <data name="nav.q200" xml:space="preserve">
+    <value>200 савол</value>
+  </data>
+  <data name="nav.bilets" xml:space="preserve">
+    <value>Билетлар</value>
+  </data>
+  <data name="nav.marathon" xml:space="preserve">
+    <value>Марафон</value>
+  </data>
+  <data name="nav.topics" xml:space="preserve">
+    <value>Мавзулар</value>
+  </data>
+  <data name="nav.real" xml:space="preserve">
+    <value>Реал имтиҳон</value>
+  </data>
+  <data name="footer.rights" xml:space="preserve">
+    <value>Барча ҳуқуқлар ҳимояланган</value>
+  </data>
+  <data name="home.pageTitle" xml:space="preserve">
+    <value>Бош саҳифа</value>
+  </data>
+  <data name="home.heroTitle" xml:space="preserve">
+    <value>ТАЙЁРЛОВ&lt;br&gt;ПЛАТФОРМАСИ</value>
+  </data>
+  <data name="home.heroDesc" xml:space="preserve">
+    <value>AVTOTEST ARCHAZOR билан ҳайдовчилик гувоҳномаси олиш учун самарали ўқув курслари ва 100 та синов тестлари орқали реал тестга тайёрланинг.</value>
+  </data>
+  <data name="home.admin" xml:space="preserve">
+    <value>БОШҚАРУВ</value>
+  </data>
+  <data name="home.more" xml:space="preserve">
+    <value>МАЪЛУМОТ ОЛИШ</value>
+  </data>
+  <data name="home.statQuestions" xml:space="preserve">
+    <value>Савол</value>
+  </data>
+  <data name="home.statStudents" xml:space="preserve">
+    <value>Ўқувчи</value>
+  </data>
+  <data name="home.statLicensed" xml:space="preserve">
+    <value>Права олган</value>
+  </data>
+  <data name="home.statYears" xml:space="preserve">
+    <value>Йил тажриба</value>
+  </data>
+  <data name="home.scroll" xml:space="preserve">
+    <value>Пастга</value>
+  </data>
+  <data name="home.mFast" xml:space="preserve">
+    <value>Тезкор курс</value>
+  </data>
+  <data name="home.mNormal" xml:space="preserve">
+    <value>Оддий курс</value>
+  </data>
+  <data name="home.mReal" xml:space="preserve">
+    <value>Реал имтиҳон</value>
+  </data>
+  <data name="home.mRules" xml:space="preserve">
+    <value>Ҳайдовчилик қоидалари</value>
+  </data>
+  <data name="home.mCount" xml:space="preserve">
+    <value>1250+ савол</value>
+  </data>
+  <data name="home.mCert" xml:space="preserve">
+    <value>Сертификат</value>
+  </data>
+  <data name="home.coursesLabel" xml:space="preserve">
+    <value>Курслар ва хизматлар</value>
+  </data>
+  <data name="home.coursesTitle" xml:space="preserve">
+    <value>Қайси йўлни&lt;br&gt;танлайсиз?</value>
+  </data>
+  <data name="home.fastTitle" xml:space="preserve">
+    <value>Тезкор курс</value>
+  </data>
+  <data name="home.fastDesc" xml:space="preserve">
+    <value>1 ҳафтада ҳайдовчилик қоидаларини мукаммал ўрганинг. Вақтингизни тежаб, энг тезкор усулда тайёрланинг.</value>
+  </data>
+  <data name="home.normalTitle" xml:space="preserve">
+    <value>Оддий курс</value>
+  </data>
+  <data name="home.normalDesc" xml:space="preserve">
+    <value>Секин-аста, чуқур билимларни эгаллаш. Ҳар бир қоидани тўлиқ тушунган ҳолда олдинга боринг.</value>
+  </data>
+  <data name="home.realTitle" xml:space="preserve">
+    <value>Реал имтиҳон</value>
+  </data>
+  <data name="home.realDesc" xml:space="preserve">
+    <value>Ҳақиқий имтиҳон шароитида машқ қилинг. Вақт чеклови ва балл тизими билан ўзингизни синаб кўринг.</value>
+  </data>
+  <data name="home.topicsTitle" xml:space="preserve">
+    <value>Мавзулар бўйича</value>
+  </data>
+  <data name="home.topicsDesc" xml:space="preserve">
+    <value>Саволлар мавзуларга ажратилган. Ҳар бир мавзуни алоҳида ўрганинг ва заиф жойларингизни мустаҳкамланг.</value>
+  </data>
+  <data name="home.view" xml:space="preserve">
+    <value>Кўриш</value>
+  </data>
+  <data name="home.start" xml:space="preserve">
+    <value>Бошлаш</value>
+  </data>
+  <data name="home.aboutLabel" xml:space="preserve">
+    <value>Тизим ҳақида</value>
+  </data>
+  <data name="home.aboutTitle" xml:space="preserve">
+    <value>AVTOTEST ARCHAZOR &lt;span style="color:var(--red)"&gt;ПЛАТФОРМАСИ&lt;/span&gt;</value>
+  </data>
+  <data name="home.aboutDesc" xml:space="preserve">
+    <value>Платформа 4 йилдан ортиқ тажрибага эга. Юзлаб ўқувчилар муваффақиятли имтиҳон топшириб, ҳайдовчилик гувоҳномаларини олишган.</value>
+  </data>
+  <data name="home.aboutQuestions" xml:space="preserve">
+    <value>Имтиҳон саволлари</value>
+  </data>
+  <data name="home.aboutStudents" xml:space="preserve">
+    <value>Фаол ўқувчилар</value>
+  </data>
+  <data name="home.aboutLicensed" xml:space="preserve">
+    <value>Права олганлар</value>
+  </data>
+  <data name="home.aboutYears" xml:space="preserve">
+    <value>Йиллик тажриба</value>
+  </data>
+  <data name="home.tipsLabel" xml:space="preserve">
+    <value>Фойдали маслаҳатлар</value>
+  </data>
+  <data name="home.tipsTitle" xml:space="preserve">
+    <value>МУВАФФАҚИЯТ&lt;br&gt;СИРИ</value>
+  </data>
+  <data name="home.tip1Title" xml:space="preserve">
+    <value>Мунтазам машқ</value>
+  </data>
+  <data name="home.tip1Desc" xml:space="preserve">
+    <value>Ҳар куни қоидалар ва тестларни ечиш орқали билимларни мустаҳкамланг. Такрорийлик — энг яхши усул.</value>
+  </data>
+  <data name="home.tip1Tag" xml:space="preserve">
+    <value>Муҳим</value>
+  </data>
+  <data name="home.tip2Title" xml:space="preserve">
+    <value>Назарияни ўрганиш</value>
+  </data>
+  <data name="home.tip2Desc" xml:space="preserve">
+    <value>Ҳайдовчилик қоидаларини чуқур тушуниш имтиҳонда муваффақиятни сезиларли даражада оширади.</value>
+  </data>
+  <data name="home.tip2Tag" xml:space="preserve">
+    <value>Тавсия</value>
+  </data>
+  <data name="home.tip3Title" xml:space="preserve">
+    <value>Синовдан ўтиш</value>
+  </data>
+  <data name="home.tip3Desc" xml:space="preserve">
+    <value>Реал имтиҳон шароитида машқ қилинг, вақтни бошқаринг ва ўз билим даражангизни аниқлаб олинг.</value>
+  </data>
+  <data name="home.tip3Tag" xml:space="preserve">
+    <value>Фойдали</value>
+  </data>
+  <data name="test.pageTitle" xml:space="preserve">
+    <value>Тест</value>
+  </data>
+  <data name="test.loading" xml:space="preserve">
+    <value>Юкланмоқда...</value>
+  </data>
+  <data name="test.imageAlt" xml:space="preserve">
+    <value>Савол расми</value>
+  </data>
+  <data name="test.exit" xml:space="preserve">
+    <value>Чиқиш</value>
+  </data>
+  <data name="test.finish" xml:space="preserve">
+    <value>Якунлаш</value>
+  </data>
+  <data name="test.result" xml:space="preserve">
+    <value>Натижа</value>
+  </data>
+  <data name="test.review" xml:space="preserve">
+    <value>Кўриб чиқиш</value>
+  </data>
+  <data name="test.reviewErrors" xml:space="preserve">
+    <value>Хатоларни ишлаш</value>
+  </data>
+  <data name="test.retry" xml:space="preserve">
+    <value>Қайта ишлаш</value>
+  </data>
+  <data name="test.correct" xml:space="preserve">
+    <value>Тўғри: {correct} / {total} ({percent}%)</value>
+  </data>
+  <data name="test.wrong" xml:space="preserve">
+    <value>Хато жавоблар: {n}</value>
+  </data>
+  <data name="test.skipped" xml:space="preserve">
+    <value>Белгиланмаганлар: {n}</value>
+  </data>
+  <data name="test.passed" xml:space="preserve">
+    <value>Имтиҳондан ўтдингиз!</value>
+  </data>
+  <data name="test.failed" xml:space="preserve">
+    <value>Имтиҳондан ўта олмадингиз</value>
+  </data>
+  <data name="test.noOptions" xml:space="preserve">
+    <value>Ушбу саволда вариантлар мавжуд эмас.</value>
+  </data>
+  <data name="test.noQuestions" xml:space="preserve">
+    <value>Саволлар топилмади.</value>
+  </data>
+  <data name="test.loadError" xml:space="preserve">
+    <value>Саволларни юклашда хатолик.</value>
+  </data>
+  <data name="test.pageError" xml:space="preserve">
+    <value>Саҳифани юклашда хатолик:</value>
+  </data>
+  <data name="test.serverError" xml:space="preserve">
+    <value>Сервер хатоси: HTTP {status}</value>
+  </data>
+  <data name="test.badJson" xml:space="preserve">
+    <value>Сервер JSON қайтармади.</value>
+  </data>
+  <data name="test.badData" xml:space="preserve">
+    <value>Сервердан нотўғри маълумот келди.</value>
+  </data>
+  <data name="test.unknownError" xml:space="preserve">
+    <value>Номаълум хатолик</value>
+  </data>
+  <data name="test.controllerError" xml:space="preserve">
+    <value>Сервер хатолиги</value>
+  </data>
+  <data name="bilet.pageTitle" xml:space="preserve">
+    <value>Билетлар</value>
+  </data>
+  <data name="bilet.list" xml:space="preserve">
+    <value>Билетлар рўйхати</value>
+  </data>
+  <data name="bilet.item" xml:space="preserve">
+    <value>{n}-билет</value>
+  </data>
+  <data name="bilet.title" xml:space="preserve">
+    <value>Билет №</value>
+  </data>
+  <data name="bilet.noQuestions" xml:space="preserve">
+    <value>Ушбу билет учун саволлар топилмади.</value>
+  </data>
+  <data name="bilet.loadError" xml:space="preserve">
+    <value>Билетни юклашда хатолик.</value>
+  </data>
+  <data name="bilet.range" xml:space="preserve">
+    <value>Билет рақами 1 дан {max} гача бўлиши керак.</value>
+  </data>
+  <data name="topics.pageTitle" xml:space="preserve">
+    <value>Мавзулар</value>
+  </data>
+  <data name="topics.eyebrow" xml:space="preserve">
+    <value>Мавзулар бўйича тест</value>
+  </data>
+  <data name="topics.title" xml:space="preserve">
+    <value>МАВЗУНИ &lt;span&gt;ТАНЛАНГ&lt;/span&gt;</value>
+  </data>
+  <data name="topics.sub" xml:space="preserve">
+    <value>Ҳар бир мавзу бўйича алоҳида машқ қилинг — саволлар мавзулар бўйича гуруҳланган.</value>
+  </data>
+  <data name="topics.count" xml:space="preserve">
+    <value>{n} та савол</value>
+  </data>
+  <data name="topics.noQuestions" xml:space="preserve">
+    <value>Бу мавзуда саволлар топилмади.</value>
+  </data>
+  <data name="topics.noQuestionsDb" xml:space="preserve">
+    <value>Ушбу мавзуга мос савол топилмади.</value>
+  </data>
+  <data name="topics.topic" xml:space="preserve">
+    <value>Мавзу</value>
+  </data>
+  <data name="login.pageTitle" xml:space="preserve">
+    <value>Кириш</value>
+  </data>
+  <data name="login.title" xml:space="preserve">
+    <value>Тизимга кириш</value>
+  </data>
+  <data name="login.username" xml:space="preserve">
+    <value>Логин</value>
+  </data>
+  <data name="login.password" xml:space="preserve">
+    <value>Парол</value>
+  </data>
+  <data name="login.submit" xml:space="preserve">
+    <value>Кириш</value>
+  </data>
+  <data name="login.error" xml:space="preserve">
+    <value>Логин ёки парол нотўғри!</value>
+  </data>
+  <data name="admin.panel" xml:space="preserve">
+    <value>Админ панел</value>
+  </data>
+  <data name="admin.admin" xml:space="preserve">
+    <value>Админ</value>
+  </data>
+  <data name="admin.main" xml:space="preserve">
+    <value>Асосий</value>
+  </data>
+  <data name="admin.dashboard" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+  <data name="admin.questions" xml:space="preserve">
+    <value>Саволлар</value>
+  </data>
+  <data name="admin.addQuestion" xml:space="preserve">
+    <value>Савол қўшиш</value>
+  </data>
+  <data name="admin.system" xml:space="preserve">
+    <value>Тизим</value>
+  </data>
+  <data name="admin.logout" xml:space="preserve">
+    <value>Чиқиш</value>
+  </data>
+  <data name="admin.role" xml:space="preserve">
+    <value>Суперадмин</value>
+  </data>
+  <data name="admin.status" xml:space="preserve">
+    <value>Тизим ишлаяпти</value>
+  </data>
+  <data name="admin.new" xml:space="preserve">
+    <value>ЯНГИ</value>
+  </data>
+  <data name="admin.menu" xml:space="preserve">
+    <value>Меню</value>
+  </data>
+  <data name="dash.pageTitle" xml:space="preserve">
+    <value>Саволлар статистикаси</value>
+  </data>
+  <data name="dash.title" xml:space="preserve">
+    <value>Саволлар &lt;span&gt;базаси&lt;/span&gt;</value>
+  </data>
+  <data name="dash.total" xml:space="preserve">
+    <value>Жами саволлар</value>
+  </data>
+  <data name="dash.allTypes" xml:space="preserve">
+    <value>Барча тест турлари бўйича</value>
+  </data>
+  <data name="dash.bar" xml:space="preserve">
+    <value>{n} талик</value>
+  </data>
+  <data name="dash.card" xml:space="preserve">
+    <value>{n} талик тест</value>
+  </data>
+  <data name="dash.real" xml:space="preserve">
+    <value>Реал имтиҳон</value>
+  </data>
+  <data name="dash.tagFast" xml:space="preserve">
+    <value>Тезкор</value>
+  </data>
+  <data name="dash.tagMid" xml:space="preserve">
+    <value>Ўрта</value>
+  </data>
+  <data name="dash.tagExt" xml:space="preserve">
+    <value>Кенгайтирилган</value>
+  </data>
+  <data name="dash.tagFull" xml:space="preserve">
+    <value>Тўлиқ</value>
+  </data>
+  <data name="dash.tagSpecial" xml:space="preserve">
+    <value>Махсус</value>
+  </data>
+  <data name="dash.tagReal" xml:space="preserve">
+    <value>Реал</value>
+  </data>
+  <data name="dash.translations" xml:space="preserve">
+    <value>Таржималар</value>
+  </data>
+  <data name="dash.withRu" xml:space="preserve">
+    <value>Рус таржимаси бор</value>
+  </data>
+  <data name="dash.withUzk" xml:space="preserve">
+    <value>Кирилл варианти бор</value>
+  </data>
+  <data name="qs.pageTitle" xml:space="preserve">
+    <value>Саволлар базаси</value>
+  </data>
+  <data name="qs.title" xml:space="preserve">
+    <value>САВОЛЛАР &lt;span&gt;БАЗАСИ&lt;/span&gt;</value>
+  </data>
+  <data name="qs.subtitle" xml:space="preserve">
+    <value>Барча тест саволлари бошқарув панели</value>
+  </data>
+  <data name="qs.new" xml:space="preserve">
+    <value>Янги савол</value>
+  </data>
+  <data name="qs.total" xml:space="preserve">
+    <value>Жами саволлар</value>
+  </data>
+  <data name="qs.showing" xml:space="preserve">
+    <value>Кўрсатилмоқда</value>
+  </data>
+  <data name="qs.withAnswer" xml:space="preserve">
+    <value>Жавобли саволлар</value>
+  </data>
+  <data name="qs.withImage" xml:space="preserve">
+    <value>Расмли саволлар</value>
+  </data>
+  <data name="qs.searchText" xml:space="preserve">
+    <value>Савол матни бўйича қидириш...</value>
+  </data>
+  <data name="qs.searchId" xml:space="preserve">
+    <value>ID рақами бўйича қидириш...</value>
+  </data>
+  <data name="qs.list" xml:space="preserve">
+    <value>Саволлар рўйхати</value>
+  </data>
+  <data name="qs.totalBadge" xml:space="preserve">
+    <value>ЖАМИ {n} ТА</value>
+  </data>
+  <data name="qs.colImage" xml:space="preserve">
+    <value>Расм</value>
+  </data>
+  <data name="qs.colText" xml:space="preserve">
+    <value>Савол матни</value>
+  </data>
+  <data name="qs.colCorrect" xml:space="preserve">
+    <value>Тўғри жавоб</value>
+  </data>
+  <data name="qs.colLangs" xml:space="preserve">
+    <value>Тиллар</value>
+  </data>
+  <data name="qs.colActions" xml:space="preserve">
+    <value>Амаллар</value>
+  </data>
+  <data name="qs.edit" xml:space="preserve">
+    <value>Таҳрирлаш</value>
+  </data>
+  <data name="qs.delete" xml:space="preserve">
+    <value>Ўчириш</value>
+  </data>
+  <data name="qs.confirmDelete" xml:space="preserve">
+    <value>Ҳақиқатан ҳам ўчирмоқчимисиз?</value>
+  </data>
+  <data name="qs.empty" xml:space="preserve">
+    <value>Қидирув натижаси топилмади</value>
+  </data>
+  <data name="qs.pageInfo" xml:space="preserve">
+    <value>Кўрсатилмоқда:</value>
+  </data>
+  <data name="qs.prev" xml:space="preserve">
+    <value>Олдинги</value>
+  </data>
+  <data name="qs.next" xml:space="preserve">
+    <value>Кейинги</value>
+  </data>
+  <data name="qs.missing" xml:space="preserve">
+    <value>Таржима йўқ — ўзбек (лотин) варианти кўрсатилади</value>
+  </data>
+  <data name="qs.saved" xml:space="preserve">
+    <value>Савол сақланди.</value>
+  </data>
+  <data name="qs.deleted" xml:space="preserve">
+    <value>Савол ўчирилди.</value>
+  </data>
+  <data name="form.createPageTitle" xml:space="preserve">
+    <value>Янги савол қўшиш</value>
+  </data>
+  <data name="form.createTitle" xml:space="preserve">
+    <value>ЯНГИ САВОЛ &lt;span&gt;ҚЎШИШ&lt;/span&gt;</value>
+  </data>
+  <data name="form.editPageTitle" xml:space="preserve">
+    <value>Саволни таҳрирлаш</value>
+  </data>
+  <data name="form.editTitle" xml:space="preserve">
+    <value>САВОЛНИ &lt;span&gt;ТАҲРИРЛАШ&lt;/span&gt;</value>
+  </data>
+  <data name="form.editEyebrow" xml:space="preserve">
+    <value>Админ панел — Таҳрирлаш</value>
+  </data>
+  <data name="form.questionId" xml:space="preserve">
+    <value>Савол ID:</value>
+  </data>
+  <data name="form.questionText" xml:space="preserve">
+    <value>Савол матни</value>
+  </data>
+  <data name="form.langUz" xml:space="preserve">
+    <value>Ўзбек (лотин)</value>
+  </data>
+  <data name="form.langRu" xml:space="preserve">
+    <value>Рус тили</value>
+  </data>
+  <data name="form.langUzk" xml:space="preserve">
+    <value>Ўзбек (кирилл)</value>
+  </data>
+  <data name="form.required" xml:space="preserve">
+    <value>мажбурий</value>
+  </data>
+  <data name="form.optional" xml:space="preserve">
+    <value>ихтиёрий</value>
+  </data>
+  <data name="form.topic" xml:space="preserve">
+    <value>Мавзу</value>
+  </data>
+  <data name="form.chooseTopic" xml:space="preserve">
+    <value>— Мавзу танланг —</value>
+  </data>
+  <data name="form.explanation" xml:space="preserve">
+    <value>Изоҳ (ихтиёрий)</value>
+  </data>
+  <data name="form.image" xml:space="preserve">
+    <value>Расм</value>
+  </data>
+  <data name="form.imageOptional" xml:space="preserve">
+    <value>Расм (ихтиёрий)</value>
+  </data>
+  <data name="form.upload" xml:space="preserve">
+    <value>Расм юклаш</value>
+  </data>
+  <data name="form.uploadNew" xml:space="preserve">
+    <value>Янги расм юклаш</value>
+  </data>
+  <data name="form.uploadHint" xml:space="preserve">
+    <value>Босинг ёки расмни бу ерга ташланг · PNG, JPG, WEBP</value>
+  </data>
+  <data name="form.currentImage" xml:space="preserve">
+    <value>Жорий расм мавжуд</value>
+  </data>
+  <data name="form.currentImageHint" xml:space="preserve">
+    <value>Расмни ўчириш учун × тугмасини босинг&lt;br&gt;ёки қуйида янги расм юкланг.</value>
+  </data>
+  <data name="form.orNew" xml:space="preserve">
+    <value>ёки янги расм юкланг</value>
+  </data>
+  <data name="form.removeImage" xml:space="preserve">
+    <value>Расмни ўчириш</value>
+  </data>
+  <data name="form.options" xml:space="preserve">
+    <value>Жавоб вариантлари</value>
+  </data>
+  <data name="form.addOption" xml:space="preserve">
+    <value>Вариант қўшиш</value>
+  </data>
+  <data name="form.correct" xml:space="preserve">
+    <value>Тўғри</value>
+  </data>
+  <data name="form.correctAnswer" xml:space="preserve">
+    <value>Тўғри жавоб</value>
+  </data>
+  <data name="form.delete" xml:space="preserve">
+    <value>Ўчириш</value>
+  </data>
+  <data name="form.back" xml:space="preserve">
+    <value>Орқага</value>
+  </data>
+  <data name="form.save" xml:space="preserve">
+    <value>Саволни сақлаш</value>
+  </data>
+  <data name="form.saveChanges" xml:space="preserve">
+    <value>Ўзгаришларни сақлаш</value>
+  </data>
+  <data name="form.translit" xml:space="preserve">
+    <value>Лотиндан ўгириш</value>
+  </data>
+  <data name="form.translitTitle" xml:space="preserve">
+    <value>Ўзбек (лотин) матнидан кириллга ўгириш</value>
+  </data>
+  <data name="form.translitAll" xml:space="preserve">
+    <value>Бўш кирилл майдонларини лотиндан тўлдириш</value>
+  </data>
+  <data name="form.translitHint" xml:space="preserve">
+    <value>Кирилл майдони бўш қолса, сақлашда лотин матнидан автоматик ўгирилади. Натижани қўлда тузатишингиз мумкин.</value>
+  </data>
+  <data name="form.translitDone" xml:space="preserve">
+    <value>Кирилл майдонлари тўлдирилди — текшириб, керак бўлса тузатинг.</value>
+  </data>
+  <data name="form.translitOverwrite" xml:space="preserve">
+    <value>Кирилл майдони тўлдирилган. Лотин матнидан қайта ўгирилсинми?</value>
+  </data>
+  <data name="form.translitEmpty" xml:space="preserve">
+    <value>Аввал ўзбек (лотин) матнини киритинг.</value>
+  </data>
+  <data name="form.phQuestionUz" xml:space="preserve">
+    <value>Savol matnini kiriting...</value>
+  </data>
+  <data name="form.phQuestionRu" xml:space="preserve">
+    <value>Введите вопрос...</value>
+  </data>
+  <data name="form.phQuestionUzk" xml:space="preserve">
+    <value>Савол матнини киритинг...</value>
+  </data>
+  <data name="form.phExplanationUz" xml:space="preserve">
+    <value>Izoh matni...</value>
+  </data>
+  <data name="form.phExplanationRu" xml:space="preserve">
+    <value>Пояснение...</value>
+  </data>
+  <data name="form.phExplanationUzk" xml:space="preserve">
+    <value>Изоҳ матни...</value>
+  </data>
+  <data name="err.correctRequired" xml:space="preserve">
+    <value>Камида 1 та тўғри жавоб танланиши шарт!</value>
+  </data>
+  <data name="err.questionUzRequired" xml:space="preserve">
+    <value>Ўзбек (лотин) тилидаги савол матни киритилиши шарт!</value>
+  </data>
+  <data name="err.optionUzRequired" xml:space="preserve">
+    <value>Ҳар бир вариантнинг ўзбек (лотин) матни киритилиши шарт!</value>
+  </data>
+  <data name="err.minOptions" xml:space="preserve">
+    <value>Камида 2 та жавоб варианти киритинг!</value>
+  </data>
+  <data name="err.pageTitle" xml:space="preserve">
+    <value>Хатолик</value>
+  </data>
+  <data name="err.generic" xml:space="preserve">
+    <value>Сўровни бажаришда хатолик юз берди.</value>
+  </data>
+  <data name="privacy.title" xml:space="preserve">
+    <value>Махфийлик сиёсати</value>
+  </data>
+  <data name="nav.admin" xml:space="preserve">
+    <value>Админ панел</value>
+  </data>
+  <data name="nav.logout" xml:space="preserve">
+    <value>Чиқиш</value>
+  </data>
+  <data name="login.inactive" xml:space="preserve">
+    <value>Ҳисобингиз ўчириб қўйилган. Администраторга мурожаат қилинг.</value>
+  </data>
+  <data name="auth.deniedTitle" xml:space="preserve">
+    <value>Рухсат йўқ</value>
+  </data>
+  <data name="auth.deniedText" xml:space="preserve">
+    <value>Бу саҳифа фақат супер админ учун.</value>
+  </data>
+  <data name="auth.toHome" xml:space="preserve">
+    <value>Бош саҳифага</value>
+  </data>
+  <data name="admin.users" xml:space="preserve">
+    <value>Фойдаланувчилар</value>
+  </data>
+  <data name="admin.toSite" xml:space="preserve">
+    <value>Сайтга ўтиш</value>
+  </data>
+  <data name="role.superadmin" xml:space="preserve">
+    <value>Супер админ</value>
+  </data>
+  <data name="role.user" xml:space="preserve">
+    <value>Фойдаланувчи</value>
+  </data>
+  <data name="users.pageTitle" xml:space="preserve">
+    <value>Фойдаланувчилар</value>
+  </data>
+  <data name="users.title" xml:space="preserve">
+    <value>ФОЙДАЛАНУВ&lt;span&gt;ЧИЛАР&lt;/span&gt;</value>
+  </data>
+  <data name="users.subtitle" xml:space="preserve">
+    <value>Тизимга кира оладиган фойдаланувчиларни бошқариш</value>
+  </data>
+  <data name="users.new" xml:space="preserve">
+    <value>Янги фойдаланувчи</value>
+  </data>
+  <data name="users.createTitle" xml:space="preserve">
+    <value>Янги фойдаланувчи</value>
+  </data>
+  <data name="users.editTitle" xml:space="preserve">
+    <value>Фойдаланувчини таҳрирлаш</value>
+  </data>
+  <data name="users.username" xml:space="preserve">
+    <value>Логин</value>
+  </data>
+  <data name="users.usernameHint" xml:space="preserve">
+    <value>3–64 та белги: лотин ҳарфлари, рақамлар, нуқта, _ ва -</value>
+  </data>
+  <data name="users.fullName" xml:space="preserve">
+    <value>Тўлиқ исм</value>
+  </data>
+  <data name="users.role" xml:space="preserve">
+    <value>Рол</value>
+  </data>
+  <data name="users.roleHint" xml:space="preserve">
+    <value>Супер админ — саволлар ва фойдаланувчиларни бошқаради. Фойдаланувчи — фақат тестларни ишлайди.</value>
+  </data>
+  <data name="users.status" xml:space="preserve">
+    <value>Ҳолати</value>
+  </data>
+  <data name="users.active" xml:space="preserve">
+    <value>Фаол</value>
+  </data>
+  <data name="users.inactive" xml:space="preserve">
+    <value>Нофаол</value>
+  </data>
+  <data name="users.isActive" xml:space="preserve">
+    <value>Фаол (тизимга кира олади)</value>
+  </data>
+  <data name="users.lastLogin" xml:space="preserve">
+    <value>Охирги кириш</value>
+  </data>
+  <data name="users.you" xml:space="preserve">
+    <value>(сиз)</value>
+  </data>
+  <data name="users.password" xml:space="preserve">
+    <value>Парол</value>
+  </data>
+  <data name="users.newPassword" xml:space="preserve">
+    <value>Янги парол</value>
+  </data>
+  <data name="users.passwordHint" xml:space="preserve">
+    <value>Камида 6 та белги.</value>
+  </data>
+  <data name="users.keepPassword" xml:space="preserve">
+    <value>Ўзгартирмаслик учун бўш қолдиринг.</value>
+  </data>
+  <data name="users.confirmPassword" xml:space="preserve">
+    <value>Паролни тасдиқланг</value>
+  </data>
+  <data name="users.save" xml:space="preserve">
+    <value>Сақлаш</value>
+  </data>
+  <data name="users.confirmDelete" xml:space="preserve">
+    <value>«{name}» ўчирилсинми? 3 кун ичида тиклаш мумкин бўлади.</value>
+  </data>
+  <data name="users.created" xml:space="preserve">
+    <value>Фойдаланувчи қўшилди.</value>
+  </data>
+  <data name="users.updated" xml:space="preserve">
+    <value>Ўзгаришлар сақланди.</value>
+  </data>
+  <data name="users.deleted" xml:space="preserve">
+    <value>Фойдаланувчи ўчирилди. 3 кун ичида «Ўчирилганлар» бўлимидан тиклаш мумкин.</value>
+  </data>
+  <data name="users.empty" xml:space="preserve">
+    <value>Фойдаланувчилар йўқ</value>
+  </data>
+  <data name="err.usernameRequired" xml:space="preserve">
+    <value>Логин киритилиши шарт!</value>
+  </data>
+  <data name="err.usernameFormat" xml:space="preserve">
+    <value>Логин 3–64 та белгидан иборат бўлиб, фақат лотин ҳарфлари, рақамлар, '.', '_' ва '-' дан тузилиши керак.</value>
+  </data>
+  <data name="err.usernameTaken" xml:space="preserve">
+    <value>Бу логин банд.</value>
+  </data>
+  <data name="err.passwordRequired" xml:space="preserve">
+    <value>Парол киритилиши шарт!</value>
+  </data>
+  <data name="err.passwordShort" xml:space="preserve">
+    <value>Парол камида 6 та белгидан иборат бўлиши керак.</value>
+  </data>
+  <data name="err.passwordMismatch" xml:space="preserve">
+    <value>Пароллар мос келмади.</value>
+  </data>
+  <data name="err.roleInvalid" xml:space="preserve">
+    <value>Нотўғри рол танланди.</value>
+  </data>
+  <data name="err.lastSuperadmin" xml:space="preserve">
+    <value>Камида битта фаол супер админ қолиши керак.</value>
+  </data>
+  <data name="err.deleteSelf" xml:space="preserve">
+    <value>Ўзингизни ўчира олмайсиз.</value>
+  </data>
+  <data name="err.deactivateSelf" xml:space="preserve">
+    <value>Ўз ҳисобингизни нофаол қила олмайсиз.</value>
+  </data>
+  <data name="err.userNotFound" xml:space="preserve">
+    <value>Фойдаланувчи топилмади.</value>
+  </data>
+  <data name="topic.1" xml:space="preserve">
+    <value>Умумий қоидалар</value>
+  </data>
+  <data name="topic.2" xml:space="preserve">
+    <value>Ҳайдовчиларнинг умумий вазифалари</value>
+  </data>
+  <data name="topic.3" xml:space="preserve">
+    <value>Пиёдаларнинг умумий вазифалари</value>
+  </data>
+  <data name="topic.4" xml:space="preserve">
+    <value>Махсус транспорт воситаларининг имтиёзлари</value>
+  </data>
+  <data name="topic.5" xml:space="preserve">
+    <value>Огоҳлантирувчи белгилар</value>
+  </data>
+  <data name="topic.6" xml:space="preserve">
+    <value>Имтиёз белгилари</value>
+  </data>
+  <data name="topic.7" xml:space="preserve">
+    <value>Тақиқловчи белгилар</value>
+  </data>
+  <data name="topic.8" xml:space="preserve">
+    <value>Буюрувчи белгилар</value>
+  </data>
+  <data name="topic.9" xml:space="preserve">
+    <value>Ахборот-кўрсатгич белгилари</value>
+  </data>
+  <data name="topic.10" xml:space="preserve">
+    <value>Сервис белгилари</value>
+  </data>
+  <data name="topic.11" xml:space="preserve">
+    <value>Қўшимча ахборот белгилари</value>
+  </data>
+  <data name="topic.12" xml:space="preserve">
+    <value>Ётиқ чизиқлар</value>
+  </data>
+  <data name="topic.13" xml:space="preserve">
+    <value>Тик чизиқлар</value>
+  </data>
+  <data name="topic.14" xml:space="preserve">
+    <value>Светофор ишоралари</value>
+  </data>
+  <data name="topic.15" xml:space="preserve">
+    <value>Тартибга солувчининг ишоралари</value>
+  </data>
+  <data name="topic.16" xml:space="preserve">
+    <value>Огоҳлантирувчи ва авария (хавф-хатар) ишоралари</value>
+  </data>
+  <data name="topic.17" xml:space="preserve">
+    <value>Ҳаракатланишни бошлаш, манёвр қилиш</value>
+  </data>
+  <data name="topic.18" xml:space="preserve">
+    <value>Йўлнинг қатнов қисмида транспорт воситаларининг жойлашуви</value>
+  </data>
+  <data name="topic.19" xml:space="preserve">
+    <value>Ҳаракатланиш тезлиги</value>
+  </data>
+  <data name="topic.20" xml:space="preserve">
+    <value>Қувиб ўтиш</value>
+  </data>
+  <data name="topic.21" xml:space="preserve">
+    <value>Тўхташ ва тўхтаб туриш</value>
+  </data>
+  <data name="topic.22" xml:space="preserve">
+    <value>Чорраҳаларда ҳаракатланиш</value>
+  </data>
+  <data name="topic.23" xml:space="preserve">
+    <value>Тартибга солинган чорраҳалар</value>
+  </data>
+  <data name="topic.24" xml:space="preserve">
+    <value>Тартибга солинмаган чорраҳалар асосий йўл йўналиши тўғрига</value>
+  </data>
+  <data name="topic.25" xml:space="preserve">
+    <value>Тартибга солинмаган чорраҳалар тенг ахамиятли</value>
+  </data>
+  <data name="topic.26" xml:space="preserve">
+    <value>Тартибга солинмаган чорраҳалар асосий йўл йўналиши ўзгариши</value>
+  </data>
+  <data name="topic.27" xml:space="preserve">
+    <value>Пиёдаларнинг ўтиш жойлари ва йўналишли транспорт воситаларининг бекатлари</value>
+  </data>
+  <data name="topic.28" xml:space="preserve">
+    <value>Темир йўл кесишмалари орқали ҳаракатланиш</value>
+  </data>
+  <data name="topic.29" xml:space="preserve">
+    <value>Автомагистралларда ҳаракатланиш</value>
+  </data>
+  <data name="topic.30" xml:space="preserve">
+    <value>Турар жой даҳаларида ҳаракатланиш</value>
+  </data>
+  <data name="topic.31" xml:space="preserve">
+    <value>Тик баландлик ва нишабликларда ҳаракатланиш</value>
+  </data>
+  <data name="topic.32" xml:space="preserve">
+    <value>Йўналишли транспорт воситаларининг имтиёзлари</value>
+  </data>
+  <data name="topic.33" xml:space="preserve">
+    <value>Ташқи ёритиш асбобларидан фойдаланиш</value>
+  </data>
+  <data name="topic.34" xml:space="preserve">
+    <value>Механик транспорт воситаларини шатакка олиш</value>
+  </data>
+  <data name="topic.35" xml:space="preserve">
+    <value>Транспорт воситаларини бошқаришни ўргатиш</value>
+  </data>
+  <data name="topic.36" xml:space="preserve">
+    <value>Одам ташиш</value>
+  </data>
+  <data name="topic.37" xml:space="preserve">
+    <value>Юк ташиш</value>
+  </data>
+  <data name="topic.38" xml:space="preserve">
+    <value>Велосипед, мопед ва аравалар ҳаракатланишига, шунингдек, ҳайвонларни ҳайдаб ўтишга доир қўшимча талаблар</value>
+  </data>
+  <data name="topic.39" xml:space="preserve">
+    <value>Мансабдор шахсларнинг ва фуқароларнинг йўл ҳаракати хавфсизлигини таъминлаш, транспорт воситаларини йўлга чиқариш, рақам ва таниқли белгиларини ўрнатиш бўйича мажбуриятлари</value>
+  </data>
+  <data name="topic.40" xml:space="preserve">
+    <value>Транспорт воситаларидан фойдаланишни тақиқловчи шартлар</value>
+  </data>
+  <data name="topic.41" xml:space="preserve">
+    <value>Ҳаракат хавфсизлиги асослари</value>
+  </data>
+  <data name="topic.42" xml:space="preserve">
+    <value>Биринчи тиббий ёрдам</value>
+  </data>
+  <data name="tracker.saved" xml:space="preserve">
+    <value>Натижа кабинетингизга сақланди</value>
+  </data>
+  <data name="tracker.failed" xml:space="preserve">
+    <value>Натижани сақлаб бўлмади</value>
+  </data>
+  <data name="nav.cabinet" xml:space="preserve">
+    <value>Кабинет</value>
+  </data>
+  <data name="nav.tests" xml:space="preserve">
+    <value>Тестлар</value>
+  </data>
+  <data name="nav.myCabinet" xml:space="preserve">
+    <value>Шахсий кабинет</value>
+  </data>
+  <data name="nav.language" xml:space="preserve">
+    <value>Тил</value>
+  </data>
+  <data name="nav.menu" xml:space="preserve">
+    <value>Меню</value>
+  </data>
+  <data name="lang.current" xml:space="preserve">
+    <value>Ўзбекча</value>
+  </data>
+  <data name="lang.code" xml:space="preserve">
+    <value>ЎЗ</value>
+  </data>
+  <data name="login.welcome" xml:space="preserve">
+    <value>Хуш келибсиз!</value>
+  </data>
+  <data name="login.subtitle" xml:space="preserve">
+    <value>Ҳисобингизга киринг ва тайёргарликни давом эттиринг</value>
+  </data>
+  <data name="login.brandTitle" xml:space="preserve">
+    <value>Ҳайдовчилик имтиҳонига&lt;br&gt;ишонч билан тайёрланинг</value>
+  </data>
+  <data name="login.brandText" xml:space="preserve">
+    <value>Реал имтиҳон форматидаги тестлар, хатолар устида ишлаш ва шахсий таҳлил — барчаси бир жойда.</value>
+  </data>
+  <data name="login.feature1" xml:space="preserve">
+    <value>1350+ расмий имтиҳон саволи</value>
+  </data>
+  <data name="login.feature2" xml:space="preserve">
+    <value>Хатолар устида ишлаш ва ақлли таҳлил</value>
+  </data>
+  <data name="login.feature3" xml:space="preserve">
+    <value>Имтиҳонга тайёрлик прогнози</value>
+  </data>
+  <data name="login.showPassword" xml:space="preserve">
+    <value>Паролни кўрсатиш</value>
+  </data>
+  <data name="login.hidePassword" xml:space="preserve">
+    <value>Паролни яшириш</value>
+  </data>
+  <data name="login.usernamePh" xml:space="preserve">
+    <value>Логинингизни киритинг</value>
+  </data>
+  <data name="login.passwordPh" xml:space="preserve">
+    <value>Паролингизни киритинг</value>
+  </data>
+  <data name="login.help" xml:space="preserve">
+    <value>Логин ва паролни ўқув маркази администраторидан олинг.</value>
+  </data>
+  <data name="login.signingIn" xml:space="preserve">
+    <value>Кирилмоқда...</value>
+  </data>
+  <data name="login.capsLock" xml:space="preserve">
+    <value>Caps Lock ёқилган</value>
+  </data>
+  <data name="cab.pageTitle" xml:space="preserve">
+    <value>Шахсий кабинет</value>
+  </data>
+  <data name="cab.overview" xml:space="preserve">
+    <value>Умумий кўриниш</value>
+  </data>
+  <data name="cab.results" xml:space="preserve">
+    <value>Натижалар</value>
+  </data>
+  <data name="cab.mistakes" xml:space="preserve">
+    <value>Хатоларни тузатиш</value>
+  </data>
+  <data name="cab.analysis" xml:space="preserve">
+    <value>Таҳлил</value>
+  </data>
+  <data name="cab.startTest" xml:space="preserve">
+    <value>Тест ишлаш</value>
+  </data>
+  <data name="cab.hello" xml:space="preserve">
+    <value>Салом, {name}!</value>
+  </data>
+  <data name="cab.helloSub" xml:space="preserve">
+    <value>Бугунги машғулотни бошлашга тайёрмисиз?</value>
+  </data>
+  <data name="cab.readiness" xml:space="preserve">
+    <value>Имтиҳонга тайёрлик</value>
+  </data>
+  <data name="cab.avgResult" xml:space="preserve">
+    <value>Ўртача натижа</value>
+  </data>
+  <data name="cab.testsTaken" xml:space="preserve">
+    <value>Ишланган тестлар</value>
+  </data>
+  <data name="cab.answered" xml:space="preserve">
+    <value>Жавоб берилган саволлар</value>
+  </data>
+  <data name="cab.activeMistakes" xml:space="preserve">
+    <value>Фаол хатолар</value>
+  </data>
+  <data name="cab.studyTime" xml:space="preserve">
+    <value>Ўқиш вақти</value>
+  </data>
+  <data name="cab.minutes" xml:space="preserve">
+    <value>{n} дақ</value>
+  </data>
+  <data name="cab.hoursMinutes" xml:space="preserve">
+    <value>{h} соат {m} дақ</value>
+  </data>
+  <data name="cab.streak" xml:space="preserve">
+    <value>Кетма-кет кунлар</value>
+  </data>
+  <data name="cab.readyTitle" xml:space="preserve">
+    <value>Имтиҳонга тайёрсиз! 🎉</value>
+  </data>
+  <data name="cab.readyText" xml:space="preserve">
+    <value>Базадаги барча саволларни тўғри ишладингиз. Шаклни сақлаш учун кунига битта реал имтиҳон ишланг.</value>
+  </data>
+  <data name="cab.forecastTitle" xml:space="preserve">
+    <value>Тахминий тайёр бўлиш санаси</value>
+  </data>
+  <data name="cab.forecastDays" xml:space="preserve">
+    <value>{n} кундан кейин</value>
+  </data>
+  <data name="cab.forecastNoData" xml:space="preserve">
+    <value>Прогноз учун яна камида {n} та саволга жавоб беринг</value>
+  </data>
+  <data name="cab.forecastUnknown" xml:space="preserve">
+    <value>Ҳозирги суръатда прогноз қилиб бўлмайди — ҳар куни машқ қилинг</value>
+  </data>
+  <data name="cab.progress" xml:space="preserve">
+    <value>Тараққиёт (30 кун)</value>
+  </data>
+  <data name="cab.progressHint" xml:space="preserve">
+    <value>Кунлик тўғри жавоблар улуши</value>
+  </data>
+  <data name="cab.noActivity" xml:space="preserve">
+    <value>Ҳали фаоллик йўқ</value>
+  </data>
+  <data name="cab.byType" xml:space="preserve">
+    <value>Тест турлари бўйича</value>
+  </data>
+  <data name="cab.colTest" xml:space="preserve">
+    <value>Тест</value>
+  </data>
+  <data name="cab.colAttempts" xml:space="preserve">
+    <value>Уринишлар</value>
+  </data>
+  <data name="cab.colAvg" xml:space="preserve">
+    <value>Ўртача</value>
+  </data>
+  <data name="cab.colBest" xml:space="preserve">
+    <value>Энг яхши</value>
+  </data>
+  <data name="cab.colPassed" xml:space="preserve">
+    <value>Ўтилган</value>
+  </data>
+  <data name="cab.colLast" xml:space="preserve">
+    <value>Охиргиси</value>
+  </data>
+  <data name="cab.colDate" xml:space="preserve">
+    <value>Сана</value>
+  </data>
+  <data name="cab.colResult" xml:space="preserve">
+    <value>Натижа</value>
+  </data>
+  <data name="cab.colStatus" xml:space="preserve">
+    <value>Ҳолат</value>
+  </data>
+  <data name="cab.passed" xml:space="preserve">
+    <value>Ўтди</value>
+  </data>
+  <data name="cab.failed" xml:space="preserve">
+    <value>Ўтмади</value>
+  </data>
+  <data name="cab.recent" xml:space="preserve">
+    <value>Сўнгги уринишлар</value>
+  </data>
+  <data name="cab.viewAll" xml:space="preserve">
+    <value>Ҳаммасини кўриш</value>
+  </data>
+  <data name="cab.details" xml:space="preserve">
+    <value>Батафсил</value>
+  </data>
+  <data name="cab.weakTopics" xml:space="preserve">
+    <value>Кўпроқ ишлаш керак бўлган мавзулар</value>
+  </data>
+  <data name="cab.practiceTopic" xml:space="preserve">
+    <value>Машқ қилиш</value>
+  </data>
+  <data name="cab.noWeakTopics" xml:space="preserve">
+    <value>Кучсиз мавзулар аниқланмади 👍</value>
+  </data>
+  <data name="cab.empty" xml:space="preserve">
+    <value>Ҳали бирорта тест ишланмаган</value>
+  </data>
+  <data name="cab.emptyText" xml:space="preserve">
+    <value>Биринчи тестни ишланг — натижалар, хатолар ва таҳлил шу ерда пайдо бўлади.</value>
+  </data>
+  <data name="cab.fixMistakes" xml:space="preserve">
+    <value>Хатоларни қайта ишлаш</value>
+  </data>
+  <data name="cab.mistakesTitle" xml:space="preserve">
+    <value>Хато саволлар</value>
+  </data>
+  <data name="cab.mistakesSub" xml:space="preserve">
+    <value>Тўғри жавоб берган саволингиз рўйхатдан автоматик ўчади.</value>
+  </data>
+  <data name="cab.mistakesResolved" xml:space="preserve">
+    <value>{n} та хато тузатилди</value>
+  </data>
+  <data name="cab.noMistakes" xml:space="preserve">
+    <value>Фаол хатолар йўқ — ажойиб! 🎯</value>
+  </data>
+  <data name="cab.wrongTimes" xml:space="preserve">
+    <value>{n} марта хато</value>
+  </data>
+  <data name="cab.lastWrong" xml:space="preserve">
+    <value>Охирги хато</value>
+  </data>
+  <data name="cab.correctAnswer" xml:space="preserve">
+    <value>Тўғри жавоб</value>
+  </data>
+  <data name="cab.yourAnswer" xml:space="preserve">
+    <value>Сизнинг жавобингиз</value>
+  </data>
+  <data name="cab.noAnswer" xml:space="preserve">
+    <value>Жавоб берилмаган</value>
+  </data>
+  <data name="cab.attemptTitle" xml:space="preserve">
+    <value>Уриниш тафсилотлари</value>
+  </data>
+  <data name="cab.backToResults" xml:space="preserve">
+    <value>Натижаларга қайтиш</value>
+  </data>
+  <data name="cab.filterAll" xml:space="preserve">
+    <value>Барчаси</value>
+  </data>
+  <data name="cab.readinessBreakdown" xml:space="preserve">
+    <value>Тайёрлик таркиби</value>
+  </data>
+  <data name="cab.factorAccuracy" xml:space="preserve">
+    <value>Аниқлик (охирги 200 жавоб)</value>
+  </data>
+  <data name="cab.factorExams" xml:space="preserve">
+    <value>Реал имтиҳон натижаси</value>
+  </data>
+  <data name="cab.factorCoverage" xml:space="preserve">
+    <value>Саволлар базасини қамраб олиш</value>
+  </data>
+  <data name="cab.factorTarget" xml:space="preserve">
+    <value>Мақсад: {n}%</value>
+  </data>
+  <data name="cab.topicsTitle" xml:space="preserve">
+    <value>Мавзулар бўйича натижалар</value>
+  </data>
+  <data name="cab.colTopic" xml:space="preserve">
+    <value>Мавзу</value>
+  </data>
+  <data name="cab.colAnswered" xml:space="preserve">
+    <value>Жавоблар</value>
+  </data>
+  <data name="cab.colAccuracy" xml:space="preserve">
+    <value>Аниқлик</value>
+  </data>
+  <data name="cab.notPracticed" xml:space="preserve">
+    <value>Ишланмаган</value>
+  </data>
+  <data name="cab.insights" xml:space="preserve">
+    <value>Тавсиялар</value>
+  </data>
+  <data name="cab.aiTitle" xml:space="preserve">
+    <value>Ақлли таҳлил</value>
+  </data>
+  <data name="cab.aiButton" xml:space="preserve">
+    <value>Батафсил таҳлил</value>
+  </data>
+  <data name="cab.aiLoading" xml:space="preserve">
+    <value>Натижаларингиз таҳлил қилинмоқда...</value>
+  </data>
+  <data name="cab.aiError" xml:space="preserve">
+    <value>Таҳлилни олиб бўлмади. Кейинроқ уриниб кўринг.</value>
+  </data>
+  <data name="cab.aiDisabled" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="cab.aiHint" xml:space="preserve">
+    <value>Натижаларингиз асосида шахсий тавсиялар.</value>
+  </data>
+  <data name="insight.start" xml:space="preserve">
+    <value>Биринчи тестни ишланг — шундан сўнг шахсий таҳлил пайдо бўлади.</value>
+  </data>
+  <data name="insight.needData" xml:space="preserve">
+    <value>Аниқ прогноз учун яна камида {n} та саволга жавоб беринг.</value>
+  </data>
+  <data name="insight.ready" xml:space="preserve">
+    <value>Сиз имтиҳонга тайёрсиз: аниқлик 90% дан юқори ва охирги имтиҳон тестлари муваффақиятли.</value>
+  </data>
+  <data name="insight.forecast" xml:space="preserve">
+    <value>Ҳозирги суръат сақланса, тахминан {days} кунда ({date}) имтиҳонга тайёр бўласиз.</value>
+  </data>
+  <data name="insight.noForecast" xml:space="preserve">
+    <value>Натижалар ҳозирча ўсмаяпти — ҳар куни камида 40 та савол ишланг ва хатоларни таҳлил қилинг.</value>
+  </data>
+  <data name="insight.improving" xml:space="preserve">
+    <value>Охирги 100 та жавобда аниқлик {n} фоиз пунктга ошди — шундай давом этинг!</value>
+  </data>
+  <data name="insight.declining" xml:space="preserve">
+    <value>Охирги 100 та жавобда аниқлик {n} фоиз пунктга тушди — қоидаларни такрорланг.</value>
+  </data>
+  <data name="insight.weakTopics" xml:space="preserve">
+    <value>Энг кучсиз мавзулар: {topics}. Улар бўйича алоҳида машқ қилинг.</value>
+  </data>
+  <data name="insight.untouched" xml:space="preserve">
+    <value>{n} та мавзу умуман ишланмаган — уларни ҳам кўриб чиқинг.</value>
+  </data>
+  <data name="insight.mistakes" xml:space="preserve">
+    <value>{n} та фаол хато бор — «Хатоларни қайта ишлаш» орқали уларни ёпинг.</value>
+  </data>
+  <data name="insight.examPractice" xml:space="preserve">
+    <value>Камида 3 та реал имтиҳон ишланг — бу тайёрликни аниқроқ баҳолашга ёрдам беради.</value>
+  </data>
+  <data name="insight.examLow" xml:space="preserve">
+    <value>Охирги имтиҳон тестларининг фақат {n}% и ўтилди. Ўтиш учун 20 тадан 18 та тўғри жавоб керак.</value>
+  </data>
+  <data name="insight.coverage" xml:space="preserve">
+    <value>Саволлар базасининг {n}% и тўғри ишланган — марафон режими билан қамровни оширинг.</value>
+  </data>
+  <data name="insight.inactive" xml:space="preserve">
+    <value>{n} кундан бери машқ қилмадингиз — билимлар тез унутилади.</value>
+  </data>
+  <data name="insight.streak" xml:space="preserve">
+    <value>{n} кун кетма-кет машқ қиляпсиз — зўр одат!</value>
+  </data>
+  <data name="testType.real" xml:space="preserve">
+    <value>Реал имтиҳон</value>
+  </data>
+  <data name="testType.q20" xml:space="preserve">
+    <value>20 савол</value>
+  </data>
+  <data name="testType.q40" xml:space="preserve">
+    <value>40 савол</value>
+  </data>
+  <data name="testType.q80" xml:space="preserve">
+    <value>80 савол</value>
+  </data>
+  <data name="testType.q100" xml:space="preserve">
+    <value>100 савол</value>
+  </data>
+  <data name="testType.q200" xml:space="preserve">
+    <value>200 савол</value>
+  </data>
+  <data name="testType.marathon" xml:space="preserve">
+    <value>Марафон</value>
+  </data>
+  <data name="testType.bilet" xml:space="preserve">
+    <value>Билет</value>
+  </data>
+  <data name="testType.topic" xml:space="preserve">
+    <value>Мавзу бўйича</value>
+  </data>
+  <data name="testType.mistakes" xml:space="preserve">
+    <value>Хатолар устида ишлаш</value>
+  </data>
+  <data name="admin.analytics" xml:space="preserve">
+    <value>Таҳлил</value>
+  </data>
+  <data name="an.pageTitle" xml:space="preserve">
+    <value>Таҳлил ва натижалар</value>
+  </data>
+  <data name="an.title" xml:space="preserve">
+    <value>ТАҲЛИЛ &lt;span&gt;ВА НАТИЖАЛАР&lt;/span&gt;</value>
+  </data>
+  <data name="an.subtitle" xml:space="preserve">
+    <value>Барча ўқувчилар натижалари, тайёрлик ва энг қийин саволлар</value>
+  </data>
+  <data name="an.students" xml:space="preserve">
+    <value>Ўқувчилар</value>
+  </data>
+  <data name="an.active7d" xml:space="preserve">
+    <value>7 кунда фаол</value>
+  </data>
+  <data name="an.attempts" xml:space="preserve">
+    <value>Тестлар</value>
+  </data>
+  <data name="an.attempts7d" xml:space="preserve">
+    <value>7 кунда тестлар</value>
+  </data>
+  <data name="an.accuracy" xml:space="preserve">
+    <value>Умумий аниқлик</value>
+  </data>
+  <data name="an.examPass" xml:space="preserve">
+    <value>Имтиҳондан ўтиш</value>
+  </data>
+  <data name="an.readyCount" xml:space="preserve">
+    <value>Тайёр ўқувчилар</value>
+  </data>
+  <data name="an.colStudent" xml:space="preserve">
+    <value>Ўқувчи</value>
+  </data>
+  <data name="an.colReadiness" xml:space="preserve">
+    <value>Тайёрлик</value>
+  </data>
+  <data name="an.colLastActive" xml:space="preserve">
+    <value>Охирги тест</value>
+  </data>
+  <data name="an.colMistakes" xml:space="preserve">
+    <value>Хатолар</value>
+  </data>
+  <data name="an.open" xml:space="preserve">
+    <value>Очиш</value>
+  </data>
+  <data name="an.noStudents" xml:space="preserve">
+    <value>Ҳали ўқувчилар йўқ</value>
+  </data>
+  <data name="an.hardQuestions" xml:space="preserve">
+    <value>Энг қийин саволлар</value>
+  </data>
+  <data name="an.colWrongRate" xml:space="preserve">
+    <value>Хато улуши</value>
+  </data>
+  <data name="an.hardTopics" xml:space="preserve">
+    <value>Мавзулар бўйича аниқлик</value>
+  </data>
+  <data name="an.search" xml:space="preserve">
+    <value>Ўқувчини қидириш...</value>
+  </data>
+  <data name="an.backToList" xml:space="preserve">
+    <value>Барча ўқувчилар</value>
+  </data>
+  <data name="an.studentNote" xml:space="preserve">
+    <value>Бу саҳифада ўқувчи ўз кабинетида кўрадиган барча маълумотлар кўрсатилган.</value>
+  </data>
+  <data name="an.readyBadge" xml:space="preserve">
+    <value>Тайёр</value>
+  </data>
+  <data name="an.noData" xml:space="preserve">
+    <value>Маълумот етарли эмас</value>
+  </data>
+  <data name="an.noAnswers" xml:space="preserve">
+    <value>Ҳали жавоблар йўқ</value>
+  </data>
+  <data name="common.close" xml:space="preserve">
+    <value>Ёпиш</value>
+  </data>
+  <data name="login.expired" xml:space="preserve">
+    <value>Кириш муддатингиз тугаган. Муддатни узайтириш учун администраторга мурожаат қилинг.</value>
+  </data>
+  <data name="login.devicePending" xml:space="preserve">
+    <value>Бу аккаунт бошқа қурилмага боғланган. Администраторга сўров юборилди — у тасдиқлагач, шу қурилмадан қайтадан киринг.</value>
+  </data>
+  <data name="users.search" xml:space="preserve">
+    <value>Логин ёки исм бўйича қидириш...</value>
+  </data>
+  <data name="users.fAll" xml:space="preserve">
+    <value>Барча ҳолатлар</value>
+  </data>
+  <data name="users.fActive" xml:space="preserve">
+    <value>Фаол</value>
+  </data>
+  <data name="users.fInactive" xml:space="preserve">
+    <value>Нофаол</value>
+  </data>
+  <data name="users.fExpired" xml:space="preserve">
+    <value>Муддати тугаган</value>
+  </data>
+  <data name="users.fSoon" xml:space="preserve">
+    <value>7 кундан кам қолган</value>
+  </data>
+  <data name="users.fUnlimited" xml:space="preserve">
+    <value>Чексиз муддат</value>
+  </data>
+  <data name="users.fPending" xml:space="preserve">
+    <value>Қурилма сўрови бор</value>
+  </data>
+  <data name="users.fNoDevice" xml:space="preserve">
+    <value>Қурилма боғланмаган</value>
+  </data>
+  <data name="users.fAllRoles" xml:space="preserve">
+    <value>Барча роллар</value>
+  </data>
+  <data name="users.found" xml:space="preserve">
+    <value>{n} / {total} та фойдаланувчи</value>
+  </data>
+  <data name="users.noMatch" xml:space="preserve">
+    <value>Қидирув бўйича фойдаланувчи топилмади</value>
+  </data>
+  <data name="users.access" xml:space="preserve">
+    <value>Кириш муддати</value>
+  </data>
+  <data name="users.device" xml:space="preserve">
+    <value>Қурилма</value>
+  </data>
+  <data name="users.unlimited" xml:space="preserve">
+    <value>Чексиз</value>
+  </data>
+  <data name="users.expired" xml:space="preserve">
+    <value>Муддати тугаган</value>
+  </data>
+  <data name="users.daysLeft" xml:space="preserve">
+    <value>{n} кун қолди</value>
+  </data>
+  <data name="users.noDevice" xml:space="preserve">
+    <value>Ҳали кирмаган</value>
+  </data>
+  <data name="users.noDeviceLong" xml:space="preserve">
+    <value>Қурилма боғланмаган — фойдаланувчи кейинги сафар қайси қурилмадан кирса, ўшанга боғланади.</value>
+  </data>
+  <data name="users.pendingDevice" xml:space="preserve">
+    <value>Янги қурилма сўрови</value>
+  </data>
+  <data name="users.currentAccess" xml:space="preserve">
+    <value>Ҳозирги муддат</value>
+  </data>
+  <data name="users.accessKeep" xml:space="preserve">
+    <value>Ўзгартирмаслик</value>
+  </data>
+  <data name="users.accessSet" xml:space="preserve">
+    <value>Муддат белгилаш</value>
+  </data>
+  <data name="users.nDays" xml:space="preserve">
+    <value>{n} кун</value>
+  </data>
+  <data name="users.nMonths" xml:space="preserve">
+    <value>{n} ой</value>
+  </data>
+  <data name="users.unitDays" xml:space="preserve">
+    <value>кун</value>
+  </data>
+  <data name="users.unitMonths" xml:space="preserve">
+    <value>ой</value>
+  </data>
+  <data name="users.until" xml:space="preserve">
+    <value>{date} гача</value>
+  </data>
+  <data name="users.accessHint" xml:space="preserve">
+    <value>Ҳозирдан бошлаб ҳисобланади: 1 кундан 365 кунгача ёки 1 ойдан 12 ойгача.</value>
+  </data>
+  <data name="users.unlimitedHint" xml:space="preserve">
+    <value>Фойдаланувчи муддат чекловисиз кира олади.</value>
+  </data>
+  <data name="users.adminNoLimits" xml:space="preserve">
+    <value>Супер админ учун кириш муддати ва битта қурилма чеклови қўлланмайди.</value>
+  </data>
+  <data name="users.boundAt" xml:space="preserve">
+    <value>Боғланган вақти</value>
+  </data>
+  <data name="users.resetDevice" xml:space="preserve">
+    <value>Қурилмани бўшатиш</value>
+  </data>
+  <data name="users.resetDeviceConfirm" xml:space="preserve">
+    <value>Қурилмани бўшатасизми? Фойдаланувчи кейинги сафар қайси қурилмадан кирса, ўшанга боғланади.</value>
+  </data>
+  <data name="users.deviceHint" xml:space="preserve">
+    <value>Ҳар бир фойдаланувчи фақат битта қурилмадан кира олади. Бошқа қурилмадан кириш учун сизнинг тасдиғингиз керак.</value>
+  </data>
+  <data name="err.accessRange" xml:space="preserve">
+    <value>Муддат 1 кундан 365 кунгача ёки 1 ойдан 12 ойгача бўлиши керак</value>
+  </data>
+  <data name="dev.title" xml:space="preserve">
+    <value>Қурилма сўровлари</value>
+  </data>
+  <data name="dev.subtitle" xml:space="preserve">
+    <value>Фойдаланувчи бошқа қурилмадан кирмоқчи бўлса, сўров шу ерга келади</value>
+  </data>
+  <data name="dev.pending" xml:space="preserve">
+    <value>Кутилаётган сўровлар</value>
+  </data>
+  <data name="dev.none" xml:space="preserve">
+    <value>Ҳозирча янги сўров йўқ</value>
+  </data>
+  <data name="dev.oldDevice" xml:space="preserve">
+    <value>Ҳозирги қурилма</value>
+  </data>
+  <data name="dev.newDevice" xml:space="preserve">
+    <value>Янги қурилма</value>
+  </data>
+  <data name="dev.approve" xml:space="preserve">
+    <value>Тасдиқлаш</value>
+  </data>
+  <data name="dev.reject" xml:space="preserve">
+    <value>Рад этиш</value>
+  </data>
+  <data name="dev.approveHint" xml:space="preserve">
+    <value>Тасдиқланса, фойдаланувчи янги қурилмага ўтказилади ва эски қурилмадаги сессияси ёпилади.</value>
+  </data>
+  <data name="dev.history" xml:space="preserve">
+    <value>Сўнгги қарорлар</value>
+  </data>
+  <data name="dev.requested" xml:space="preserve">
+    <value>Сўралган</value>
+  </data>
+  <data name="dev.resolved" xml:space="preserve">
+    <value>Ҳал қилинган</value>
+  </data>
+  <data name="dev.stApproved" xml:space="preserve">
+    <value>Тасдиқланган</value>
+  </data>
+  <data name="dev.stRejected" xml:space="preserve">
+    <value>Рад этилган</value>
+  </data>
+  <data name="dev.approved" xml:space="preserve">
+    <value>Сўров тасдиқланди — фойдаланувчи энди янги қурилмадан кира олади</value>
+  </data>
+  <data name="dev.rejected" xml:space="preserve">
+    <value>Сўров рад этилди</value>
+  </data>
+  <data name="dev.notFound" xml:space="preserve">
+    <value>Сўров топилмади ёки аллақачон ҳал қилинган</value>
+  </data>
+  <data name="dev.resetDone" xml:space="preserve">
+    <value>Қурилма бўшатилди</value>
+  </data>
+  <data name="dev.toast" xml:space="preserve">
+    <value>Янги қурилма сўрови келди — кўриш учун босинг</value>
+  </data>
+  <data name="users.soonTitle" xml:space="preserve">
+    <value>Муддати тугаётганлар</value>
+  </data>
+  <data name="users.soonSub" xml:space="preserve">
+    <value>Кириш муддати 7 кун ичида тугайди</value>
+  </data>
+  <data name="users.expiredTitle" xml:space="preserve">
+    <value>Муддати тугаганлар</value>
+  </data>
+  <data name="users.expiredSub" xml:space="preserve">
+    <value>Муддат узайтирилмагунча тизимга кира олмайди</value>
+  </data>
+  <data name="users.extend" xml:space="preserve">
+    <value>Узайтириш</value>
+  </data>
+  <data name="err.imageType" xml:space="preserve">
+    <value>Фақат расм файли юклаш мумкин (JPG, PNG, WEBP, GIF, BMP)</value>
+  </data>
+  <data name="sq.title" xml:space="preserve">
+    <value>Савол қидириш</value>
+  </data>
+  <data name="sq.short" xml:space="preserve">
+    <value>Савол қидириш</value>
+  </data>
+  <data name="sq.subtitle" xml:space="preserve">
+    <value>Савол матнидан бир неча сўз ёзинг — керакли саволни топинг ва уни алоҳида ишлаб кўринг. Лотин, кирилл ёки рус тилида ёзиш мумкин.</value>
+  </data>
+  <data name="sq.placeholder" xml:space="preserve">
+    <value>Савол матнини ёзинг... масалан: чорраҳада ким биринчи ўтади</value>
+  </data>
+  <data name="sq.clear" xml:space="preserve">
+    <value>Тозалаш</value>
+  </data>
+  <data name="sq.kbdHint" xml:space="preserve">
+    <value>Қидирувга ўтиш: / тугмаси</value>
+  </data>
+  <data name="sq.try" xml:space="preserve">
+    <value>Масалан:</value>
+  </data>
+  <data name="sq.ex1" xml:space="preserve">
+    <value>светофор</value>
+  </data>
+  <data name="sq.ex2" xml:space="preserve">
+    <value>қувиб ўтиш</value>
+  </data>
+  <data name="sq.ex3" xml:space="preserve">
+    <value>пиёдалар</value>
+  </data>
+  <data name="sq.ex4" xml:space="preserve">
+    <value>шатакка олиш</value>
+  </data>
+  <data name="sq.ex5" xml:space="preserve">
+    <value>темир йўл</value>
+  </data>
+  <data name="sq.found" xml:space="preserve">
+    <value>{n} та савол топилди</value>
+  </data>
+  <data name="sq.foundMore" xml:space="preserve">
+    <value>{n} та савол топилди — энг мос {shown} таси кўрсатилмоқда. Аниқроқ ёзинг.</value>
+  </data>
+  <data name="sq.tooShort" xml:space="preserve">
+    <value>Камида 2 та ҳарф ёзинг</value>
+  </data>
+  <data name="sq.startTitle" xml:space="preserve">
+    <value>Қайси саволни қидиряпсиз?</value>
+  </data>
+  <data name="sq.startText" xml:space="preserve">
+    <value>Саволдан эсингизда қолган сўзларни ёзинг. Савол рақамини ҳам ёзиш мумкин, масалан: #125</value>
+  </data>
+  <data name="sq.emptyTitle" xml:space="preserve">
+    <value>Ҳеч нарса топилмади</value>
+  </data>
+  <data name="sq.emptyText" xml:space="preserve">
+    <value>Бошқа сўзлар билан ёки қисқароқ ёзиб кўринг.</value>
+  </data>
+  <data name="sq.errorTitle" xml:space="preserve">
+    <value>Қидирувда хатолик</value>
+  </data>
+  <data name="sq.errorText" xml:space="preserve">
+    <value>Интернет алоқасини текшириб, қайтадан уриниб кўринг.</value>
+  </data>
+  <data name="sq.inMistakes" xml:space="preserve">
+    <value>«Хатоларни тузатиш» рўйхатида</value>
+  </data>
+  <data name="sq.inAnswer" xml:space="preserve">
+    <value>Жавобда:</value>
+  </data>
+  <data name="sq.solve" xml:space="preserve">
+    <value>Ишлаш</value>
+  </data>
+  <data name="testType.search" xml:space="preserve">
+    <value>Савол қидириш</value>
+  </data>
+  <data name="sq.back" xml:space="preserve">
+    <value>← Қидирувга қайтиш</value>
+  </data>
+  <data name="sq.backShort" xml:space="preserve">
+    <value>Орқага</value>
+  </data>
+  <data name="sq.solveAll" xml:space="preserve">
+    <value>Ҳаммасини тест қилиб ишлаш</value>
+  </data>
+  <data name="cab.limitCoverage" xml:space="preserve">
+    <value>Имтиҳонга тайёр бўлиш учун базадаги барча {total} та саволни тўғри ишлаш керак — яна {n} та қолди (ҳозирги суръат — кунига ~{pace} та янги савол). Кўпроқ янги саволлар ишласангиз, сана яқинлашади.</value>
+  </data>
+  <data name="cab.limitAccuracy" xml:space="preserve">
+    <value>Санани асосан аниқлик белгилайди: охирги жавобларингизда тўғри жавоблар улуши 90% га етиши керак.</value>
+  </data>
+  <data name="cab.limitExams" xml:space="preserve">
+    <value>Деярли тайёрсиз — кетма-кет 3 та имтиҳон тестини (20 савол) ўтиш қолди.</value>
+  </data>
+  <data name="hm.lead" xml:space="preserve">
+    <value>Имтиҳон турини танланг ва машқни бошланг. Керакли саволни матни бўйича шу ердан топишингиз мумкин.</value>
+  </data>
+  <data name="hm.searchPlaceholder" xml:space="preserve">
+    <value>Савол матнини ёзинг... масалан: светофор</value>
+  </data>
+  <data name="hm.searchBtn" xml:space="preserve">
+    <value>Қидириш</value>
+  </data>
+  <data name="hm.searchHint" xml:space="preserve">
+    <value>Лотин, кирилл ёки рус тилида ёзиш мумкин. Савол рақами билан ҳам қидиринг: #125</value>
+  </data>
+  <data name="hm.allResults" xml:space="preserve">
+    <value>Барча натижалар ({n})</value>
+  </data>
+  <data name="hm.examBadge" xml:space="preserve">
+    <value>Имтиҳон режими</value>
+  </data>
+  <data name="hm.examDesc" xml:space="preserve">
+    <value>Ҳақиқий имтиҳондагидек: базадан тасодифий 20 та савол. Ўзингизни синаб кўринг — натижа кабинетингизга ёзилади.</value>
+  </data>
+  <data name="hm.examFact1" xml:space="preserve">
+    <value>20 та савол</value>
+  </data>
+  <data name="hm.examFact2" xml:space="preserve">
+    <value>Ўтиш: 18 та тўғри (90%)</value>
+  </data>
+  <data name="hm.examFact3" xml:space="preserve">
+    <value>Натижа кабинетга ёзилади</value>
+  </data>
+  <data name="hm.examStart" xml:space="preserve">
+    <value>Имтиҳонни бошлаш</value>
+  </data>
+  <data name="hm.practiceTitle" xml:space="preserve">
+    <value>Машқ тестлари</value>
+  </data>
+  <data name="hm.practiceSub" xml:space="preserve">
+    <value>Саволлар базадан тасодифий танланади — ҳар сафар янги тўплам</value>
+  </data>
+  <data name="hm.questions" xml:space="preserve">
+    <value>савол</value>
+  </data>
+  <data name="hm.lvl1" xml:space="preserve">
+    <value>Тезкор</value>
+  </data>
+  <data name="hm.lvl2" xml:space="preserve">
+    <value>Ўртача</value>
+  </data>
+  <data name="hm.lvl3" xml:space="preserve">
+    <value>Чуқур</value>
+  </data>
+  <data name="hm.lvl4" xml:space="preserve">
+    <value>Катта синов</value>
+  </data>
+  <data name="hm.lvl5" xml:space="preserve">
+    <value>Энг катта синов</value>
+  </data>
+  <data name="hm.modesTitle" xml:space="preserve">
+    <value>Бошқа имтиҳон турлари</value>
+  </data>
+  <data name="hm.modesSub" xml:space="preserve">
+    <value>Билетлар тартибида ёки бутун база бўйича машқ</value>
+  </data>
+  <data name="hm.biletsDesc" xml:space="preserve">
+    <value>{n} та билет, ҳар бирида 20 тадан савол — тартиб билан ишлаб чиқинг.</value>
+  </data>
+  <data name="hm.topicsDesc" xml:space="preserve">
+    <value>{n} та мавзу — керакли мавзуни танлаб, фақат шу саволларни ишланг.</value>
+  </data>
+  <data name="hm.marathonDesc" xml:space="preserve">
+    <value>Базадаги барча {n} та савол кетма-кет — тўлиқ тайёргарлик учун.</value>
+  </data>
+  <data name="hm.open" xml:space="preserve">
+    <value>Очиш</value>
+  </data>
+  <data name="hm.start" xml:space="preserve">
+    <value>Бошлаш</value>
+  </data>
+  <data name="hm.topicsBadge" xml:space="preserve">
+    <value>Мавзу бўйича тайёргарлик</value>
+  </data>
+  <data name="hm.topicsBannerDesc" xml:space="preserve">
+    <value>Керакли мавзуни танланг ва фақат шу мавзу саволларини ишланг — қийин жойларни алоҳида мустаҳкамлаш учун энг яхши йўл.</value>
+  </data>
+  <data name="hm.topicsFact1" xml:space="preserve">
+    <value>{n} та мавзу</value>
+  </data>
+  <data name="hm.topicsFact2" xml:space="preserve">
+    <value>Ҳар бир мавзу алоҳида тест</value>
+  </data>
+  <data name="hm.topicsFact3" xml:space="preserve">
+    <value>Заиф мавзуларни мустаҳкамланг</value>
+  </data>
+  <data name="hm.topicsStart" xml:space="preserve">
+    <value>Мавзуни танлаш</value>
+  </data>
+  <data name="users.kind" xml:space="preserve">
+    <value>Ҳисоб тури</value>
+  </data>
+  <data name="users.kindStudent" xml:space="preserve">
+    <value>Ўқувчи</value>
+  </data>
+  <data name="users.kindStudentHint" xml:space="preserve">
+    <value>Шахсий ҳисоб: ўз телефони ёки компьютеридан киради, натижалари фақат ўзиники.</value>
+  </data>
+  <data name="users.kindComputer" xml:space="preserve">
+    <value>Компьютер (ўқув маркази)</value>
+  </data>
+  <data name="users.kindComputerHint" xml:space="preserve">
+    <value>Марказдаги битта компьютер учун. Бир марта кирилгач, компьютер ўчиб-ёнса ҳам логин қайта сўралмайди. Бошқа компьютердан бу логин билан кириб бўлмайди.</value>
+  </data>
+  <data name="users.compShort" xml:space="preserve">
+    <value>Комп</value>
+  </data>
+  <data name="users.fComputers" xml:space="preserve">
+    <value>Компьютерлар</value>
+  </data>
+  <data name="users.showPassword" xml:space="preserve">
+    <value>Паролни кўрсатиш</value>
+  </data>
+  <data name="users.hidePassword" xml:space="preserve">
+    <value>Паролни яшириш</value>
+  </data>
+  <data name="users.phone" xml:space="preserve">
+    <value>Телефон рақами</value>
+  </data>
+  <data name="users.phoneHint" xml:space="preserve">
+    <value>Ўқувчи учун мажбурий. Масалан: +998 90 123 45 67 ёки 90 123 45 67</value>
+  </data>
+  <data name="err.phoneRequired" xml:space="preserve">
+    <value>Ўқувчининг телефон рақамини киритинг</value>
+  </data>
+  <data name="err.phoneFormat" xml:space="preserve">
+    <value>Телефон рақами нотўғри. Масалан: +998 90 123 45 67</value>
+  </data>
+  <data name="users.deviceRuleOff" xml:space="preserve">
+    <value>Ҳозир битта қурилма қоидаси ўчирилган — ўқувчи исталган қурилмадан кира олади. Ёқиш: Қурилма сўровлари саҳифаси.</value>
+  </data>
+  <data name="dev.ruleTitle" xml:space="preserve">
+    <value>Битта қурилма қоидаси (ўқувчилар)</value>
+  </data>
+  <data name="dev.ruleOn" xml:space="preserve">
+    <value>Ёқилган</value>
+  </data>
+  <data name="dev.ruleOff" xml:space="preserve">
+    <value>Ўчирилган</value>
+  </data>
+  <data name="dev.ruleOnDesc" xml:space="preserve">
+    <value>Ҳар бир ўқувчи фақат битта қурилмадан киради. Бошқа қурилмадан кириш учун сизнинг тасдиғингиз керак.</value>
+  </data>
+  <data name="dev.ruleOffDesc" xml:space="preserve">
+    <value>Ўқувчилар исталган қурилмадан (телефон, компьютер) чекловсиз кира олади.</value>
+  </data>
+  <data name="dev.ruleComputers" xml:space="preserve">
+    <value>Компьютер (ўқув маркази) ҳисоблари доим фақат ўз компьютеридан киради.</value>
+  </data>
+  <data name="dev.ruleEnable" xml:space="preserve">
+    <value>Қоидани ёқиш</value>
+  </data>
+  <data name="dev.ruleDisable" xml:space="preserve">
+    <value>Қоидани ўчириш</value>
+  </data>
+  <data name="dev.ruleEnableConfirm" xml:space="preserve">
+    <value>Битта қурилма қоидасини ёқасизми? Ҳар бир ўқувчи кейинги кирган қурилмасига боғланади, бошқа қурилмалардан эса фақат сизнинг тасдиғингиз билан кира олади.</value>
+  </data>
+  <data name="dev.ruleDisableConfirm" xml:space="preserve">
+    <value>Битта қурилма қоидасини ўчирасизми? Ўқувчилар исталган қурилмадан кира олади.</value>
+  </data>
+  <data name="dev.ruleChangedOn" xml:space="preserve">
+    <value>Битта қурилма қоидаси ёқилди</value>
+  </data>
+  <data name="dev.ruleChangedOff" xml:space="preserve">
+    <value>Битта қурилма қоидаси ўчирилди — ўқувчилар исталган қурилмадан кира олади</value>
+  </data>
+  <data name="dash.bilets" xml:space="preserve">
+    <value>Билетлар</value>
+  </data>
+  <data name="dash.topics" xml:space="preserve">
+    <value>Мавзулар</value>
+  </data>
+  <data name="dash.withImage" xml:space="preserve">
+    <value>Расмли саволлар</value>
+  </data>
+  <data name="dash.lead" xml:space="preserve">
+    <value>Билетлар, мавзулар, расмлар ва таржималар ҳолати</value>
+  </data>
+  <data name="dash.live" xml:space="preserve">
+    <value>Маълумотлар жорий</value>
+  </data>
+  <data name="dash.unit" xml:space="preserve">
+    <value>та савол</value>
+  </data>
+  <data name="dash.perBilet" xml:space="preserve">
+    <value>саволдан</value>
+  </data>
+  <data name="dash.biletsDesc" xml:space="preserve">
+    <value>Ҳар бирида {n} та савол</value>
+  </data>
+  <data name="dash.pdd" xml:space="preserve">
+    <value>ЙҲҚ</value>
+  </data>
+  <data name="dash.topicsDesc" xml:space="preserve">
+    <value>Йўл ҳаракати қоидалари бўлимлари</value>
+  </data>
+  <data name="dash.withoutImage" xml:space="preserve">
+    <value>Расмсиз саволлар</value>
+  </data>
+  <data name="dash.imageShare" xml:space="preserve">
+    <value>расмли</value>
+  </data>
+  <data name="dash.translationsDesc" xml:space="preserve">
+    <value>Ҳар бир тилда матни бор саволлар сони</value>
+  </data>
+  <data name="dash.langUz" xml:space="preserve">
+    <value>Ўзбекча (лотин)</value>
+  </data>
+  <data name="dash.langRu" xml:space="preserve">
+    <value>Русча</value>
+  </data>
+  <data name="dash.langUzk" xml:space="preserve">
+    <value>Ўзбекча (кирилл)</value>
+  </data>
+  <data name="dash.complete" xml:space="preserve">
+    <value>Тўлиқ</value>
+  </data>
+  <data name="test.fullscreen" xml:space="preserve">
+    <value>Тўлиқ экран</value>
+  </data>
+  <data name="test.fullscreenExit" xml:space="preserve">
+    <value>Экрандан чиқиш</value>
+  </data>
+  <data name="test.backToSearch" xml:space="preserve">
+    <value>Қидирувга қайтиш</value>
+  </data>
+  <data name="test.qOf" xml:space="preserve">
+    <value>Савол {n} / {total}</value>
+  </data>
+  <data name="cab.progressHint2" xml:space="preserve">
+    <value>Ҳар бир кун: нечта савол ишланган, қанчаси тўғри. Устунни босинг — тафсилот чиқади.</value>
+  </data>
+  <data name="cab.pcAnswers" xml:space="preserve">
+    <value>жавоб (30 кунда)</value>
+  </data>
+  <data name="cab.pcCorrect" xml:space="preserve">
+    <value>тўғри жавоблар</value>
+  </data>
+  <data name="cab.pcActiveDays" xml:space="preserve">
+    <value>фаол кун</value>
+  </data>
+  <data name="cab.pcBestDay" xml:space="preserve">
+    <value>энг кўп: {date}</value>
+  </data>
+  <data name="cab.pcTip" xml:space="preserve">
+    <value>{date} — {n} та жавоб: {ok} тўғри, {bad} хато ({pct}%)</value>
+  </data>
+  <data name="cab.pcTipEmpty" xml:space="preserve">
+    <value>{date} — машқ қилинмаган</value>
+  </data>
+  <data name="cab.pcLegendOk" xml:space="preserve">
+    <value>Тўғри</value>
+  </data>
+  <data name="cab.pcLegendBad" xml:space="preserve">
+    <value>Хато</value>
+  </data>
+  <data name="cab.pcLegendHint" xml:space="preserve">
+    <value>Устун тепасидаги сон — ўша кунги жавоблар</value>
+  </data>
+  <data name="cab.factorSolved" xml:space="preserve">
+    <value>Тўғри ишланган саволлар (базадан)</value>
+  </data>
+  <data name="cab.readinessRule" xml:space="preserve">
+    <value>Тайёрлик фоизи — базадаги саволларнинг қанчаси тўғри ишлангани. Барча саволлар тўғри ишланса — 100%, имтиҳонга тайёрсиз. «Хатоларни тузатиш»даги саволлар ҳисобга кирмайди.</value>
+  </data>
+  <data name="users.phoneHint2" xml:space="preserve">
+    <value>Ўқувчи учун мажбурий. +998 ўзи ёзилади — фақат қолган 9 та рақамни киритинг.</value>
+  </data>
+  <data name="hm.popularTopics" xml:space="preserve">
+    <value>Кўп саволли мавзулар</value>
+  </data>
+  <data name="hm.allTopics" xml:space="preserve">
+    <value>Барча мавзулар</value>
+  </data>
+  <data name="hm.questionsInBank" xml:space="preserve">
+    <value>базада {n} та савол</value>
+  </data>
+  <data name="hm.practiceShort" xml:space="preserve">
+    <value>Тасодифий саволлар — ҳар сафар янги тўплам</value>
+  </data>
+  <data name="hm.statTopics" xml:space="preserve">
+    <value>мавзу</value>
+  </data>
+  <data name="hm.statQuestions" xml:space="preserve">
+    <value>савол</value>
+  </data>
+  <data name="hm.statBilets" xml:space="preserve">
+    <value>билет</value>
+  </data>
+  <data name="hm.topicsHint" xml:space="preserve">
+    <value>Мавзуни танланг — фақат шу мавзу саволлари</value>
+  </data>
+  <data name="test.confirmLabel" xml:space="preserve">
+    <value>Сизнинг жавобингиз</value>
+  </data>
+  <data name="test.confirmQuestion" xml:space="preserve">
+    <value>Шу жавобни тасдиқлайсизми?</value>
+  </data>
+  <data name="test.confirmYes" xml:space="preserve">
+    <value>Ҳа</value>
+  </data>
+  <data name="test.confirmNo" xml:space="preserve">
+    <value>Йўқ</value>
+  </data>
+  <data name="form.biletAuto" xml:space="preserve">
+    <value>Савол автоматик равишда {n}-билетга қўшилади (билет тўлса — янги билет очилади) ва ўз мавзусида ҳам чиқади.</value>
+  </data>
+  <data name="form.biletCurrent" xml:space="preserve">
+    <value>Бу савол {n}-билетда.</value>
+  </data>
+  <data name="test.timeLeft" xml:space="preserve">
+    <value>Қолган вақт</value>
+  </data>
+  <data name="test.endTime" xml:space="preserve">
+    <value>Вақт тугади — имтиҳон якунланди.</value>
+  </data>
+  <data name="test.endMistakes" xml:space="preserve">
+    <value>3-хато: имтиҳондан ўта олмадингиз (кўпи билан 2 та хато мумкин).</value>
+  </data>
+  <data name="users.lastSeen" xml:space="preserve">
+    <value>Охирги фаоллик</value>
+  </data>
+  <data name="users.fOnline" xml:space="preserve">
+    <value>Онлайн</value>
+  </data>
+  <data name="users.fOffline" xml:space="preserve">
+    <value>Офлайн</value>
+  </data>
+  <data name="pres.online" xml:space="preserve">
+    <value>Онлайн</value>
+  </data>
+  <data name="pres.never" xml:space="preserve">
+    <value>Ҳали кирмаган</value>
+  </data>
+  <data name="pres.justNow" xml:space="preserve">
+    <value>ҳозиргина</value>
+  </data>
+  <data name="pres.minAgo" xml:space="preserve">
+    <value>{n} дақиқа олдин</value>
+  </data>
+  <data name="pres.hourAgo" xml:space="preserve">
+    <value>{n} соат олдин</value>
+  </data>
+  <data name="pres.dayAgo" xml:space="preserve">
+    <value>{n} кун олдин</value>
+  </data>
+  <data name="pres.onlineNow" xml:space="preserve">
+    <value>Ҳозир онлайн: {n}</value>
+  </data>
+  <data name="pres.onlineHint" xml:space="preserve">
+    <value>Сайтни (ёки иловани) ҳозир очиб турган ўқувчилар сони. Ҳар 30 сонияда янгиланади.</value>
+  </data>
+  <data name="cab.durH" xml:space="preserve">
+    <value>{h} соат</value>
+  </data>
+  <data name="cab.durHM" xml:space="preserve">
+    <value>{h} соат {m} дақиқа</value>
+  </data>
+  <data name="cab.durM" xml:space="preserve">
+    <value>{m} дақиқа</value>
+  </data>
+  <data name="cab.durMShort" xml:space="preserve">
+    <value>{m}д</value>
+  </data>
+  <data name="cab.pcTotalTime" xml:space="preserve">
+    <value>ишланган вақт (30 кунда)</value>
+  </data>
+  <data name="cab.pcTipTime" xml:space="preserve">
+    <value>Ишланган вақт: {time}</value>
+  </data>
+  <data name="cab.pcLegendTime" xml:space="preserve">
+    <value>Кун остидаги кўк рақам — ўша куни ишланган вақт (соат:дақиқа)</value>
+  </data>
+  <data name="qd.pageTitle" xml:space="preserve">
+    <value>Саволни ўчириш</value>
+  </data>
+  <data name="qd.title" xml:space="preserve">
+    <value>Саволни ўчириш</value>
+  </data>
+  <data name="qd.sub" xml:space="preserve">
+    <value>Қуйидаги саволни ўчиришни тасдиқланг.</value>
+  </data>
+  <data name="qd.bilet" xml:space="preserve">
+    <value>{n}-билет</value>
+  </data>
+  <data name="qd.correct" xml:space="preserve">
+    <value>Тўғри жавоб</value>
+  </data>
+  <data name="qd.warnTitle" xml:space="preserve">
+    <value>Ўчирилганда нима бўлади</value>
+  </data>
+  <data name="qd.warnEverywhere" xml:space="preserve">
+    <value>Савол билетдан, мавзудан ва барча тест турларидан олиб ташланади; саволлар сони камаяди.</value>
+  </data>
+  <data name="qd.warnAnswers" xml:space="preserve">
+    <value>Ўқувчилар бу саволга {n} марта жавоб берган — бу жавоблар натижалар тарихидан ҳам ўчади.</value>
+  </data>
+  <data name="qd.warnMistakes" xml:space="preserve">
+    <value>{n} та ўқувчининг «Хатоларни тузатиш» рўйхатидан ҳам олиб ташланади.</value>
+  </data>
+  <data name="qd.warnUndo" xml:space="preserve">
+    <value>Бу амални қайтариб бўлмайди.</value>
+  </data>
+  <data name="qd.cancel" xml:space="preserve">
+    <value>Бекор қилиш</value>
+  </data>
+  <data name="qd.confirm" xml:space="preserve">
+    <value>Ҳа, ўчириш</value>
+  </data>
+  <data name="pres.offline" xml:space="preserve">
+    <value>Офлайн</value>
+  </data>
+  <data name="cab.durS" xml:space="preserve">
+    <value>{s} сония</value>
+  </data>
+  <data name="cab.durSShort" xml:space="preserve">
+    <value>{s}с</value>
+  </data>
+  <data name="rc.passed" xml:space="preserve">
+    <value>Табриклаймиз, ўтдингиз!</value>
+  </data>
+  <data name="rc.failed" xml:space="preserve">
+    <value>Бу сафар ўтмади</value>
+  </data>
+  <data name="rc.sub" xml:space="preserve">
+    <value>{correct} / {total} та тўғри жавоб</value>
+  </data>
+  <data name="rc.correct" xml:space="preserve">
+    <value>Тўғри</value>
+  </data>
+  <data name="rc.wrong" xml:space="preserve">
+    <value>Хато</value>
+  </data>
+  <data name="rc.skipped" xml:space="preserve">
+    <value>Белгиланмаган</value>
+  </data>
+  <data name="notif.title" xml:space="preserve">
+    <value>Билдиришномалар</value>
+  </data>
+  <data name="notif.readAll" xml:space="preserve">
+    <value>Ҳаммасини ўқилди қилиш</value>
+  </data>
+  <data name="notif.liveNow" xml:space="preserve">
+    <value>Ҳозир жонли эфир:</value>
+  </data>
+  <data name="notif.empty" xml:space="preserve">
+    <value>Ҳозирча билдиришнома йўқ</value>
+  </data>
+  <data name="notif.enablePush" xml:space="preserve">
+    <value>🔔 Браузер билдиришномаларини ёқиш</value>
+  </data>
+  <data name="notif.liveCall" xml:space="preserve">
+    <value>Жонли эфир: {title}</value>
+  </data>
+  <data name="notif.join" xml:space="preserve">
+    <value>Қўшилиш</value>
+  </data>
+  <data name="notif.liveScheduled" xml:space="preserve">
+    <value>Янги жонли дарс: «{title}» — {when}</value>
+  </data>
+  <data name="notif.liveReminder" xml:space="preserve">
+    <value>«{title}» жонли дарси 15 дақиқадан кейин бошланади</value>
+  </data>
+  <data name="notif.liveStarted" xml:space="preserve">
+    <value>«{title}» жонли дарси бошланди — қўшилинг!</value>
+  </data>
+  <data name="notif.lessonNew" xml:space="preserve">
+    <value>«{topicUzk}» мавзусига янги видео дарс қўшилди</value>
+  </data>
+  <data name="an.updatedAt" xml:space="preserve">
+    <value>Янгиланди:</value>
+  </data>
+  <data name="an.refreshHint" xml:space="preserve">
+    <value>Маълумот фонда тайёрланади ва автоматик янгиланади. Босинг — ҳозир қайта ҳисоблаш.</value>
+  </data>
+  <data name="lp.play" xml:space="preserve">
+    <value>Ижро этиш (K)</value>
+  </data>
+  <data name="lp.pause" xml:space="preserve">
+    <value>Пауза (K)</value>
+  </data>
+  <data name="lp.seek" xml:space="preserve">
+    <value>Видео вақт чизиғи</value>
+  </data>
+  <data name="lp.back10" xml:space="preserve">
+    <value>10 сония орқага (J)</value>
+  </data>
+  <data name="lp.fwd10" xml:space="preserve">
+    <value>10 сония олдинга (L)</value>
+  </data>
+  <data name="lp.mute" xml:space="preserve">
+    <value>Овозни ўчириш (M)</value>
+  </data>
+  <data name="lp.volume" xml:space="preserve">
+    <value>Овоз баландлиги</value>
+  </data>
+  <data name="lp.prevChapter" xml:space="preserve">
+    <value>Олдинги бўлим (P)</value>
+  </data>
+  <data name="lp.nextChapter" xml:space="preserve">
+    <value>Кейинги бўлим (N)</value>
+  </data>
+  <data name="lp.card" xml:space="preserve">
+    <value>Савол картаси (C)</value>
+  </data>
+  <data name="lp.speed" xml:space="preserve">
+    <value>Тезлик</value>
+  </data>
+  <data name="lp.pip" xml:space="preserve">
+    <value>Кичик ойнада (PiP)</value>
+  </data>
+  <data name="lp.theater" xml:space="preserve">
+    <value>Кинотеатр режими (T)</value>
+  </data>
+  <data name="lp.fullscreen" xml:space="preserve">
+    <value>Тўлиқ экран (F)</value>
+  </data>
+  <data name="lp.shortcuts" xml:space="preserve">
+    <value>Клавиатура тугмалари</value>
+  </data>
+  <data name="lp.normal" xml:space="preserve">
+    <value>Оддий</value>
+  </data>
+  <data name="lp.resumeQ" xml:space="preserve">
+    <value>Тўхтаган жойингиз: {time}</value>
+  </data>
+  <data name="lp.resumeYes" xml:space="preserve">
+    <value>Давом эттириш</value>
+  </data>
+  <data name="lp.resumeNo" xml:space="preserve">
+    <value>Бошидан</value>
+  </data>
+  <data name="lp.kPlay" xml:space="preserve">
+    <value>Ижро / пауза</value>
+  </data>
+  <data name="lp.k5" xml:space="preserve">
+    <value>5 сония орқага / олдинга</value>
+  </data>
+  <data name="lp.k10" xml:space="preserve">
+    <value>10 сония орқага / олдинга</value>
+  </data>
+  <data name="lp.kVol" xml:space="preserve">
+    <value>Овоз баландлиги</value>
+  </data>
+  <data name="lp.kMute" xml:space="preserve">
+    <value>Овозни ўчириш / ёқиш</value>
+  </data>
+  <data name="lp.kChapter" xml:space="preserve">
+    <value>Кейинги / олдинги бўлим</value>
+  </data>
+  <data name="lp.kPercent" xml:space="preserve">
+    <value>Видеонинг 0–90% жойига ўтиш</value>
+  </data>
+  <data name="lp.kFull" xml:space="preserve">
+    <value>Тўлиқ экран</value>
+  </data>
+  <data name="lp.kTheater" xml:space="preserve">
+    <value>Кинотеатр режими</value>
+  </data>
+  <data name="lp.kCard" xml:space="preserve">
+    <value>Савол картасини кўрсатиш / яшириш</value>
+  </data>
+  <data name="lp.kSpeed" xml:space="preserve">
+    <value>Тезликни камайтириш / ошириш</value>
+  </data>
+  <data name="th.videoLen" xml:space="preserve">
+    <value>Видео: {t}</value>
+  </data>
+  <data name="th.explained" xml:space="preserve">
+    <value>{n} та савол тушунтирилган</value>
+  </data>
+  <data name="th.ringVideo" xml:space="preserve">
+    <value>Видео дарс</value>
+  </data>
+  <data name="th.ringVideoSub" xml:space="preserve">
+    <value>кўрилган қисми</value>
+  </data>
+  <data name="th.noVideoShort" xml:space="preserve">
+    <value>ҳали қўшилмаган</value>
+  </data>
+  <data name="th.ringMastery" xml:space="preserve">
+    <value>Мавзу билими</value>
+  </data>
+  <data name="th.ringMasterySub" xml:space="preserve">
+    <value>{n} / {total} савол ўзлаштирилган</value>
+  </data>
+  <data name="th.ringBest" xml:space="preserve">
+    <value>Энг яхши тест</value>
+  </data>
+  <data name="th.ringBestSub" xml:space="preserve">
+    <value>{n} марта ишланган</value>
+  </data>
+  <data name="th.hintMastered" xml:space="preserve">
+    <value>Ажойиб! Бу мавзу тўлиқ ўзлаштирилган. Билимни мустаҳкамлаш учун вақти-вақти билан тестни қайтаринг.</value>
+  </data>
+  <data name="th.hintMistakes" xml:space="preserve">
+    <value>Бу мавзуда {n} та хато саволингиз бор — пастдаги ▶ тугмалар орқали айнан шу саволларнинг видео тушунтиришини қайта кўринг, кейин тестни ишланг.</value>
+  </data>
+  <data name="th.hintWatch" xml:space="preserve">
+    <value>Аввал видео дарсни кўринг: мавзудаги ҳар бир савол унда тушунтирилган. Кейин тест билан ўзингизни текширинг.</value>
+  </data>
+  <data name="th.hintTest" xml:space="preserve">
+    <value>Видеони кўрдингиз — энди билимингизни тест билан текширинг.</value>
+  </data>
+  <data name="th.hintTestOnly" xml:space="preserve">
+    <value>Мавзу бўйича тестни ишланг — натижангиз шу ерда кўринади.</value>
+  </data>
+  <data name="th.hintKeep" xml:space="preserve">
+    <value>Яхши кетяпсиз! Хато қилган саволларингизни қайта ишлаб, мавзуни тўлиқ ўзлаштиринг.</value>
+  </data>
+  <data name="th.videoKicker" xml:space="preserve">
+    <value>Видео дарс</value>
+  </data>
+  <data name="th.videoWatch" xml:space="preserve">
+    <value>Дарсни кўриш</value>
+  </data>
+  <data name="th.videoContinue" xml:space="preserve">
+    <value>Дарсни давом эттириш</value>
+  </data>
+  <data name="th.videoRewatch" xml:space="preserve">
+    <value>Дарсни қайта кўриш</value>
+  </data>
+  <data name="th.fromTime" xml:space="preserve">
+    <value>{t} дан давом этади</value>
+  </data>
+  <data name="th.videoSub" xml:space="preserve">
+    <value>Ҳар бир савол алоҳида тушунтирилади</value>
+  </data>
+  <data name="th.videoSoon" xml:space="preserve">
+    <value>Видео дарс тез орада</value>
+  </data>
+  <data name="th.videoSoonSub" xml:space="preserve">
+    <value>Ҳозирча тест орқали машқ қилинг</value>
+  </data>
+  <data name="th.testKicker" xml:space="preserve">
+    <value>Машқ</value>
+  </data>
+  <data name="th.testTitle" xml:space="preserve">
+    <value>Тест ишлаш</value>
+  </data>
+  <data name="th.testSub" xml:space="preserve">
+    <value>Мавзудаги {n} та савол</value>
+  </data>
+  <data name="th.qTitle" xml:space="preserve">
+    <value>Мавзудаги саволлар</value>
+  </data>
+  <data name="th.qSub" xml:space="preserve">
+    <value>Яшил — тўғри ишланган, қизил — хато.</value>
+  </data>
+  <data name="th.qSubVideo" xml:space="preserve">
+    <value>Яшил — тўғри ишланган, қизил — хато. ▶ — видеода шу саволнинг тушунтиришига ўтиш.</value>
+  </data>
+  <data name="th.watchExplain" xml:space="preserve">
+    <value>Видеода тушунтиришни кўриш</value>
+  </data>
+  <data name="ls.pageTitle" xml:space="preserve">
+    <value>Видео дарс</value>
+  </data>
+  <data name="ls.draft" xml:space="preserve">
+    <value>Қоралама (фақат админ кўради)</value>
+  </data>
+  <data name="ls.toTopic" xml:space="preserve">
+    <value>Мавзу саҳифаси</value>
+  </data>
+  <data name="ls.startTest" xml:space="preserve">
+    <value>Тестни бошлаш</value>
+  </data>
+  <data name="ls.watchedMap" xml:space="preserve">
+    <value>Кўрилган қисмлар</value>
+  </data>
+  <data name="ls.heatHint" xml:space="preserve">
+    <value>Қизил — сиз кўрган жойлар. Кулранг жойларни ҳам кўриб чиқинг.</value>
+  </data>
+  <data name="ls.chapters" xml:space="preserve">
+    <value>Дарс режаси</value>
+  </data>
+  <data name="ls.chaptersSub" xml:space="preserve">
+    <value>{n} та бўлим · босинг — ўша жойга ўтади</value>
+  </data>
+  <data name="ls.qShort" xml:space="preserve">
+    <value>Савол {n}</value>
+  </data>
+  <data name="ls.qOf" xml:space="preserve">
+    <value>Савол {n} / {total}</value>
+  </data>
+  <data name="ls.showAnswer" xml:space="preserve">
+    <value>Тўғри жавобни кўрсатиш</value>
+  </data>
+  <data name="ls.endTitle" xml:space="preserve">
+    <value>Дарс тугади!</value>
+  </data>
+  <data name="ls.endSub" xml:space="preserve">
+    <value>Энди билимингизни тест билан мустаҳкамланг.</value>
+  </data>
+  <data name="ls.replay" xml:space="preserve">
+    <value>Қайта кўриш</value>
+  </data>
+  <data name="ls.nextTopic" xml:space="preserve">
+    <value>Кейинги мавзу</value>
+  </data>
+  <data name="ls.adminTitle" xml:space="preserve">
+    <value>Видео дарслар</value>
+  </data>
+  <data name="ls.adminSub" xml:space="preserve">
+    <value>Ҳар бир мавзу учун видео дарс: видео, тавсиф ва ҳар бир савол тушунтирилиши бошланадиган вақт.</value>
+  </data>
+  <data name="ls.kpiVideos" xml:space="preserve">
+    <value>Видео бор мавзулар</value>
+  </data>
+  <data name="ls.kpiPublished" xml:space="preserve">
+    <value>Эълон қилинган</value>
+  </data>
+  <data name="ls.kpiViewers" xml:space="preserve">
+    <value>Кўрганлар</value>
+  </data>
+  <data name="ls.kpiHours" xml:space="preserve">
+    <value>Жами кўрилган соат</value>
+  </data>
+  <data name="ls.statePub" xml:space="preserve">
+    <value>Эълон қилинган</value>
+  </data>
+  <data name="ls.stateDraft" xml:space="preserve">
+    <value>Қоралама</value>
+  </data>
+  <data name="ls.stateNone" xml:space="preserve">
+    <value>Видео йўқ</value>
+  </data>
+  <data name="ls.mQuestions" xml:space="preserve">
+    <value>савол</value>
+  </data>
+  <data name="ls.mChapters" xml:space="preserve">
+    <value>вақт белгиланган</value>
+  </data>
+  <data name="ls.mViewers" xml:space="preserve">
+    <value>кўрган</value>
+  </data>
+  <data name="ls.mCompleted" xml:space="preserve">
+    <value>охиригача</value>
+  </data>
+  <data name="ls.backToList" xml:space="preserve">
+    <value>Видео дарслар</value>
+  </data>
+  <data name="ls.editSub" xml:space="preserve">
+    <value>Видео юкланг (ёки YouTube ҳаволасини қўйинг), кейин ҳар бир савол тушунтирилиши бошланадиган вақтни белгиланг.</value>
+  </data>
+  <data name="ls.preview" xml:space="preserve">
+    <value>Ўқувчи кўринишида очиш</value>
+  </data>
+  <data name="ls.saved" xml:space="preserve">
+    <value>Сақланди.</value>
+  </data>
+  <data name="ls.errYouTube" xml:space="preserve">
+    <value>YouTube ҳаволаси нотўғри.</value>
+  </data>
+  <data name="ls.videoSource" xml:space="preserve">
+    <value>Видео</value>
+  </data>
+  <data name="ls.srcFile" xml:space="preserve">
+    <value>Файл юклаш</value>
+  </data>
+  <data name="ls.dropTitle" xml:space="preserve">
+    <value>Видеони шу ерга ташланг ёки босиб танланг</value>
+  </data>
+  <data name="ls.dropSub" xml:space="preserve">
+    <value>MP4 (тавсия), WebM ёки MOV · 4 GB гача · катта файл ҳам бўлаклаб ишончли юкланади</value>
+  </data>
+  <data name="ls.cancel" xml:space="preserve">
+    <value>Бекор қилиш</value>
+  </data>
+  <data name="ls.ytHint" xml:space="preserve">
+    <value>Видео YouTube'да бўлса (масалан, очиқ ёки ҳавола орқали кўринадиган), ҳаволасини қўйинг — сервер хотираси тежалади.</value>
+  </data>
+  <data name="ls.previewHint" xml:space="preserve">
+    <value>Видеони керакли жойга қўйинг ва савол қаторидаги ⏱ тугмасини босинг — вақт ўзи ёзилади. Вақт устига икки марта босилса, видео ўша жойга ўтади.</value>
+  </data>
+  <data name="ls.details" xml:space="preserve">
+    <value>Дарс маълумотлари</value>
+  </data>
+  <data name="ls.fTitle" xml:space="preserve">
+    <value>Сарлавҳа (ихтиёрий)</value>
+  </data>
+  <data name="ls.fDesc" xml:space="preserve">
+    <value>Тавсиф</value>
+  </data>
+  <data name="ls.fPublish" xml:space="preserve">
+    <value>Ўқувчиларга кўрсатиш</value>
+  </data>
+  <data name="ls.fPublishHint" xml:space="preserve">
+    <value>Биринчи марта эълон қилинганда барча ўқувчиларга билдиришнома боради.</value>
+  </data>
+  <data name="ls.chaptersAdmin" xml:space="preserve">
+    <value>Саволлар тушунтирилиш вақти</value>
+  </data>
+  <data name="ls.chaptersHint" xml:space="preserve">
+    <value>Формат: м:сс ёки ҳ:мм:сс. Бўш қолдирилган савол бўлим бўлмайди.</value>
+  </data>
+  <data name="ls.setNow" xml:space="preserve">
+    <value>Плеэрдаги ҳозирги вақтни қўйиш</value>
+  </data>
+  <data name="ls.extraTitle" xml:space="preserve">
+    <value>Қўшимча бўлимлар</value>
+  </data>
+  <data name="ls.extraHint" xml:space="preserve">
+    <value>Масалан: Кириш, Асосий қоидалар, Хулоса</value>
+  </data>
+  <data name="ls.add" xml:space="preserve">
+    <value>Қўшиш</value>
+  </data>
+  <data name="ls.save" xml:space="preserve">
+    <value>Сақлаш</value>
+  </data>
+  <data name="ls.needVideo" xml:space="preserve">
+    <value>Аввал видео юкланг ёки YouTube ҳаволасини қўйинг.</value>
+  </data>
+  <data name="ls.extraPh" xml:space="preserve">
+    <value>Бўлим номи</value>
+  </data>
+  <data name="ls.errType" xml:space="preserve">
+    <value>Фақат MP4, WebM, M4V ёки MOV видео.</value>
+  </data>
+  <data name="ls.left" xml:space="preserve">
+    <value>~{t} қолди</value>
+  </data>
+  <data name="ls.uploaded" xml:space="preserve">
+    <value>Юкланди. Сақлашни унутманг.</value>
+  </data>
+  <data name="ls.cancelled" xml:space="preserve">
+    <value>Бекор қилинди.</value>
+  </data>
+  <data name="ls.uploadFailed" xml:space="preserve">
+    <value>Юклаб бўлмади. Интернетни текшириб, қайта уриниб кўринг.</value>
+  </data>
+  <data name="lv.title" xml:space="preserve">
+    <value>Жонли дарслар</value>
+  </data>
+  <data name="lv.sub" xml:space="preserve">
+    <value>Ўқитувчи билан жонли эфир: дарсни кузатинг ва саволларингизни юборинг.</value>
+  </data>
+  <data name="lv.onAir" xml:space="preserve">
+    <value>Жонли эфир</value>
+  </data>
+  <data name="lv.upcoming" xml:space="preserve">
+    <value>Режалаштирилган дарслар</value>
+  </data>
+  <data name="lv.noUpcoming" xml:space="preserve">
+    <value>Ҳозирча режалаштирилган жонли дарс йўқ. Янги дарс белгиланганда билдиришнома келади.</value>
+  </data>
+  <data name="lv.minutes" xml:space="preserve">
+    <value>{n} дақиқа</value>
+  </data>
+  <data name="lv.enterRoom" xml:space="preserve">
+    <value>Дарс хонаси</value>
+  </data>
+  <data name="lv.addCalendar" xml:space="preserve">
+    <value>Тақвимга қўшиш</value>
+  </data>
+  <data name="lv.past" xml:space="preserve">
+    <value>Ўтган дарслар</value>
+  </data>
+  <data name="lv.attended" xml:space="preserve">
+    <value>Қатнашдингиз: {n} дақиқа</value>
+  </data>
+  <data name="lv.missed" xml:space="preserve">
+    <value>Қатнашмагансиз</value>
+  </data>
+  <data name="lv.recording" xml:space="preserve">
+    <value>Ёзувни кўриш</value>
+  </data>
+  <data name="lv.stScheduled" xml:space="preserve">
+    <value>Кутилмоқда</value>
+  </data>
+  <data name="lv.stEnded" xml:space="preserve">
+    <value>Дарс тугади</value>
+  </data>
+  <data name="lv.viewersNow" xml:space="preserve">
+    <value>Ҳозир дарсда</value>
+  </data>
+  <data name="lv.startsIn" xml:space="preserve">
+    <value>Дарс бошланишига</value>
+  </data>
+  <data name="lv.waitHint" xml:space="preserve">
+    <value>Саҳифани ёпманг — дарс бошланганда эфир ўзи очилади.</value>
+  </data>
+  <data name="lv.noStream" xml:space="preserve">
+    <value>Эфир ҳаволаси ҳали қўйилмаган. Ўқитувчи тез орада улайди.</value>
+  </data>
+  <data name="lv.thanks" xml:space="preserve">
+    <value>Қатнашганингиз учун раҳмат!</value>
+  </data>
+  <data name="lv.recordingHint" xml:space="preserve">
+    <value>Дарс ёзувини қайта кўришингиз мумкин.</value>
+  </data>
+  <data name="lv.reactions" xml:space="preserve">
+    <value>Реаксиялар</value>
+  </data>
+  <data name="lv.answeringNow" xml:space="preserve">
+    <value>Ҳозир жавоб берилмоқда</value>
+  </data>
+  <data name="lv.askTitle" xml:space="preserve">
+    <value>Ўқитувчига савол</value>
+  </data>
+  <data name="lv.askWait" xml:space="preserve">
+    <value>Савол юбориш дарс бошланганда очилади.</value>
+  </data>
+  <data name="lv.askClosed" xml:space="preserve">
+    <value>Ўқитувчи ҳозирча саволларни ёпган.</value>
+  </data>
+  <data name="lv.askPh" xml:space="preserve">
+    <value>Саволингизни ёзинг… (Стрл+Энтер — юбориш)</value>
+  </data>
+  <data name="lv.send" xml:space="preserve">
+    <value>Юбориш</value>
+  </data>
+  <data name="lv.myQuestions" xml:space="preserve">
+    <value>Саволларингиз</value>
+  </data>
+  <data name="lv.anyMoment" xml:space="preserve">
+    <value>Ҳозир бошланади…</value>
+  </data>
+  <data name="lv.cdD" xml:space="preserve">
+    <value>кун</value>
+  </data>
+  <data name="lv.cdH" xml:space="preserve">
+    <value>соат</value>
+  </data>
+  <data name="lv.cdM" xml:space="preserve">
+    <value>дақ</value>
+  </data>
+  <data name="lv.cdS" xml:space="preserve">
+    <value>сон</value>
+  </data>
+  <data name="lv.conn_on" xml:space="preserve">
+    <value>Уланган</value>
+  </data>
+  <data name="lv.conn_off" xml:space="preserve">
+    <value>Уланиш йўқ</value>
+  </data>
+  <data name="lv.conn_reconnecting" xml:space="preserve">
+    <value>Қайта уланмоқда…</value>
+  </data>
+  <data name="lv.qs_new" xml:space="preserve">
+    <value>Янги</value>
+  </data>
+  <data name="lv.qs_answered" xml:space="preserve">
+    <value>Жавоб берилди</value>
+  </data>
+  <data name="lv.qs_hidden" xml:space="preserve">
+    <value>Яширилди</value>
+  </data>
+  <data name="lv.qOpened" xml:space="preserve">
+    <value>Савол юбориш очилди</value>
+  </data>
+  <data name="lv.qClosed" xml:space="preserve">
+    <value>Ўқитувчи саволларни ёпди</value>
+  </data>
+  <data name="lv.yourAnswered" xml:space="preserve">
+    <value>Саволингизга жавоб берилди ✓</value>
+  </data>
+  <data name="lv.sent" xml:space="preserve">
+    <value>Савол юборилди</value>
+  </data>
+  <data name="lv.err_short" xml:space="preserve">
+    <value>Савол жуда қисқа.</value>
+  </data>
+  <data name="lv.err_notLive" xml:space="preserve">
+    <value>Дарс ҳозир эфирда эмас.</value>
+  </data>
+  <data name="lv.err_closed" xml:space="preserve">
+    <value>Саволлар ёпилган.</value>
+  </data>
+  <data name="lv.err_notJoined" xml:space="preserve">
+    <value>Саҳифани янгиланг.</value>
+  </data>
+  <data name="lv.err_wait" xml:space="preserve">
+    <value>Кейинги саволни {n} сониядан кейин юборишингиз мумкин.</value>
+  </data>
+  <data name="lv.err_limit" xml:space="preserve">
+    <value>Битта дарсда кўпи билан 30 та савол.</value>
+  </data>
+  <data name="lv.err_net" xml:space="preserve">
+    <value>Юбориб бўлмади. Интернетни текширинг.</value>
+  </data>
+  <data name="lv.nobody" xml:space="preserve">
+    <value>Ҳозирча ҳеч ким йўқ</value>
+  </data>
+  <data name="lv.evIn" xml:space="preserve">
+    <value>{name} кирди</value>
+  </data>
+  <data name="lv.evOut" xml:space="preserve">
+    <value>{name} чиқиб кетди</value>
+  </data>
+  <data name="lv.noQuestions" xml:space="preserve">
+    <value>Саволлар йўқ</value>
+  </data>
+  <data name="lv.pin" xml:space="preserve">
+    <value>Жавоб берилмоқда</value>
+  </data>
+  <data name="lv.unpin" xml:space="preserve">
+    <value>Маҳкамни олиш</value>
+  </data>
+  <data name="lv.markAnswered" xml:space="preserve">
+    <value>Жавоб берилди</value>
+  </data>
+  <data name="lv.markNew" xml:space="preserve">
+    <value>Қайтариш</value>
+  </data>
+  <data name="lv.hide" xml:space="preserve">
+    <value>Яшириш</value>
+  </data>
+  <data name="lv.adminTitle" xml:space="preserve">
+    <value>Жонли дарслар</value>
+  </data>
+  <data name="lv.adminSub" xml:space="preserve">
+    <value>Дарсни режалаштиринг — ўқувчиларга билдиришнома боради. Эфир тўғридан-тўғри сайт ичида (камера ёки экран); савол-жавоб, давомат ва ҳисобот — шу ерда. Эфир ёзиб олинмайди ва юклаб олинмайди.</value>
+  </data>
+  <data name="lv.newLesson" xml:space="preserve">
+    <value>Янги жонли дарс</value>
+  </data>
+  <data name="lv.editLesson" xml:space="preserve">
+    <value>Дарсни таҳрирлаш</value>
+  </data>
+  <data name="lv.fTitle" xml:space="preserve">
+    <value>Мавзу</value>
+  </data>
+  <data name="lv.fTitlePh" xml:space="preserve">
+    <value>Масалан: Йўл белгилари — савол-жавоб</value>
+  </data>
+  <data name="lv.fWhen" xml:space="preserve">
+    <value>Сана ва вақт</value>
+  </data>
+  <data name="lv.fDuration" xml:space="preserve">
+    <value>Давомийлиги (дақ)</value>
+  </data>
+  <data name="lv.fStream" xml:space="preserve">
+    <value>Эфир ҳаволаси (YouTube Ливе)</value>
+  </data>
+  <data name="lv.fStreamHint" xml:space="preserve">
+    <value>YouTube Студио → Жонли эфир → ҳаволани нусхаланг. Кейин ҳам қўшиш мумкин.</value>
+  </data>
+  <data name="lv.fDesc" xml:space="preserve">
+    <value>Тавсиф</value>
+  </data>
+  <data name="lv.fQuestions" xml:space="preserve">
+    <value>Ўқувчилар савол юбора олади</value>
+  </data>
+  <data name="lv.fNotify" xml:space="preserve">
+    <value>Барча ўқувчиларга билдиришнома юбориш</value>
+  </data>
+  <data name="lv.create" xml:space="preserve">
+    <value>Режалаштириш</value>
+  </data>
+  <data name="lv.noLessons" xml:space="preserve">
+    <value>Ҳали жонли дарс йўқ.</value>
+  </data>
+  <data name="lv.st_scheduled" xml:space="preserve">
+    <value>Режалаштирилган</value>
+  </data>
+  <data name="lv.st_live" xml:space="preserve">
+    <value>Эфирда</value>
+  </data>
+  <data name="lv.st_ended" xml:space="preserve">
+    <value>Тугаган</value>
+  </data>
+  <data name="lv.st_cancelled" xml:space="preserve">
+    <value>Бекор қилинган</value>
+  </data>
+  <data name="lv.min" xml:space="preserve">
+    <value>дақ</value>
+  </data>
+  <data name="lv.peak" xml:space="preserve">
+    <value>Энг кўп бир вақтда</value>
+  </data>
+  <data name="lv.controlRoom" xml:space="preserve">
+    <value>Бошқарув хонаси</value>
+  </data>
+  <data name="lv.report" xml:space="preserve">
+    <value>Дарс ҳисоботи</value>
+  </data>
+  <data name="lv.cancelLesson" xml:space="preserve">
+    <value>Бекор қилиш</value>
+  </data>
+  <data name="lv.cancelConfirm" xml:space="preserve">
+    <value>Дарсни бекор қиласизми?</value>
+  </data>
+  <data name="lv.created" xml:space="preserve">
+    <value>Дарс режалаштирилди.</value>
+  </data>
+  <data name="lv.saved" xml:space="preserve">
+    <value>Сақланди.</value>
+  </data>
+  <data name="lv.errForm" xml:space="preserve">
+    <value>Мавзу ва сана-вақтни тўлдиринг.</value>
+  </data>
+  <data name="lv.errStream" xml:space="preserve">
+    <value>Эфир ҳаволаси нотўғри (YouTube ёки ҳттпс ҳавола бўлиши керак).</value>
+  </data>
+  <data name="lv.startConfirm" xml:space="preserve">
+    <value>Эфирни бошлайсизми? Барча ўқувчиларга хабар боради.</value>
+  </data>
+  <data name="lv.start" xml:space="preserve">
+    <value>Эфирни бошлаш</value>
+  </data>
+  <data name="lv.endConfirm" xml:space="preserve">
+    <value>Дарсни тугатасизми? Ҳисобот тайёрланади.</value>
+  </data>
+  <data name="lv.end" xml:space="preserve">
+    <value>Дарсни тугатиш</value>
+  </data>
+  <data name="lv.questions" xml:space="preserve">
+    <value>Саволлар</value>
+  </data>
+  <data name="lv.allowQuestions" xml:space="preserve">
+    <value>Саволларга рухсат</value>
+  </data>
+  <data name="lv.controlHint" xml:space="preserve">
+    <value>Ўқувчилар кутиш залига кира бошлаши мумкин. Тайёр бўлгач «Эфирни бошлаш» ни босинг — давомат шу пайтдан ҳисобланади.</value>
+  </data>
+  <data name="lv.all" xml:space="preserve">
+    <value>Ҳаммаси</value>
+  </data>
+  <data name="lv.inRoom" xml:space="preserve">
+    <value>Ҳозир дарсда</value>
+  </data>
+  <data name="lv.activity" xml:space="preserve">
+    <value>Кириш-чиқиш лентаси</value>
+  </data>
+  <data name="lv.activityEmpty" xml:space="preserve">
+    <value>Ким кирса ёки чиқса — шу ерда кўринади</value>
+  </data>
+  <data name="lv.print" xml:space="preserve">
+    <value>Чоп этиш</value>
+  </data>
+  <data name="lv.rAttendees" xml:space="preserve">
+    <value>Қатнашганлар</value>
+  </data>
+  <data name="lv.rAvg" xml:space="preserve">
+    <value>Ўртача қатнашиш</value>
+  </data>
+  <data name="lv.rTimeline" xml:space="preserve">
+    <value>Томошабинлар сони</value>
+  </data>
+  <data name="lv.rTimelineSub" xml:space="preserve">
+    <value>Дарс давомида ҳар лаҳзада нечта ўқувчи дарсда бўлган</value>
+  </data>
+  <data name="lv.rTable" xml:space="preserve">
+    <value>Ўқувчилар бўйича</value>
+  </data>
+  <data name="lv.rScoreHint" xml:space="preserve">
+    <value>Фаоллик баҳоси: қатнашган вақт (70%) + саволлар (30%).</value>
+  </data>
+  <data name="lv.rJoined" xml:space="preserve">
+    <value>Кирди</value>
+  </data>
+  <data name="lv.rLeft" xml:space="preserve">
+    <value>Чиқди</value>
+  </data>
+  <data name="lv.rTime" xml:space="preserve">
+    <value>Қатнашиш</value>
+  </data>
+  <data name="lv.rSessions" xml:space="preserve">
+    <value>Киришлар</value>
+  </data>
+  <data name="lv.rScore" xml:space="preserve">
+    <value>Фаоллик</value>
+  </data>
+  <data name="lv.rQuestions" xml:space="preserve">
+    <value>Барча саволлар</value>
+  </data>
+  <data name="lv.rAbsent" xml:space="preserve">
+    <value>Қатнашмаганлар</value>
+  </data>
+  <data name="lv.teacherConnecting" xml:space="preserve">
+    <value>Ўқитувчи эфирни уламоқда…</value>
+  </data>
+  <data name="lv.teacherConnectingSub" xml:space="preserve">
+    <value>Камера ёки экран уланиши билан дарс шу ерда кўринади.</value>
+  </data>
+  <data name="lv.unmute" xml:space="preserve">
+    <value>Овозни ёқиш</value>
+  </data>
+  <data name="lv.unsupported" xml:space="preserve">
+    <value>Браузерингиз эфирни кўрсата олмайди. Илтимос, Гоогле Чроме ёки Мисрософт Эдгеънинг янги версиясидан фойдаланинг.</value>
+  </data>
+  <data name="lv.bcTitle" xml:space="preserve">
+    <value>Эфир (сайт ичида)</value>
+  </data>
+  <data name="lv.bcOff" xml:space="preserve">
+    <value>Эфир узатилмаяпти</value>
+  </data>
+  <data name="lv.bcOn" xml:space="preserve">
+    <value>Эфирдасиз</value>
+  </data>
+  <data name="lv.bcError" xml:space="preserve">
+    <value>Хатолик — қайта уриниб кўринг</value>
+  </data>
+  <data name="lv.bcDenied" xml:space="preserve">
+    <value>Камера/микрофонга рухсат берилмади</value>
+  </data>
+  <data name="lv.bcUnsupported" xml:space="preserve">
+    <value>Бу браузер эфир узата олмайди — Чроме ёки Эдгеъдан фойдаланинг</value>
+  </data>
+  <data name="lv.bcChoose" xml:space="preserve">
+    <value>Камера ёки экранни танланг — эфир ўқувчиларга дарҳол боради</value>
+  </data>
+  <data name="lv.bcStartFirst" xml:space="preserve">
+    <value>Аввал «Эфирни бошлаш» ни босинг, кейин камера ёки экранни уланг</value>
+  </data>
+  <data name="lv.bcCamera" xml:space="preserve">
+    <value>Камера</value>
+  </data>
+  <data name="lv.bcScreen" xml:space="preserve">
+    <value>Экран</value>
+  </data>
+  <data name="lv.bcMic" xml:space="preserve">
+    <value>Микрофон</value>
+  </data>
+  <data name="lv.bcQuality" xml:space="preserve">
+    <value>Сифат</value>
+  </data>
+  <data name="lv.bcStop" xml:space="preserve">
+    <value>Тўхтатиш</value>
+  </data>
+  <data name="lv.bcSlow" xml:space="preserve">
+    <value>Интернет секин — сифатни пасайтиринг</value>
+  </data>
+  <data name="lv.bcHint" xml:space="preserve">
+    <value>Эфир ёзиб олинмайди ва юклаб олинмайди. Ўқувчилар экранида уларнинг логин ва телефони сув белгиси бўлиб туради. Экран улашишда дарс слайдлари ёки саволларни кўрсатишингиз мумкин; микрофон овози қўшилади.</value>
+  </data>
+  <data name="rep.title" xml:space="preserve">
+    <value>Кунлик ақлли таҳлил</value>
+  </data>
+  <data name="rep.sub" xml:space="preserve">
+    <value>Ҳар куни 00:00 дан кейин ўтган кун бўйича автоматик тузилади: саволлар сифати, умумий хато тушунчалар, унутиш, имтиҳондан ўтиш эҳтимоли, ташлаб кетиш хавфи ва тавсиялар.</value>
+  </data>
+  <data name="rep.chooseDay" xml:space="preserve">
+    <value>Кунни танланг</value>
+  </data>
+  <data name="rep.today" xml:space="preserve">
+    <value>Бугун (ҳозиргача)</value>
+  </data>
+  <data name="rep.rebuild" xml:space="preserve">
+    <value>Қайта ҳисоблаш</value>
+  </data>
+  <data name="rep.rebuildHint" xml:space="preserve">
+    <value>Кечаги кун ҳисоботини ҳозир қайта тузиш</value>
+  </data>
+  <data name="rep.reminded" xml:space="preserve">
+    <value>{n} та ўқувчига эслатма юборилди.</value>
+  </data>
+  <data name="rep.none" xml:space="preserve">
+    <value>Ҳали ҳисобот йўқ. Биринчи ҳисобот бугун 00:00 дан кейин автоматик тузилади — ёки «Қайта ҳисоблаш» ни босинг.</value>
+  </data>
+  <data name="rep.todaySoFar" xml:space="preserve">
+    <value>Бугунги ҳолат (кун тугамаган)</value>
+  </data>
+  <data name="rep.dayReport" xml:space="preserve">
+    <value>Кун ҳисоботи</value>
+  </data>
+  <data name="rep.builtAt" xml:space="preserve">
+    <value>Тузилган:</value>
+  </data>
+  <data name="rep.allGood" xml:space="preserve">
+    <value>Муҳим муаммо топилмади — ҳаммаси жойида.</value>
+  </data>
+  <data name="rep.remind" xml:space="preserve">
+    <value>Эслатма юбориш</value>
+  </data>
+  <data name="rep.remindConfirm" xml:space="preserve">
+    <value>Хавф остидаги ўқувчиларга эслатма билдиришномаси юборилсинми?</value>
+  </data>
+  <data name="rep.recQuiet" xml:space="preserve">
+    <value>Кеча ҳеч ким тест ишламаган. Ўқувчиларга жонли дарс ёки янги видео дарс ҳақида эслатма юборинг.</value>
+  </data>
+  <data name="rep.recAccDrop" xml:space="preserve">
+    <value>Умумий аниқлик ўтган ҳафтага нисбатан {n} фоиз пунктга тушди — қийин мавзулар кўпайган бўлиши мумкин.</value>
+  </data>
+  <data name="rep.recAccUp" xml:space="preserve">
+    <value>Ажойиб: умумий аниқлик ўтган ҳафтага нисбатан {n} фоиз пунктга ошди.</value>
+  </data>
+  <data name="rep.recMisconception" xml:space="preserve">
+    <value>Умумий хато тушунча: нотўғри жавоб берганларнинг {share}% и айнан {opt} вариантини танламоқда — бу саволни жонли дарсда алоҳида тушунтиринг.</value>
+  </data>
+  <data name="rep.recKey" xml:space="preserve">
+    <value>Эҳтиёт бўлинг: бу саволда кучли ўқувчилар ({a}%) кучсизлардан ({b}%) ёмонроқ натижа кўрсатмоқда — тўғри жавоб калити ёки савол матнини текширинг.</value>
+  </data>
+  <data name="rep.recForgot" xml:space="preserve">
+    <value>{n} та ҳолатда ўқувчилар аввал тўғри ишлаган саволини унутган — такрорлаш («Хатоларни тузатиш») ва видео дарсларни тавсия қилинг.</value>
+  </data>
+  <data name="rep.recRisk" xml:space="preserve">
+    <value>{n} та ўқувчи аввал фаол эди, лекин охирги кунларда кирмаяпти — эслатма юборинг.</value>
+  </data>
+  <data name="rep.recGolden" xml:space="preserve">
+    <value>«Олтин соат»: ўқувчилар соат {h}:00 да энг аниқ ишлайди ({acc}%), {w}:00 да эса энг ёмон ({wacc}%). Жонли дарсларни олтин соатга қўйинг.</value>
+  </data>
+  <data name="rep.recAnomaly" xml:space="preserve">
+    <value>{n} та шубҳали натижа топилди (жуда тез ёки тасодифий босишга ўхшаш) — текшириб кўринг.</value>
+  </data>
+  <data name="rep.recNeverStarted" xml:space="preserve">
+    <value>{n} та ўқувчи рўйхатдан ўтганига 3 кундан ошди, лекин ҳали бирорта ҳам тест ишламаган.</value>
+  </data>
+  <data name="rep.kActive" xml:space="preserve">
+    <value>Фаол ўқувчилар</value>
+  </data>
+  <data name="rep.vsAvg" xml:space="preserve">
+    <value>7 кунлик ўртача: {n}</value>
+  </data>
+  <data name="rep.kAnswers" xml:space="preserve">
+    <value>Жавоблар</value>
+  </data>
+  <data name="rep.tests" xml:space="preserve">
+    <value>та тест</value>
+  </data>
+  <data name="rep.kAccuracy" xml:space="preserve">
+    <value>Аниқлик (7 кунга нисбатан)</value>
+  </data>
+  <data name="rep.kPass" xml:space="preserve">
+    <value>Имтиҳондан ўтиш</value>
+  </data>
+  <data name="rep.exams" xml:space="preserve">
+    <value>та имтиҳон тести</value>
+  </data>
+  <data name="rep.kMastered" xml:space="preserve">
+    <value>Янги ўзлаштирилган</value>
+  </data>
+  <data name="rep.kMasteredSub" xml:space="preserve">
+    <value>биринчи марта тўғри ишланган саволлар</value>
+  </data>
+  <data name="rep.kForgotten" xml:space="preserve">
+    <value>Унутилган</value>
+  </data>
+  <data name="rep.retention" xml:space="preserve">
+    <value>эслаб қолиш: {n}%</value>
+  </data>
+  <data name="rep.kTime" xml:space="preserve">
+    <value>Ўқиш вақти (соат:дақ)</value>
+  </data>
+  <data name="rep.kNew" xml:space="preserve">
+    <value>Биринчи кун</value>
+  </data>
+  <data name="rep.kNewSub" xml:space="preserve">
+    <value>биринчи марта тест ишлаганлар</value>
+  </data>
+  <data name="rep.hoursTitle" xml:space="preserve">
+    <value>Соатлар бўйича фаоллик ва аниқлик</value>
+  </data>
+  <data name="rep.hoursSub" xml:space="preserve">
+    <value>Устун баландлиги — жавоблар сони, ранги — аниқлик (яшил — юқори, қизил — паст).</value>
+  </data>
+  <data name="rep.golden" xml:space="preserve">
+    <value>Олтин соат</value>
+  </data>
+  <data name="rep.miscTitle" xml:space="preserve">
+    <value>Умумий хато тушунчалар</value>
+  </data>
+  <data name="rep.miscSub" xml:space="preserve">
+    <value>Кўпчилик бир хил нотўғри вариантни танлайдиган саволлар (30 кун).</value>
+  </data>
+  <data name="rep.miscLine" xml:space="preserve">
+    <value>Хато қилганларнинг {a}% и шу вариантни танлаган · {w} хато / {n} жавоб</value>
+  </data>
+  <data name="rep.discTitle" xml:space="preserve">
+    <value>Шубҳали саволлар — жавоби нотўғри киритилган бўлиши мумкин</value>
+  </data>
+  <data name="rep.discSub" xml:space="preserve">
+    <value>Одатда яхши ўқийдиган ўқувчилар саволни кўпроқ тўғри топади. Бу саволларда эса аксинча ёки фарқ йўқ: аълочилар ҳам адашяпти. Демак савол матнида ёки «тўғри жавоб» белгисида хато бўлиши мумкин — очиб текширинг.</value>
+  </data>
+  <data name="rep.discNone" xml:space="preserve">
+    <value>Шубҳали савол топилмади — барча саволларнинг жавоблари тўғри кўринади ✅</value>
+  </data>
+  <data name="rep.strong" xml:space="preserve">
+    <value>Аълочи ўқувчилар</value>
+  </data>
+  <data name="rep.weak" xml:space="preserve">
+    <value>Суст ўқувчилар</value>
+  </data>
+  <data name="rep.passTitle" xml:space="preserve">
+    <value>Имтиҳондан ўтиш эҳтимоли</value>
+  </data>
+  <data name="rep.passSub" xml:space="preserve">
+    <value>Охирги 200 жавоб асосида: 20 саволдан кўпи билан 2 хато қилиш эҳтимоли. ▲▼ — кечагига нисбатан ўзгариш.</value>
+  </data>
+  <data name="rep.readyCount" xml:space="preserve">
+    <value>≥80%: {n} та ўқувчи</value>
+  </data>
+  <data name="rep.riskTitle" xml:space="preserve">
+    <value>Ташлаб кетиш хавфи</value>
+  </data>
+  <data name="rep.riskSub" xml:space="preserve">
+    <value>Аввал фаол бўлиб, охирги кунларда кирмаётган ўқувчилар (баҳо 0–100).</value>
+  </data>
+  <data name="rep.riskNone" xml:space="preserve">
+    <value>Хавф остидаги ўқувчи йўқ.</value>
+  </data>
+  <data name="rep.idleDays" xml:space="preserve">
+    <value>{n} кун кирмаган</value>
+  </data>
+  <data name="rep.neverStarted" xml:space="preserve">
+    <value>Яна {n} та ўқувчи умуман бошламаган.</value>
+  </data>
+  <data name="rep.forgotTitle" xml:space="preserve">
+    <value>Энг кўп унутилган саволлар</value>
+  </data>
+  <data name="rep.forgotSub" xml:space="preserve">
+    <value>Аввал тўғри ишланган, орадан камида 3 кун ўтиб хато қилинган саволлар.</value>
+  </data>
+  <data name="rep.forgotLine" xml:space="preserve">
+    <value>{n} та ўқувчи унутган</value>
+  </data>
+  <data name="rep.harderTitle" xml:space="preserve">
+    <value>Кеча кескин қийинлашган саволлар</value>
+  </data>
+  <data name="rep.harderLine" xml:space="preserve">
+    <value>Кеча {a}%, одатда {b}% · {n} жавоб</value>
+  </data>
+  <data name="rep.heroesTitle" xml:space="preserve">
+    <value>Кун қаҳрамонлари</value>
+  </data>
+  <data name="rep.heroesSub" xml:space="preserve">
+    <value>Энг кўп янги саволни ўзлаштирганлар.</value>
+  </data>
+  <data name="rep.heroLine" xml:space="preserve">
+    <value>+{n} янги савол</value>
+  </data>
+  <data name="rep.anomTitle" xml:space="preserve">
+    <value>Шубҳали натижалар</value>
+  </data>
+  <data name="rep.anomNone" xml:space="preserve">
+    <value>Шубҳали натижа йўқ.</value>
+  </data>
+  <data name="rep.anom_fast" xml:space="preserve">
+    <value>Жуда тез</value>
+  </data>
+  <data name="rep.anom_random" xml:space="preserve">
+    <value>Тасодифий босиш</value>
+  </data>
+  <data name="rep.anomLine" xml:space="preserve">
+    <value>саволга {s} с · {a}% тўғри · {n} савол</value>
+  </data>
+  <data name="rep.noData" xml:space="preserve">
+    <value>Маълумот етарли эмас.</value>
+  </data>
+  <data name="notif.comeBack" xml:space="preserve">
+    <value>Сизни соғиндик! Бугун 20 та савол ишлаб, натижангизни сақлаб қолинг 💪</value>
+  </data>
+  <data name="form.imageShrunk" xml:space="preserve">
+    <value>Расм автоматик кичрайтирилди: {from} → {to} (сифат сақланади)</value>
+  </data>
+  <data name="lv.bcFlip" xml:space="preserve">
+    <value>Камерани алмаштириш</value>
+  </data>
+  <data name="lv.bcFlipFail" xml:space="preserve">
+    <value>Камерани алмаштириб бўлмади — телефонда иккинчи камера йўқ ёки рухсат берилмаган</value>
+  </data>
+  <data name="err.usernameInTrash" xml:space="preserve">
+    <value>Бу логин ўчирилганлар рўйхатидаги фойдаланувчига тегишли. Уни тикланг ёки бошқа логин танланг.</value>
+  </data>
+  <data name="users.bulkNone" xml:space="preserve">
+    <value>Ҳеч ким белгиланмади</value>
+  </data>
+  <data name="users.bulk_delete" xml:space="preserve">
+    <value>{n} та фойдаланувчи ўчирилди (3 кун ичида тиклаш мумкин)</value>
+  </data>
+  <data name="users.bulk_restore" xml:space="preserve">
+    <value>{n} та фойдаланувчи тикланди</value>
+  </data>
+  <data name="users.bulk_purge" xml:space="preserve">
+    <value>{n} та фойдаланувчи бутунлай ўчирилди</value>
+  </data>
+  <data name="users.bulkConfirmDelete" xml:space="preserve">
+    <value>Белгиланган {n} та фойдаланувчи ўчирилсинми? 3 кун ичида тиклаш мумкин.</value>
+  </data>
+  <data name="users.selectAll" xml:space="preserve">
+    <value>Ҳаммасини белгилаш</value>
+  </data>
+  <data name="users.selected" xml:space="preserve">
+    <value>та танланди</value>
+  </data>
+  <data name="users.deleteSelected" xml:space="preserve">
+    <value>Танланганларни ўчириш</value>
+  </data>
+  <data name="users.clearSel" xml:space="preserve">
+    <value>Бекор қилиш</value>
+  </data>
+  <data name="users.trashTitle" xml:space="preserve">
+    <value>Ўчирилганлар</value>
+  </data>
+  <data name="users.trashSub" xml:space="preserve">
+    <value>Ўчирилган фойдаланувчи тизимга кира олмайди ва ҳеч қаерда кўринмайди. 3 кун ичида тиклаш мумкин — кейин бутунлай ўчади. 1 ҳафта тизимга кирмаган ва савол ишламаган ўқувчилар шу ерга автоматик тушади.</value>
+  </data>
+  <data name="users.restoreSelected" xml:space="preserve">
+    <value>Танланганларни тиклаш</value>
+  </data>
+  <data name="users.purgeSelected" xml:space="preserve">
+    <value>Бутунлай ўчириш</value>
+  </data>
+  <data name="users.purgeConfirm" xml:space="preserve">
+    <value>Белгиланганлар бутунлай ўчирилади: натижалари ва тўлов тарихи ҳам. Қайтариб бўлмайди. Давом этилсинми?</value>
+  </data>
+  <data name="users.delAuto" xml:space="preserve">
+    <value>1 ҳафта фаол эмас — автоматик</value>
+  </data>
+  <data name="users.delAdmin" xml:space="preserve">
+    <value>Админ ўчирган</value>
+  </data>
+  <data name="users.restoreLeft" xml:space="preserve">
+    <value>Тиклаш учун {d} кун {h} соат қолди</value>
+  </data>
+  <data name="notif.usersAutoDeleted" xml:space="preserve">
+    <value>1 ҳафта тизимга кирмаган ва савол ишламаган {n} та ўқувчи ўчирилди: {names}. 3 кун ичида тиклаш мумкин.</value>
+  </data>
+  <data name="lg.place" xml:space="preserve">
+    <value>Ўрин</value>
+  </data>
+  <data name="lg.week" xml:space="preserve">
+    <value>Шу ҳафта</value>
+  </data>
+  <data name="lg.title" xml:space="preserve">
+    <value>Рейтинг ва ҳафталик ўзлаштириш</value>
+  </data>
+  <data name="lg.sub" xml:space="preserve">
+    <value>Ўрин — базадаги саволларнинг қанчасини тўғри ишлаганига қараб. Гуруҳ — охирги 7 кунда ишлаган саволлари (меъёр: ҳафтасига {n} та) ва тўғри жавоблар фоизига қараб.</value>
+  </data>
+  <data name="lg.mastered" xml:space="preserve">
+    <value>ўзлаштирган</value>
+  </data>
+  <data name="lg.none" xml:space="preserve">
+    <value>Ҳозирча ҳеч ким йўқ</value>
+  </data>
+  <data name="lg.showAll" xml:space="preserve">
+    <value>Ҳаммасини кўрсатиш ({n})</value>
+  </data>
+  <data name="lg.tier_good" xml:space="preserve">
+    <value>Яхши ўзлаштираётганлар</value>
+  </data>
+  <data name="lg.tier_average" xml:space="preserve">
+    <value>Ўртача ўзлаштираётганлар</value>
+  </data>
+  <data name="lg.tier_shame" xml:space="preserve">
+    <value>Шармандалар доскаси</value>
+  </data>
+  <data name="lg.tierHint_good" xml:space="preserve">
+    <value>Меъёрни бажарган ва 85%+ тўғри топган</value>
+  </data>
+  <data name="lg.tierHint_average" xml:space="preserve">
+    <value>Ишлаяпти, лекин меъёр ёки тўғрилик етмаяпти</value>
+  </data>
+  <data name="lg.tierHint_shame" xml:space="preserve">
+    <value>Бу ҳафта жуда кам ишлаган ёки кўп хато қилган</value>
+  </data>
+  <data name="lg.why_few" xml:space="preserve">
+    <value>Бу ҳафта атиги {n} та савол (меъёр {t})</value>
+  </data>
+  <data name="lg.why_errors" xml:space="preserve">
+    <value>{n} та савол, лекин атиги {p}% тўғри</value>
+  </data>
+  <data name="lg.why_good" xml:space="preserve">
+    <value>{n} та савол · {p}% тўғри</value>
+  </data>
+  <data name="lg.why_moreVolume" xml:space="preserve">
+    <value>{n} та савол · {p}% тўғри — меъёргача оз қолди</value>
+  </data>
+  <data name="lg.why_moreAccuracy" xml:space="preserve">
+    <value>{n} та савол · {p}% тўғри — хатоларни камайтириш керак</value>
+  </data>
+  <data name="lg.badge_champion" xml:space="preserve">
+    <value>Чемпион</value>
+  </data>
+  <data name="lg.badge_master" xml:space="preserve">
+    <value>Уста</value>
+  </data>
+  <data name="lg.badge_expert" xml:space="preserve">
+    <value>Моҳир</value>
+  </data>
+  <data name="lg.ofN" xml:space="preserve">
+    <value>{n} тадан</value>
+  </data>
+  <data name="lg.youAre" xml:space="preserve">
+    <value>Сиз умумий рейтингда {r}-ўриндасиз</value>
+  </data>
+  <data name="lg.weekNorm" xml:space="preserve">
+    <value>Ҳафталик меъёр (савол)</value>
+  </data>
+  <data name="lg.weekAcc" xml:space="preserve">
+    <value>Шу ҳафтадаги тўғри жавоблар</value>
+  </data>
+  <data name="lg.leaders" xml:space="preserve">
+    <value>Пешқадамлар</value>
+  </data>
+  <data name="lg.motiv_top" xml:space="preserve">
+    <value>Сиз энг кучлилар қаторидасиз! Бу мақомни сақлаб қолиш учун ҳар куни озгина бўлса ҳам ишланг — орқангиздагилар қувиб келмоқда.</value>
+  </data>
+  <data name="lg.motiv_good_1" xml:space="preserve">
+    <value>Зўр кетяпсиз! Шу суръатда давом этсангиз, имтиҳонни биринчи уринишда топширасиз.</value>
+  </data>
+  <data name="lg.motiv_good_2" xml:space="preserve">
+    <value>Ажойиб натижа! Энди 1–3-ўринларни нишонга олинг — бу мақом сиз учун.</value>
+  </data>
+  <data name="lg.motiv_good_3" xml:space="preserve">
+    <value>Билимингиз мустаҳкамланяпти. Реал имтиҳон режимида ўзингизни синаб кўринг!</value>
+  </data>
+  <data name="lg.motiv_average_1" xml:space="preserve">
+    <value>Яхши бошладингиз! Ҳафталик меъёр — {t} та савол. Бир оз кўпроқ ишласангиз, «Яхши» гуруҳига ўтасиз.</value>
+  </data>
+  <data name="lg.motiv_average_2" xml:space="preserve">
+    <value>Сиз {r}-ўриндасиз — ҳар бир тўғри жавоб сизни юқорига кўтаради. Хатоларни тузатишдан бошланг!</value>
+  </data>
+  <data name="lg.motiv_average_3" xml:space="preserve">
+    <value>Барқарорлик — ғалаба калити. Ҳар куни 20 та савол ишланг ва натижа ўзи келади.</value>
+  </data>
+  <data name="lg.motiv_shame_1" xml:space="preserve">
+    <value>Бу ҳафта сиз «Шармандалар доскаси»дасиз 😬 Ҳали кеч эмас — бугун 20 та савол ишланг ва бу рўйхатдан чиқинг!</value>
+  </data>
+  <data name="lg.motiv_shame_2" xml:space="preserve">
+    <value>Ҳайдовчилик гувоҳномаси ўз-ўзидан келмайди. Бу ҳафта атиги {n} та савол ишладингиз — меъёр {t} та. Қани, бошладик!</value>
+  </data>
+  <data name="lg.motiv_shame_3" xml:space="preserve">
+    <value>Бошқалар олдинга кетяпти — сиз ҳам қила оласиз! Хатоларни тузатишдан бошланг, ҳар бири сизни юқорига олиб чиқади.</value>
+  </data>
+  <data name="cab.factorExamsHint" xml:space="preserve">
+    <value>«Реал имтиҳон» бўлимидаги охирги 5 та тестингизда ўртача неча фоиз тўғри топганингиз. 90% ва ундан юқори — имтиҳонга тайёрсиз.</value>
+  </data>
+  <data name="cab.factorExamsNone" xml:space="preserve">
+    <value>Ҳали «Реал имтиҳон» тестини ишламагансиз — бир марта ишлаб кўринг, натижа шу ерда чиқади.</value>
+  </data>
+  <data name="rep.discBad" xml:space="preserve">
+    <value>Аълочилар суст ўқувчилардан ҳам кўп хато қиляпти. Эҳтимол, тўғри жавоб нотўғри белгиланган — текширинг.</value>
+  </data>
+  <data name="rep.discWeak" xml:space="preserve">
+    <value>Аълочилар ҳам, сустлар ҳам деярли бир хил натижа кўрсатяпти — савол матни чалкаш ёки икки хил тушунилиши мумкин.</value>
+  </data>
+  <data name="rep.discCheck" xml:space="preserve">
+    <value>Саволни очиб текшириш →</value>
+  </data>
+  <data name="msg.title" xml:space="preserve">
+    <value>Хабарлар</value>
+  </data>
+  <data name="msg.sub" xml:space="preserve">
+    <value>Админ билан ёзишма: савол беринг, таклиф ёки муаммони ёзинг — жавоб шу ерга келади.</value>
+  </data>
+  <data name="msg.adminSub" xml:space="preserve">
+    <value>Ўқувчилар билан ёзишмалар. Исталган ўқувчини қидириб ёзинг ёки ҳаммага бирдан хабар юборинг.</value>
+  </data>
+  <data name="msg.adminName" xml:space="preserve">
+    <value>Администратор</value>
+  </data>
+  <data name="msg.adminHint" xml:space="preserve">
+    <value>Одатда бир неча соат ичида жавоб беради</value>
+  </data>
+  <data name="msg.placeholder" xml:space="preserve">
+    <value>Хабар ёзинг… (Энтер — юбориш, Шифт+Энтер — янги қатор)</value>
+  </data>
+  <data name="msg.send" xml:space="preserve">
+    <value>Юбориш</value>
+  </data>
+  <data name="msg.empty" xml:space="preserve">
+    <value>Ҳали хабар йўқ. Саволингиз бўлса — шу ерга ёзинг, админ жавоб беради.</value>
+  </data>
+  <data name="msg.emptyAdmin" xml:space="preserve">
+    <value>Бу ўқувчи билан ҳали ёзишма йўқ. Биринчи хабарни ёзинг.</value>
+  </data>
+  <data name="msg.today" xml:space="preserve">
+    <value>Бугун</value>
+  </data>
+  <data name="msg.yesterday" xml:space="preserve">
+    <value>Кеча</value>
+  </data>
+  <data name="msg.you" xml:space="preserve">
+    <value>Сиз</value>
+  </data>
+  <data name="msg.search" xml:space="preserve">
+    <value>Ўқувчини қидириш (исм, логин, телефон)</value>
+  </data>
+  <data name="msg.noThreads" xml:space="preserve">
+    <value>Ҳали ёзишма йўқ. Юқоридан ўқувчини қидириб, унга ёзинг.</value>
+  </data>
+  <data name="msg.noFound" xml:space="preserve">
+    <value>Ҳеч ким топилмади</value>
+  </data>
+  <data name="msg.pick" xml:space="preserve">
+    <value>Суҳбатни танланг</value>
+  </data>
+  <data name="msg.pickHint" xml:space="preserve">
+    <value>Чапдан ўқувчини танланг ёки қидиринг</value>
+  </data>
+  <data name="msg.profile" xml:space="preserve">
+    <value>Ўқувчи таҳлили →</value>
+  </data>
+  <data name="msg.broadcast" xml:space="preserve">
+    <value>Ҳаммага хабар</value>
+  </data>
+  <data name="msg.broadcastPh" xml:space="preserve">
+    <value>Барча фаол ўқувчиларга юбориладиган хабар…</value>
+  </data>
+  <data name="msg.broadcastSend" xml:space="preserve">
+    <value>Ҳаммага юбориш</value>
+  </data>
+  <data name="msg.broadcastConfirm" xml:space="preserve">
+    <value>Хабар барча фаол ўқувчиларга юборилсинми?</value>
+  </data>
+  <data name="msg.broadcastDone" xml:space="preserve">
+    <value>Хабар {n} та ўқувчига юборилди</value>
+  </data>
+  <data name="msg.sendFail" xml:space="preserve">
+    <value>Хабар юборилмади. Интернетни текшириб, қайта уриниб кўринг.</value>
+  </data>
+  <data name="msg.tooMany" xml:space="preserve">
+    <value>Жуда тез ёзяпсиз — бир дақиқадан кейин яна юборинг.</value>
+  </data>
+  <data name="notif.msgNew" xml:space="preserve">
+    <value>Админдан янги хабар: {text}</value>
+  </data>
+  <data name="sv.title" xml:space="preserve">
+    <value>Сақланган саволлар</value>
+  </data>
+  <data name="sv.sub" xml:space="preserve">
+    <value>Тест пайтида «☆ Сақлаш» тугмаси билан сақлаган саволларингиз. Уларни алоҳида ишлаб, мустаҳкамланг.</value>
+  </data>
+  <data name="sv.save" xml:space="preserve">
+    <value>Сақлаш</value>
+  </data>
+  <data name="sv.saved" xml:space="preserve">
+    <value>Сақланган</value>
+  </data>
+  <data name="sv.added" xml:space="preserve">
+    <value>Савол сақланганларга қўшилди ★</value>
+  </data>
+  <data name="sv.removed" xml:space="preserve">
+    <value>Савол сақланганлардан олиб ташланди</value>
+  </data>
+  <data name="sv.fail" xml:space="preserve">
+    <value>Сақлаб бўлмади, қайта уриниб кўринг</value>
+  </data>
+  <data name="sv.limit" xml:space="preserve">
+    <value>Кўпи билан 1000 та савол сақлаш мумкин</value>
+  </data>
+  <data name="sv.video" xml:space="preserve">
+    <value>Видео тушунтириш</value>
+  </data>
+  <data name="sv.close" xml:space="preserve">
+    <value>Ёпиш</value>
+  </data>
+  <data name="sv.practiceAll" xml:space="preserve">
+    <value>Ҳаммасини ишлаш ({n})</value>
+  </data>
+  <data name="sv.practiceSel" xml:space="preserve">
+    <value>Танланганларни ишлаш</value>
+  </data>
+  <data name="sv.removeSel" xml:space="preserve">
+    <value>Олиб ташлаш</value>
+  </data>
+  <data name="sv.removeConfirm" xml:space="preserve">
+    <value>Белгиланган саволлар сақланганлардан олиб ташлансинми?</value>
+  </data>
+  <data name="sv.cleared" xml:space="preserve">
+    <value>{n} та савол олиб ташланди</value>
+  </data>
+  <data name="sv.empty" xml:space="preserve">
+    <value>Ҳали сақланган савол йўқ</value>
+  </data>
+  <data name="sv.emptyText" xml:space="preserve">
+    <value>Тест ишлаётганда қийин ёки муҳим саволни «☆ Сақлаш» тугмаси билан сақланг — у шу ерда пайдо бўлади.</value>
+  </data>
+  <data name="sv.bilet" xml:space="preserve">
+    <value>{n}-билет</value>
+  </data>
+  <data name="sv.inMistakes" xml:space="preserve">
+    <value>хато қилинган</value>
+  </data>
+  <data name="sv.solveOne" xml:space="preserve">
+    <value>Шу саволни ишлаш</value>
+  </data>
+  <data name="testType.saved" xml:space="preserve">
+    <value>Сақланган саволлар</value>
+  </data>
+  <data name="ls.adminSub2" xml:space="preserve">
+    <value>Мавзуни танланг → саволларни белгиланг → улар учун видео қўшинг. Битта видео бир нечта мавзудаги саволларни тушунтириши мумкин.</value>
+  </data>
+  <data name="ls.kpiPublishedShort" xml:space="preserve">
+    <value>эълон қилинган</value>
+  </data>
+  <data name="ls.kpiCovered" xml:space="preserve">
+    <value>Видеода тушунтирилган саволлар</value>
+  </data>
+  <data name="ls.mExplained" xml:space="preserve">
+    <value>видеода</value>
+  </data>
+  <data name="ls.topicSub" xml:space="preserve">
+    <value>Саволларни белгиланг: улар учун янги видео яратинг ёки мавжуд видеога қўшинг. Яшил чизиқ — савол аллақачон видеода тушунтирилган.</value>
+  </data>
+  <data name="ls.newEmpty" xml:space="preserve">
+    <value>Бўш видео</value>
+  </data>
+  <data name="ls.topicVideos" xml:space="preserve">
+    <value>Шу мавзу видеолари</value>
+  </data>
+  <data name="ls.nQuestions" xml:space="preserve">
+    <value>{n} та савол</value>
+  </data>
+  <data name="ls.onlyFree" xml:space="preserve">
+    <value>Фақат видеосизлар</value>
+  </data>
+  <data name="ls.newForSel" xml:space="preserve">
+    <value>Белгиланганлар учун янги видео</value>
+  </data>
+  <data name="ls.attachSel" xml:space="preserve">
+    <value>Танланган видеога қўшиш</value>
+  </data>
+  <data name="ls.attached" xml:space="preserve">
+    <value>Саволлар видеога қўшилди. Энди ҳар бирига видеодаги вақтни белгиланг.</value>
+  </data>
+  <data name="ls.newVideo" xml:space="preserve">
+    <value>Янги видео</value>
+  </data>
+  <data name="ls.editSub2" xml:space="preserve">
+    <value>Видео юкланг ёки YouTube ҳаволасини қўйинг, саволларни танланг ва ҳар бирига видеодаги бошланиш вақтини белгиланг.</value>
+  </data>
+  <data name="ls.fTopic" xml:space="preserve">
+    <value>Асосий мавзу</value>
+  </data>
+  <data name="ls.pickedTitle" xml:space="preserve">
+    <value>Видеодаги саволлар</value>
+  </data>
+  <data name="ls.pickedHint" xml:space="preserve">
+    <value>Исталган мавзудан савол қўшинг. Вақт (м:сс) — савол тушунтирилиши бошланадиган жой: ўқувчи тест пайтида «🎬 Видео»ни босса, видео шу жойдан очилади. ⏱ — плеэрдаги ҳозирги вақтни қўйиш.</value>
+  </data>
+  <data name="ls.pickedSum" xml:space="preserve">
+    <value>{n} та савол · {m} та мавзудан</value>
+  </data>
+  <data name="ls.addQuestions" xml:space="preserve">
+    <value>Савол қўшиш (мавзудан танлаш)</value>
+  </data>
+  <data name="ls.pkSearch" xml:space="preserve">
+    <value>Савол матни ёки рақами…</value>
+  </data>
+  <data name="ls.noPicked" xml:space="preserve">
+    <value>Ҳали савол танланмаган. «Савол қўшиш»ни босинг.</value>
+  </data>
+  <data name="ls.delete" xml:space="preserve">
+    <value>Ўчириш</value>
+  </data>
+  <data name="ls.deleteConfirm" xml:space="preserve">
+    <value>Видео бутунлай ўчирилсинми? Файл, бўлимлар ва кўриш статистикаси ҳам ўчади.</value>
+  </data>
+  <data name="ls.deleted" xml:space="preserve">
+    <value>Видео ўчирилди</value>
+  </data>
+  <data name="th.allVideos" xml:space="preserve">
+    <value>Мавзу бўйича барча видеолар ({n})</value>
+  </data>
+  <data name="bilet.videos" xml:space="preserve">
+    <value>Видео ({n})</value>
+  </data>
+  <data name="bilet.videosSub" xml:space="preserve">
+    <value>Шу билет саволларини тушунтирадиган видео дарслар. Аввал кўринг, кейин билетни ишланг.</value>
+  </data>
+  <data name="bilet.solve" xml:space="preserve">
+    <value>Билетни ишлаш</value>
+  </data>
+  <data name="admin.content" xml:space="preserve">
+    <value>Контент</value>
+  </data>
+  <data name="admin.people" xml:space="preserve">
+    <value>Ўқувчилар</value>
+  </data>
+  <data name="admin.finance" xml:space="preserve">
+    <value>Молия</value>
+  </data>
+  <data name="login.locked" xml:space="preserve">
+    <value>Жуда кўп нотўғри уриниш. Хавфсизлик учун кириш {n} дақиқага тўхтатилди.</value>
+  </data>
+  <data name="qs.kInBilets" xml:space="preserve">
+    <value>Билетларда</value>
+  </data>
+  <data name="qs.kNoRu" xml:space="preserve">
+    <value>Русчаси йўқ</value>
+  </data>
+  <data name="qs.kNoUzk" xml:space="preserve">
+    <value>Кириллчаси йўқ</value>
+  </data>
+  <data name="qs.kVideo" xml:space="preserve">
+    <value>Видео билан</value>
+  </data>
+  <data name="qs.allTopics" xml:space="preserve">
+    <value>Барча мавзулар</value>
+  </data>
+  <data name="qs.allBilets" xml:space="preserve">
+    <value>Барча билетлар</value>
+  </data>
+  <data name="qs.moreFilters" xml:space="preserve">
+    <value>Қўшимча</value>
+  </data>
+  <data name="qs.poolAll" xml:space="preserve">
+    <value>Ҳаммаси</value>
+  </data>
+  <data name="qs.poolBilet" xml:space="preserve">
+    <value>Фақат билетлардаги</value>
+  </data>
+  <data name="qs.poolOther" xml:space="preserve">
+    <value>Билетга кирмаганлар</value>
+  </data>
+  <data name="qs.imgAll" xml:space="preserve">
+    <value>Расм: ҳаммаси</value>
+  </data>
+  <data name="qs.imgYes" xml:space="preserve">
+    <value>Расмли</value>
+  </data>
+  <data name="qs.imgNo" xml:space="preserve">
+    <value>Расмсиз</value>
+  </data>
+  <data name="qs.langAll" xml:space="preserve">
+    <value>Таржима: ҳаммаси</value>
+  </data>
+  <data name="qs.videoAll" xml:space="preserve">
+    <value>Видео: ҳаммаси</value>
+  </data>
+  <data name="qs.videoYes" xml:space="preserve">
+    <value>Видео бор</value>
+  </data>
+  <data name="qs.videoNo" xml:space="preserve">
+    <value>Видеосиз</value>
+  </data>
+  <data name="qs.sort" xml:space="preserve">
+    <value>Тартиб</value>
+  </data>
+  <data name="qs.sortNew" xml:space="preserve">
+    <value>Аввал янгилари</value>
+  </data>
+  <data name="qs.sortOld" xml:space="preserve">
+    <value>Аввал эскилари</value>
+  </data>
+  <data name="qs.sortBilet" xml:space="preserve">
+    <value>Билет тартибида</value>
+  </data>
+  <data name="qs.sortHard" xml:space="preserve">
+    <value>Энг қийинлари</value>
+  </data>
+  <data name="qs.reset" xml:space="preserve">
+    <value>Тозалаш</value>
+  </data>
+  <data name="qs.found" xml:space="preserve">
+    <value>{n} та савол · {a}–{b}</value>
+  </data>
+  <data name="qs.perPage" xml:space="preserve">
+    <value>саҳифада</value>
+  </data>
+  <data name="qs.hasVideo" xml:space="preserve">
+    <value>видео</value>
+  </data>
+  <data name="qs.noCorrect" xml:space="preserve">
+    <value>Тўғри жавоб белгиланмаган!</value>
+  </data>
+  <data name="qs.wrongShort" xml:space="preserve">
+    <value>хато</value>
+  </data>
+  <data name="qs.noStats" xml:space="preserve">
+    <value>Ҳали ишланмаган</value>
+  </data>
+  <data name="qs.statHint" xml:space="preserve">
+    <value>{n} марта ишланган, {w} марта хато</value>
+  </data>
+  <data name="bill.title" xml:space="preserve">
+    <value>Обуна ва тўловлар</value>
+  </data>
+  <data name="bill.sub" xml:space="preserve">
+    <value>Пайме орқали тушумлар, тарифлар, обуначилар ва созламалар.</value>
+  </data>
+  <data name="bill.tabOverview" xml:space="preserve">
+    <value>Умумий</value>
+  </data>
+  <data name="bill.tabPayments" xml:space="preserve">
+    <value>Тўловлар</value>
+  </data>
+  <data name="bill.tabPlans" xml:space="preserve">
+    <value>Тарифлар</value>
+  </data>
+  <data name="bill.tabSettings" xml:space="preserve">
+    <value>Созламалар</value>
+  </data>
+  <data name="bill.kToday" xml:space="preserve">
+    <value>Бугунги тушум</value>
+  </data>
+  <data name="bill.k30" xml:space="preserve">
+    <value>30 кунлик тушум</value>
+  </data>
+  <data name="bill.kTotal" xml:space="preserve">
+    <value>Жами тушум</value>
+  </data>
+  <data name="bill.kActive" xml:space="preserve">
+    <value>Фаол обуначилар</value>
+  </data>
+  <data name="bill.payers" xml:space="preserve">
+    <value>тўлаган</value>
+  </data>
+  <data name="bill.kExpired" xml:space="preserve">
+    <value>Муддати тугаганлар</value>
+  </data>
+  <data name="bill.kPending" xml:space="preserve">
+    <value>Тўлов кутилмоқда</value>
+  </data>
+  <data name="bill.chart" xml:space="preserve">
+    <value>Охирги 30 кун тушуми</value>
+  </data>
+  <data name="bill.ready" xml:space="preserve">
+    <value>Пайме текширувига тайёрлик</value>
+  </data>
+  <data name="bill.readySub" xml:space="preserve">
+    <value>Барчаси ✅ бўлса — сайт Пайме текширувидан ўтишга тайёр.</value>
+  </data>
+  <data name="bill.chkMerchant" xml:space="preserve">
+    <value>Пайме Мерчант ID киритилган</value>
+  </data>
+  <data name="bill.chkKey" xml:space="preserve">
+    <value>Пайме касса калити киритилган</value>
+  </data>
+  <data name="bill.chkPlans" xml:space="preserve">
+    <value>Камида битта фаол тариф бор</value>
+  </data>
+  <data name="bill.chkOffer" xml:space="preserve">
+    <value>Оммавий оферта саҳифаси</value>
+  </data>
+  <data name="bill.chkContacts" xml:space="preserve">
+    <value>Контактлар саҳифаси (телефон, манзил)</value>
+  </data>
+  <data name="bill.chkTariffs" xml:space="preserve">
+    <value>Нархлар кўрсатилган тарифлар саҳифаси</value>
+  </data>
+  <data name="bill.chkHttps" xml:space="preserve">
+    <value>Сайт ҲТТПС орқали ишлайди</value>
+  </data>
+  <data name="bill.chkVisible" xml:space="preserve">
+    <value>Обуна ўқувчиларга кўрсатилмоқда</value>
+  </data>
+  <data name="bill.recent" xml:space="preserve">
+    <value>Охирги тўловлар</value>
+  </data>
+  <data name="bill.noPayments" xml:space="preserve">
+    <value>Ҳали тўлов йўқ</value>
+  </data>
+  <data name="bill.expiring" xml:space="preserve">
+    <value>7 кунда муддати тугайдиганлар</value>
+  </data>
+  <data name="bill.grantTitle" xml:space="preserve">
+    <value>Қўлда муддат бериш (тўловсиз)</value>
+  </data>
+  <data name="bill.months" xml:space="preserve">
+    <value>Ой</value>
+  </data>
+  <data name="bill.days" xml:space="preserve">
+    <value>Кун</value>
+  </data>
+  <data name="bill.grant" xml:space="preserve">
+    <value>Муддат бериш</value>
+  </data>
+  <data name="bill.granted" xml:space="preserve">
+    <value>Муддат берилди</value>
+  </data>
+  <data name="bill.userNotFound" xml:space="preserve">
+    <value>Бундай логин топилмади (фақат ўқувчи)</value>
+  </data>
+  <data name="bill.grantInvalid" xml:space="preserve">
+    <value>Муддатни тўғри киритинг (ой 0–36, кун 0–1000)</value>
+  </data>
+  <data name="bill.searchPh" xml:space="preserve">
+    <value>Логин, исм, телефон, № ёки Пайме ID</value>
+  </data>
+  <data name="bill.allStatuses" xml:space="preserve">
+    <value>Барча ҳолатлар</value>
+  </data>
+  <data name="bill.allProviders" xml:space="preserve">
+    <value>Барча усуллар</value>
+  </data>
+  <data name="bill.byAdmin" xml:space="preserve">
+    <value>Админ берган</value>
+  </data>
+  <data name="bill.filter" xml:space="preserve">
+    <value>Қўллаш</value>
+  </data>
+  <data name="bill.found" xml:space="preserve">
+    <value>{n} та тўлов</value>
+  </data>
+  <data name="bill.paidSum" xml:space="preserve">
+    <value>Тўланган жами</value>
+  </data>
+  <data name="bill.colDate" xml:space="preserve">
+    <value>Сана</value>
+  </data>
+  <data name="bill.colUser" xml:space="preserve">
+    <value>Ўқувчи</value>
+  </data>
+  <data name="bill.colPlan" xml:space="preserve">
+    <value>Тариф</value>
+  </data>
+  <data name="bill.colAmount" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="bill.colProvider" xml:space="preserve">
+    <value>Усул</value>
+  </data>
+  <data name="bill.colStatus" xml:space="preserve">
+    <value>Ҳолат</value>
+  </data>
+  <data name="bill.colUntil" xml:space="preserve">
+    <value>Муддат охири</value>
+  </data>
+  <data name="bill.st_paid" xml:space="preserve">
+    <value>Тўланган</value>
+  </data>
+  <data name="bill.st_pending" xml:space="preserve">
+    <value>Кутилмоқда</value>
+  </data>
+  <data name="bill.st_cancelled" xml:space="preserve">
+    <value>Бекор қилинган</value>
+  </data>
+  <data name="bill.paidAt" xml:space="preserve">
+    <value>Тўланган вақт</value>
+  </data>
+  <data name="bill.period" xml:space="preserve">
+    <value>Давр</value>
+  </data>
+  <data name="bill.pmState" xml:space="preserve">
+    <value>Пайме ҳолати</value>
+  </data>
+  <data name="bill.pmTimes" xml:space="preserve">
+    <value>Яратилган / бажарилган / бекор</value>
+  </data>
+  <data name="bill.pmReason" xml:space="preserve">
+    <value>Бекор сабаби</value>
+  </data>
+  <data name="bill.cancelOrder" xml:space="preserve">
+    <value>Буюртмани бекор қилиш</value>
+  </data>
+  <data name="bill.cancelConfirm" xml:space="preserve">
+    <value>Тўланмаган буюртма бекор қилинсинми?</value>
+  </data>
+  <data name="bill.orderCancelled" xml:space="preserve">
+    <value>Буюртма бекор қилинди</value>
+  </data>
+  <data name="bill.cantCancel" xml:space="preserve">
+    <value>Бу буюртмани бекор қилиб бўлмайди (тўлов бошланган ёки якунланган)</value>
+  </data>
+  <data name="bill.userHistory" xml:space="preserve">
+    <value>Ўқувчининг тўловлари</value>
+  </data>
+  <data name="bill.plansHint" xml:space="preserve">
+    <value>Нарх сўмда. Нофаол тариф ўқувчиларга кўринмайди. Тўлов қилинган тариф ўчирилмайди — нофаол қилинади.</value>
+  </data>
+  <data name="bill.newPlan" xml:space="preserve">
+    <value>Янги тариф</value>
+  </data>
+  <data name="bill.planName" xml:space="preserve">
+    <value>Номи</value>
+  </data>
+  <data name="bill.price" xml:space="preserve">
+    <value>Нарх (сўм)</value>
+  </data>
+  <data name="bill.badge" xml:space="preserve">
+    <value>Белги</value>
+  </data>
+  <data name="bill.badgePh" xml:space="preserve">
+    <value>Энг оммабоп</value>
+  </data>
+  <data name="bill.order" xml:space="preserve">
+    <value>Тартиб</value>
+  </data>
+  <data name="bill.planActive" xml:space="preserve">
+    <value>Фаол (сотувда)</value>
+  </data>
+  <data name="bill.planSaved" xml:space="preserve">
+    <value>Тариф сақланди</value>
+  </data>
+  <data name="bill.planInvalid" xml:space="preserve">
+    <value>Тарифни тўғри тўлдиринг: ном, 1–36 ой, нарх камида 1 000 сўм</value>
+  </data>
+  <data name="bill.planDeleted" xml:space="preserve">
+    <value>Тариф ўчирилди</value>
+  </data>
+  <data name="bill.planDisabled" xml:space="preserve">
+    <value>Тарифда тўловлар бор — ўчирилмади, нофаол қилинди</value>
+  </data>
+  <data name="bill.planDeleteConfirm" xml:space="preserve">
+    <value>Тариф ўчирилсинми?</value>
+  </data>
+  <data name="bill.pmReady" xml:space="preserve">
+    <value>Уланган</value>
+  </data>
+  <data name="bill.pmNotReady" xml:space="preserve">
+    <value>Созланмаган</value>
+  </data>
+  <data name="bill.key" xml:space="preserve">
+    <value>Касса калити (Пайме кабинетидаги «Ключ»)</value>
+  </data>
+  <data name="bill.testKey" xml:space="preserve">
+    <value>Тест калити (синов муҳити учун)</value>
+  </data>
+  <data name="bill.keySaved" xml:space="preserve">
+    <value>сақланган</value>
+  </data>
+  <data name="bill.clearKey" xml:space="preserve">
+    <value>Калитни ўчириш</value>
+  </data>
+  <data name="bill.useTest" xml:space="preserve">
+    <value>Синов муҳити (тест.пайсом.уз)</value>
+  </data>
+  <data name="bill.useTestHint" xml:space="preserve">
+    <value>Пайме текшируви пайтида ёқинг — ҳақиқий пул ечилмайди. Текширувдан ўтгач ўчиринг.</value>
+  </data>
+  <data name="bill.returnUrl" xml:space="preserve">
+    <value>Тўловдан кейин қайтиш манзили</value>
+  </data>
+  <data name="bill.visible" xml:space="preserve">
+    <value>Ўқувчиларга кўрсатиш</value>
+  </data>
+  <data name="bill.visibleHint" xml:space="preserve">
+    <value>Ёқилмагунча ўқувчилар «Обуна» бўлимини ва тўлов тугмаларини кўрмайди. Пайме калитлари киритилгач ёқинг.</value>
+  </data>
+  <data name="bill.company" xml:space="preserve">
+    <value>Тадбиркор / ташкилот номи</value>
+  </data>
+  <data name="bill.badMerchant" xml:space="preserve">
+    <value>Мерчант ID 24 белгидан иборат бўлиши керак (0-9, а-ф)</value>
+  </data>
+  <data name="bill.badReturn" xml:space="preserve">
+    <value>Қайтиш манзили ҳттпс:// билан бошланиши керак</value>
+  </data>
+  <data name="bill.settingsSaved" xml:space="preserve">
+    <value>Созламалар сақланди</value>
+  </data>
+  <data name="bill.howTitle" xml:space="preserve">
+    <value>Паймеъни улаш тартиби</value>
+  </data>
+  <data name="bill.how1" xml:space="preserve">
+    <value>бусинесс.пайме.уз да касса яратинг (тадбиркор ёки МЧЖ номига).</value>
+  </data>
+  <data name="bill.how2" xml:space="preserve">
+    <value>Касса созламаларида «Эндпоинт URL» сифатида шуни ёзинг:</value>
+  </data>
+  <data name="bill.how3" xml:space="preserve">
+    <value>Ҳисоб (ассоунт) майдони номи:</value>
+  </data>
+  <data name="bill.how4" xml:space="preserve">
+    <value>Касса ID (Мерчант ID) ва тест калитини чапдаги формага киритинг, «Синов муҳити»ни ёқинг.</value>
+  </data>
+  <data name="bill.how5" xml:space="preserve">
+    <value>Пайме сандбохъда барча тестлардан ўтинг, сўнг текширувга юборинг (тарифлар, оферта, контактлар саҳифалари тайёр).</value>
+  </data>
+  <data name="bill.how6" xml:space="preserve">
+    <value>Тасдиқлангач ҳақиқий калитни киритинг, «Синов муҳити»ни ўчиринг ва «Ўқувчиларга кўрсатиш»ни ёқинг.</value>
+  </data>
+  <data name="bill.pubPages" xml:space="preserve">
+    <value>Очиқ саҳифалар (Пайме текширади)</value>
+  </data>
+  <data name="pay.title" xml:space="preserve">
+    <value>Обуна</value>
+  </data>
+  <data name="pay.sub" xml:space="preserve">
+    <value>Кириш муддатингиз ва уни узайтириш. Тўлов Пайме орқали — хавфсиз ва тез.</value>
+  </data>
+  <data name="pay.unlimited" xml:space="preserve">
+    <value>Чексиз кириш</value>
+  </data>
+  <data name="pay.activeUntil" xml:space="preserve">
+    <value>Обуна {d} гача фаол</value>
+  </data>
+  <data name="pay.expired" xml:space="preserve">
+    <value>Обуна муддати тугаган</value>
+  </data>
+  <data name="pay.history" xml:space="preserve">
+    <value>Тўловлар тарихи</value>
+  </data>
+  <data name="pay.errOrder" xml:space="preserve">
+    <value>Буюртма яратиб бўлмади. Кейинроқ уриниб кўринг.</value>
+  </data>
+  <data name="pay.doneTitle" xml:space="preserve">
+    <value>Тўлов қабул қилинди!</value>
+  </data>
+  <data name="pay.doneText" xml:space="preserve">
+    <value>Обунангиз {d} гача фаоллаштирилди. Омад!</value>
+  </data>
+  <data name="pay.cancelledTitle" xml:space="preserve">
+    <value>Тўлов бекор қилинди</value>
+  </data>
+  <data name="pay.tryAgain" xml:space="preserve">
+    <value>Қайта уриниш</value>
+  </data>
+  <data name="pay.waitTitle" xml:space="preserve">
+    <value>Тўлов текширилмоқда…</value>
+  </data>
+  <data name="pay.waitText" xml:space="preserve">
+    <value>Пайме тасдиқлаши билан обуна фаоллашади. Саҳифа ўзи янгиланади.</value>
+  </data>
+  <data name="pub.metaDesc" xml:space="preserve">
+    <value>АВТОПРАВА_SAM — ҳайдовчилик гувоҳномаси имтиҳонига онлайн тайёргарлик: билетлар, мавзулар, видео дарслар.</value>
+  </data>
+  <data name="pub.tariffs" xml:space="preserve">
+    <value>Тарифлар</value>
+  </data>
+  <data name="pub.offer" xml:space="preserve">
+    <value>Оммавий оферта</value>
+  </data>
+  <data name="pub.offerTitle" xml:space="preserve">
+    <value>Оммавий оферта (хизмат кўрсатиш шартномаси)</value>
+  </data>
+  <data name="pub.contacts" xml:space="preserve">
+    <value>Контактлар</value>
+  </data>
+  <data name="pub.privacy" xml:space="preserve">
+    <value>Махфийлик сиёсати</value>
+  </data>
+  <data name="pub.login" xml:space="preserve">
+    <value>Кириш</value>
+  </data>
+  <data name="pub.address" xml:space="preserve">
+    <value>Самарқанд шаҳри, Мир Саид Барака кўчаси, 22-уй</value>
+  </data>
+  <data name="pub.payWith" xml:space="preserve">
+    <value>Тўловлар</value>
+  </data>
+  <data name="pub.tariffsKicker" xml:space="preserve">
+    <value>Обуна</value>
+  </data>
+  <data name="pub.tariffsTitle" xml:space="preserve">
+    <value>Имтиҳонга ишонч билан тайёрланинг</value>
+  </data>
+  <data name="pub.tariffsSub" xml:space="preserve">
+    <value>Барча билетлар, мавзулар, реал имтиҳон режими, видео дарслар ва шахсий таҳлил — битта обунада.</value>
+  </data>
+  <data name="pub.noPlans" xml:space="preserve">
+    <value>Тарифлар тез орада эълон қилинади.</value>
+  </data>
+  <data name="pub.sum" xml:space="preserve">
+    <value>сўм</value>
+  </data>
+  <data name="pub.months" xml:space="preserve">
+    <value>{n} ой</value>
+  </data>
+  <data name="pub.perMonth" xml:space="preserve">
+    <value>ойига {n} сўм</value>
+  </data>
+  <data name="pub.f1" xml:space="preserve">
+    <value>Барча билетлар ва мавзулар бўйича тестлар</value>
+  </data>
+  <data name="pub.f2" xml:space="preserve">
+    <value>Реал имтиҳон режими (25 дақиқа, 20 савол)</value>
+  </data>
+  <data name="pub.f3" xml:space="preserve">
+    <value>Ҳар бир саволга видео тушунтириш</value>
+  </data>
+  <data name="pub.f4" xml:space="preserve">
+    <value>Хатоларни тузатиш ва сақланган саволлар</value>
+  </data>
+  <data name="pub.f5" xml:space="preserve">
+    <value>Шахсий таҳлил, рейтинг ва жонли дарслар</value>
+  </data>
+  <data name="pub.f6" xml:space="preserve">
+    <value>Ўзбек (лотин, кирилл) ва рус тилларида</value>
+  </data>
+  <data name="pub.payPayme" xml:space="preserve">
+    <value>Пайме орқали тўлаш</value>
+  </data>
+  <data name="pub.loginToBuy" xml:space="preserve">
+    <value>Сотиб олиш учун киринг</value>
+  </data>
+  <data name="pub.howTitle" xml:space="preserve">
+    <value>Қандай ишлайди</value>
+  </data>
+  <data name="pub.how1" xml:space="preserve">
+    <value>Тарифни танланг ва «Пайме орқали тўлаш»ни босинг.</value>
+  </data>
+  <data name="pub.how2" xml:space="preserve">
+    <value>Пайме саҳифасида карта (Узсард, Ҳумо) билан тўланг.</value>
+  </data>
+  <data name="pub.how3" xml:space="preserve">
+    <value>Кириш ҳуқуқи тўловдан сўнг дарҳол автоматик очилади.</value>
+  </data>
+  <data name="pub.offerNote" xml:space="preserve">
+    <value>Тўлов қилиш орқали сиз қуйидаги шартларга розилик билдирасиз:</value>
+  </data>
+  <data name="pub.contactsSub" xml:space="preserve">
+    <value>Савол, таклиф ёки тўлов бўйича мурожаат учун.</value>
+  </data>
+  <data name="pub.phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="pub.addrLabel" xml:space="preserve">
+    <value>Манзил</value>
+  </data>
+  <data name="pub.hoursLabel" xml:space="preserve">
+    <value>Иш вақти</value>
+  </data>
+  <data name="pub.hours" xml:space="preserve">
+    <value>Ҳар куни 09:00 — 21:00</value>
+  </data>
+  <data name="pub.requisites" xml:space="preserve">
+    <value>Реквизитлар</value>
+  </data>
+  <data name="pub.inn" xml:space="preserve">
+    <value>STIR</value>
+  </data>
+  <data name="pr.title" xml:space="preserve">
+    <value>Кунлик таҳлилим</value>
+  </data>
+  <data name="pr.pageSub" xml:space="preserve">
+    <value>Ҳар куни сиз учун алоҳида: қанча ишладингиз, нимани ўргандингиз, нимани унутдингиз ва эртага нима қилиш керак.</value>
+  </data>
+  <data name="pr.sub" xml:space="preserve">
+    <value>Олдинги 7 кун билан таққосланган шахсий таҳлил</value>
+  </data>
+  <data name="pr.noWork" xml:space="preserve">
+    <value>Бу куни савол ишланмаган</value>
+  </data>
+  <data name="pr.moodGreat" xml:space="preserve">
+    <value>Ажойиб кун! Меъёр бажарилди, натижа аъло 🔥</value>
+  </data>
+  <data name="pr.moodGood" xml:space="preserve">
+    <value>Яхши кун — давом этинг 👍</value>
+  </data>
+  <data name="pr.moodWeak" xml:space="preserve">
+    <value>Хатолар кўп бўлди — қуйидаги тавсияларга эътибор беринг</value>
+  </data>
+  <data name="pr.kAnswered" xml:space="preserve">
+    <value>Ишланган саволлар</value>
+  </data>
+  <data name="pr.kAccuracy" xml:space="preserve">
+    <value>Тўғри жавоблар</value>
+  </data>
+  <data name="pr.kTime" xml:space="preserve">
+    <value>Ўқиш вақти</value>
+  </data>
+  <data name="pr.kNew" xml:space="preserve">
+    <value>Янги ўзлаштирилди</value>
+  </data>
+  <data name="pr.kNewSub" xml:space="preserve">
+    <value>биринчи марта тўғри</value>
+  </data>
+  <data name="pr.kForgot" xml:space="preserve">
+    <value>Унутилган</value>
+  </data>
+  <data name="pr.kForgotSub" xml:space="preserve">
+    <value>олдин тўғри эди, энди хато</value>
+  </data>
+  <data name="pr.kExam" xml:space="preserve">
+    <value>Реал имтиҳон</value>
+  </data>
+  <data name="pr.kExamSub" xml:space="preserve">
+    <value>ўтди / жами</value>
+  </data>
+  <data name="pr.tests" xml:space="preserve">
+    <value>та тест</value>
+  </data>
+  <data name="pr.vsWeek" xml:space="preserve">
+    <value>ҳафталик ўртачага нисбатан</value>
+  </data>
+  <data name="pr.recTitle" xml:space="preserve">
+    <value>Сиз учун тавсиялар</value>
+  </data>
+  <data name="pr.topicsTitle" xml:space="preserve">
+    <value>Мавзулар бўйича натижа</value>
+  </data>
+  <data name="pr.recStart" xml:space="preserve">
+    <value>Бу куни машғулот бўлмаган. Бугун камида 20 та савол ишланг — ҳар кунги кичик қадам имтиҳонда катта натижа беради.</value>
+  </data>
+  <data name="pr.recMore" xml:space="preserve">
+    <value>Кунлик меъёрга яна {v} та савол етмади. Эртага 20 тадан кам ишламанг.</value>
+  </data>
+  <data name="pr.recTopic" xml:space="preserve">
+    <value>Энг кўп хато «{v}» мавзусида. Мавзу видеосини кўриб, шу мавзу тестини қайта ишланг.</value>
+  </data>
+  <data name="pr.recForgot" xml:space="preserve">
+    <value>{v} та саволни унутгансиз (олдин тўғри эди). «Хатоларни тузатиш» бўлимида такрорланг.</value>
+  </data>
+  <data name="pr.recMistakes" xml:space="preserve">
+    <value>Ҳозир {v} та хато тузатилмаган. Ҳар куни улардан 10 тасини тузатинг.</value>
+  </data>
+  <data name="pr.recExam" xml:space="preserve">
+    <value>Натижангиз яхши — «Реал имтиҳон» режимида ўзингизни синаб кўринг.</value>
+  </data>
+  <data name="pr.recExamFail" xml:space="preserve">
+    <value>Реал имтиҳондан ўта олмадингиз. Хатоларни тузатиб, эртага яна уриниб кўринг.</value>
+  </data>
+  <data name="pr.recGreat" xml:space="preserve">
+    <value>Ҳаммаси аъло! Шу суръатни сақланг ва пешқадамлар қаторига чиқинг.</value>
+  </data>
+  <data name="lg.navTitle" xml:space="preserve">
+    <value>Рейтинг</value>
+  </data>
+  <data name="lg.you" xml:space="preserve">
+    <value>Сиз</value>
+  </data>
+  <data name="bill.onSale" xml:space="preserve">
+    <value>Сотувда</value>
+  </data>
+  <data name="bill.offSale" xml:space="preserve">
+    <value>Сотувда эмас</value>
+  </data>
+  <data name="bill.perMonthShort" xml:space="preserve">
+    <value>ой</value>
+  </data>
+  <data name="bill.soonTitle" xml:space="preserve">
+    <value>Онлайн тўлов тез кунда</value>
+  </data>
+  <data name="bill.soonText" xml:space="preserve">
+    <value>Паймеъга ариза берилган. Жавоб келгач тўлов уланади. Ҳозирча ўқувчилар тарифларни кўради, тўлов тугмаси «тез кунда» ҳолатида; логин фақат админ томонидан берилади.</value>
+  </data>
+  <data name="bill.waitPayme" xml:space="preserve">
+    <value>Пайме жавоби кутилмоқда</value>
+  </data>
+  <data name="pay.soonTitle" xml:space="preserve">
+    <value>Тўлов тез кунда ишга тушади</value>
+  </data>
+  <data name="pay.soonText" xml:space="preserve">
+    <value>Онлайн тўлов (Пайме) уланмоқда. Ҳозирча обуна учун админ билан боғланинг — у муддатингизни узайтиради.</value>
+  </data>
+  <data name="pay.soonShort" xml:space="preserve">
+    <value>— ҳозирча обуна учун админ билан боғланинг.</value>
+  </data>
+  <data name="pay.soonBtn" xml:space="preserve">
+    <value>Тез кунда</value>
+  </data>
+  <data name="reg.title" xml:space="preserve">
+    <value>Рўйхатдан ўтиш</value>
+  </data>
+  <data name="reg.kicker" xml:space="preserve">
+    <value>Янги ўқувчи</value>
+  </data>
+  <data name="reg.heading" xml:space="preserve">
+    <value>Ҳайдовчилик имтиҳонига биз билан тайёрланинг</value>
+  </data>
+  <data name="reg.sub" xml:space="preserve">
+    <value>Ариза қолдиринг — администратор сиз билан боғланади ва логин-парол беради.</value>
+  </data>
+  <data name="reg.step1" xml:space="preserve">
+    <value>Исм ва телефон рақамингизни ёзинг</value>
+  </data>
+  <data name="reg.step2" xml:space="preserve">
+    <value>Администратор сиз билан боғланади</value>
+  </data>
+  <data name="reg.step3" xml:space="preserve">
+    <value>Логин-парол олиб, ўқишни бошлайсиз</value>
+  </data>
+  <data name="reg.wantLogin" xml:space="preserve">
+    <value>Хоҳлаган логин (ихтиёрий)</value>
+  </data>
+  <data name="reg.note" xml:space="preserve">
+    <value>Изоҳ (ихтиёрий)</value>
+  </data>
+  <data name="reg.notePh" xml:space="preserve">
+    <value>Масалан: қайси тоифа, қачон имтиҳон...</value>
+  </data>
+  <data name="reg.agree" xml:space="preserve">
+    <value>Шартларга розиман:</value>
+  </data>
+  <data name="reg.send" xml:space="preserve">
+    <value>Ариза юбориш</value>
+  </data>
+  <data name="reg.haveLogin" xml:space="preserve">
+    <value>Логин борми?</value>
+  </data>
+  <data name="reg.noLogin" xml:space="preserve">
+    <value>Ҳали логин йўқми?</value>
+  </data>
+  <data name="reg.errName" xml:space="preserve">
+    <value>Исм-фамилияни тўлиқ ёзинг</value>
+  </data>
+  <data name="reg.errAgree" xml:space="preserve">
+    <value>Шартларга розилигингизни белгиланг</value>
+  </data>
+  <data name="reg.errMany" xml:space="preserve">
+    <value>Жуда кўп ариза юборилди. Бир соатдан кейин уриниб кўринг.</value>
+  </data>
+  <data name="reg.doneTitle" xml:space="preserve">
+    <value>Аризангиз қабул қилинди!</value>
+  </data>
+  <data name="reg.againTitle" xml:space="preserve">
+    <value>Аризангиз аллақачон бор</value>
+  </data>
+  <data name="reg.doneText" xml:space="preserve">
+    <value>Администратор тез орада сиз билан боғланиб, логин ва парол беради.</value>
+  </data>
+  <data name="reg.adminTitle" xml:space="preserve">
+    <value>Рўйхатдан ўтиш аризалари</value>
+  </data>
+  <data name="reg.adminSub" xml:space="preserve">
+    <value>Сайтдан қолдирилган аризалар. «Логин бериш» — маълумотлар олдиндан тўлдирилган фойдаланувчи формаси очилади.</value>
+  </data>
+  <data name="reg.pendingN" xml:space="preserve">
+    <value>та янги</value>
+  </data>
+  <data name="reg.none" xml:space="preserve">
+    <value>Ҳали ариза йўқ</value>
+  </data>
+  <data name="reg.st_pending" xml:space="preserve">
+    <value>Янги</value>
+  </data>
+  <data name="reg.st_approved" xml:space="preserve">
+    <value>Логин берилди</value>
+  </data>
+  <data name="reg.st_rejected" xml:space="preserve">
+    <value>Рад этилди</value>
+  </data>
+  <data name="reg.giveLogin" xml:space="preserve">
+    <value>Логин бериш</value>
+  </data>
+  <data name="reg.reject" xml:space="preserve">
+    <value>Рад этиш</value>
+  </data>
+  <data name="reg.rejectConfirm" xml:space="preserve">
+    <value>Ариза рад этилсинми?</value>
+  </data>
+  <data name="reg.rejected" xml:space="preserve">
+    <value>Ариза рад этилди</value>
+  </data>
+  <data name="reg.openUser" xml:space="preserve">
+    <value>Фойдаланувчини очиш →</value>
+  </data>
+  <data name="reg.fromRequest" xml:space="preserve">
+    <value>Рўйхатдан ўтиш аризасидан: маълумотлар олдиндан тўлдирилди. Паролни киритинг ва сақланг — ариза ёпилади.</value>
+  </data>
+  <data name="notif.regNew" xml:space="preserve">
+    <value>Янги рўйхатдан ўтиш аризаси: {name} ({phone})</value>
+  </data>
+  <data name="reg.navShort" xml:space="preserve">
+    <value>Аризалар</value>
+  </data>
+  <data name="msg.select" xml:space="preserve">
+    <value>Танлаш</value>
+  </data>
+  <data name="msg.deleteAll" xml:space="preserve">
+    <value>Ҳаммасини ўчириш</value>
+  </data>
+  <data name="msg.deleteSel" xml:space="preserve">
+    <value>Ўчириш</value>
+  </data>
+  <data name="msg.selectedN" xml:space="preserve">
+    <value>{n} та танланди</value>
+  </data>
+  <data name="msg.deleteSelConfirm" xml:space="preserve">
+    <value>Танланган {n} та хабар иккала томонда ҳам ўчирилсинми? Қайтариб бўлмайди.</value>
+  </data>
+  <data name="msg.deleteAllConfirm" xml:space="preserve">
+    <value>Бутун ёзишма иккала томонда ҳам ўчирилсинми? Қайтариб бўлмайди.</value>
+  </data>
+  <data name="msg.deleteFail" xml:space="preserve">
+    <value>Ўчириб бўлмади, қайта уриниб кўринг</value>
+  </data>
+  <data name="reg.delAll" xml:space="preserve">
+    <value>Ҳаммасини ўчириш</value>
+  </data>
+  <data name="reg.delRejected" xml:space="preserve">
+    <value>Рад этилганларни ўчириш ({n})</value>
+  </data>
+  <data name="reg.delSelConfirm" xml:space="preserve">
+    <value>Танланган аризалар ўчирилсинми?</value>
+  </data>
+  <data name="reg.delRejectedConfirm" xml:space="preserve">
+    <value>Барча рад этилган аризалар ўчирилсинми?</value>
+  </data>
+  <data name="reg.delAllConfirm" xml:space="preserve">
+    <value>БАРЧА аризалар (янгилари ҳам) ўчирилсинми? Қайтариб бўлмайди.</value>
+  </data>
+  <data name="reg.delOneConfirm" xml:space="preserve">
+    <value>Ариза ўчирилсинми?</value>
+  </data>
+  <data name="reg.deletedN" xml:space="preserve">
+    <value>{n} та ариза ўчирилди</value>
+  </data>
+  <data name="msg.pickUsers" xml:space="preserve">
+    <value>Ўқувчиларни танлаш</value>
+  </data>
+  <data name="msg.wipeAll" xml:space="preserve">
+    <value>Барча суҳбатларни ўчириш</value>
+  </data>
+  <data name="msg.deleteChats" xml:space="preserve">
+    <value>Суҳбатларини ўчириш</value>
+  </data>
+  <data name="msg.deleteChatsConfirm" xml:space="preserve">
+    <value>Танланган {n} та ўқувчи билан бутун ёзишма иккала томонда ҳам ўчирилсинми? Қайтариб бўлмайди.</value>
+  </data>
+  <data name="msg.wipeAllConfirm" xml:space="preserve">
+    <value>БАРЧА ўқувчилар билан БАРЧА ёзишмалар ўчирилсинми? Қайтариб бўлмайди.</value>
+  </data>
+  <data name="msg.chatsDeleted" xml:space="preserve">
+    <value>{n} та хабар ўчирилди</value>
+  </data>
+  <data name="qs.statsPending" xml:space="preserve">
+    <value>Қийинлик статистикаси ҳисобланмоқда — бир неча сониядан кейин саҳифани янгиланг. Ҳозирча янги саволлар биринчи кўрсатилмоқда.</value>
+  </data>
+  <data name="ar.nav" xml:space="preserve">
+    <value>Энг қийин саволлар</value>
+  </data>
+  <data name="ar.title" xml:space="preserve">
+    <value>Қийинлар аренаси</value>
+  </data>
+  <data name="ar.kicker" xml:space="preserve">
+    <value>Қийинлар аренаси</value>
+  </data>
+  <data name="ar.period" xml:space="preserve">
+    <value>Давр</value>
+  </data>
+  <data name="ar.p_day" xml:space="preserve">
+    <value>Кун</value>
+  </data>
+  <data name="ar.p_week" xml:space="preserve">
+    <value>Ҳафта</value>
+  </data>
+  <data name="ar.p_month" xml:space="preserve">
+    <value>Ой</value>
+  </data>
+  <data name="ar.h_day" xml:space="preserve">
+    <value>Куннинг энг қийин саволлари</value>
+  </data>
+  <data name="ar.h_week" xml:space="preserve">
+    <value>Ҳафтанинг энг қийин саволлари</value>
+  </data>
+  <data name="ar.h_month" xml:space="preserve">
+    <value>Ойнинг энг қийин саволлари</value>
+  </data>
+  <data name="ar.sub" xml:space="preserve">
+    <value>Ўқувчилар энг кўп адашган саволлар. Уларни ечинг — имтиҳонда сизни ҳеч нарса ҳайрон қолдирмайди.</value>
+  </data>
+  <data name="ar.sQuestions" xml:space="preserve">
+    <value>энг қийин савол</value>
+  </data>
+  <data name="ar.sAvgWrong" xml:space="preserve">
+    <value>ўртача хато</value>
+  </data>
+  <data name="ar.sAnswers" xml:space="preserve">
+    <value>жавоб таҳлил қилинди</value>
+  </data>
+  <data name="ar.sYou" xml:space="preserve">
+    <value>сиз ечгансиз</value>
+  </data>
+  <data name="ar.challenge" xml:space="preserve">
+    <value>Чақириқ: {n} тасини еча оласизми?</value>
+  </data>
+  <data name="ar.challengeSub" xml:space="preserve">
+    <value>Ҳаммасини битта тестда ишлаш</value>
+  </data>
+  <data name="ar.conquered" xml:space="preserve">
+    <value>🏆 Арена забт этилди — барча қийин саволлар ечилган!</value>
+  </data>
+  <data name="ar.progress" xml:space="preserve">
+    <value>Сиз {s} / {n} тасини ечгансиз — давом этинг!</value>
+  </data>
+  <data name="ar.emptyTitle" xml:space="preserve">
+    <value>Ҳозирча қийин савол йўқ</value>
+  </data>
+  <data name="ar.empty" xml:space="preserve">
+    <value>Бу даврда етарлича жавоб тўпланмаган. Бошқа даврни танланг ёки кейинроқ қайтинг.</value>
+  </data>
+  <data name="ar.boss_day" xml:space="preserve">
+    <value>👑 Куннинг энг қийин саволи</value>
+  </data>
+  <data name="ar.boss_week" xml:space="preserve">
+    <value>👑 Ҳафтанинг энг қийин саволи</value>
+  </data>
+  <data name="ar.boss_month" xml:space="preserve">
+    <value>👑 Ойнинг энг қийин саволи</value>
+  </data>
+  <data name="ar.wrongOf" xml:space="preserve">
+    <value>{n} та ўқувчи ишлади — жавобларнинг {p}% хато</value>
+  </data>
+  <data name="ar.trap" xml:space="preserve">
+    <value>Тузоқ жавоб:</value>
+  </data>
+  <data name="ar.trapPct" xml:space="preserve">
+    <value>{p}% шуни танлаган</value>
+  </data>
+  <data name="ar.mineOk" xml:space="preserve">
+    <value>✓ Сиз ечгансиз</value>
+  </data>
+  <data name="ar.mineBad" xml:space="preserve">
+    <value>✕ Сиз адашгансиз — қайта урининг</value>
+  </data>
+  <data name="ar.solveIt" xml:space="preserve">
+    <value>Ечиш</value>
+  </data>
+  <data name="ar.dist" xml:space="preserve">
+    <value>Жавоблар тақсимоти</value>
+  </data>
+  <data name="ar.answersShort" xml:space="preserve">
+    <value>жавоб</value>
+  </data>
+  <data name="ar.people" xml:space="preserve">
+    <value>ўқувчи</value>
+  </data>
+  <data name="ar.note_day" xml:space="preserve">
+    <value>Охирги 24 соат ичидаги жавоблар бўйича (камида 3 марта ишланган саволлар). Ҳар 10 дақиқада янгиланади.</value>
+  </data>
+  <data name="ar.note_week" xml:space="preserve">
+    <value>Охирги 7 кун ичидаги жавоблар бўйича (камида 5 марта ишланган саволлар). Кунлик рўйхатдаги саволлар бу ерда такрорланмайди. Ҳар 10 дақиқада янгиланади.</value>
+  </data>
+  <data name="ar.note_month" xml:space="preserve">
+    <value>Охирги 30 кун ичидаги жавоблар бўйича (камида 10 марта ишланган саволлар). Кунлик ва ҳафталик рўйхатдаги саволлар бу ерда такрорланмайди. Ҳар 10 дақиқада янгиланади.</value>
+  </data>
+  <data name="ar.preparing" xml:space="preserve">
+    <value>Арена тайёрланмоқда…</value>
+  </data>
+  <data name="ar.preparingSub" xml:space="preserve">
+    <value>Энг қийин саволлар фонда ҳисобланмоқда. Саҳифа бир неча сонияда ўзи янгиланади.</value>
+  </data>
+  <data name="admin.takeTest" xml:space="preserve">
+    <value>Тест ишлаш</value>
+  </data>
+</root>

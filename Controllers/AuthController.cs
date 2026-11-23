@@ -1,0 +1,171 @@
+using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
+using propro;
+
+[AllowAnonymous]
+public class AuthController : Controller
+{
+    private readonly UserService _users;
+    private readonly IStringLocalizer<SharedResource> _t;
+    private readonly LoginGuard _guard;
+
+    public AuthController(UserService users, IStringLocalizer<SharedResource> t, LoginGuard guard)
+    {
+        _users = users;
+        _t = t;
+        _guard = guard;
+    }
+
+    [HttpGet]
+    public IActionResult Login(string? returnUrl)
+    {
+        if (User.Identity?.IsAuthenticated == true)
+            return RedirectAfterLogin(User.IsInRole(Roles.SuperAdmin), returnUrl);
+
+        ViewBag.ReturnUrl = returnUrl;
+        DeviceGuard.GetOrCreateDeviceId(HttpContext); // qurilma identifikatori login sahifasidayoq beriladi
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Login(string username, string password, string? returnUrl)
+    {
+        ViewBag.ReturnUrl = returnUrl;
+        ViewBag.Username = username;
+
+        // Ko'p marta noto'g'ri parol — vaqtincha bloklangan (parolni tanlab topishdan himoya)
+        var ip = DeviceGuard.ClientIp(HttpContext);
+        if (_guard.Blocked(username, ip) is TimeSpan wait)
+        {
+            var min = (int)Math.Ceiling(wait.TotalMinutes);
+            ViewBag.ErrorKey = "login.locked";
+            ViewBag.ErrorArgs = min;
+            ViewBag.Error = _t["login.locked"].Value.Replace("{n}", min.ToString());
+            return View();
+        }
+
+        var user = await _users.VerifyAsync(username, password);
+        if (user == null)
+        {
+            _guard.Fail(username, ip);
+            ViewBag.ErrorKey = "login.error";
+            ViewBag.Error = _t["login.error"].Value;
+            return View();
+        }
+        _guard.Success(username);
+        var check = await _users.CheckAccessAsync(user, HttpContext);
+        if (check != LoginCheck.Ok)
+        {
+            var key = check switch
+            {
+                LoginCheck.Inactive => "login.inactive",
+                LoginCheck.Expired => "login.expired",
+                _ => "login.devicePending",
+            };
+            ViewBag.ErrorKey = key;
+            ViewBag.Error = _t[key].Value;
+            if (check == LoginCheck.DevicePending) ViewBag.Notice = true;
+            return View();
+        }
+
+        await _users.SignInAsync(HttpContext, user);
+        return RedirectAfterLogin(user.Role == Roles.SuperAdmin, returnUrl);
+    }
+
+    // GET ham qoldirildi — eski "Chiqish" havolalari ishlashda davom etadi
+    [AcceptVerbs("GET", "POST")]
+    public async Task<IActionResult> Logout()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction(nameof(Login));
+    }
+
+    [HttpGet]
+    public IActionResult AccessDenied() => View();
+
+    // ───────── Ro'yxatdan o'tish (ariza): hozircha login faqat admin tomonidan beriladi ─────────
+
+    private static readonly System.Collections.Concurrent.ConcurrentDictionary<string, List<DateTime>> RegHits = new();
+
+    [HttpGet]
+    public IActionResult Register() => View(new RegisterForm());
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Register(RegisterForm form, [FromServices] AppDbContext db, [FromServices] NotificationService notify)
+    {
+        // Bot: yashirin maydon to'ldirilgan bo'lsa — jim "qabul qilindi"
+        if (!string.IsNullOrEmpty(form.Website)) return RedirectToAction(nameof(Registered));
+
+        form.FullName = form.FullName?.Trim();
+        form.Username = string.IsNullOrWhiteSpace(form.Username) ? null : form.Username.Trim();
+        var phone = UserService.NormalizePhone(form.Phone);
+        if (string.IsNullOrWhiteSpace(form.FullName) || form.FullName.Length < 3 || form.FullName.Length > 128) form.ErrorKey = "reg.errName";
+        else if (phone == null) form.ErrorKey = "err.phoneFormat";
+        else if (form.Username != null && !UserService.IsValidUsername(form.Username)) form.ErrorKey = "err.usernameFormat";
+        else if (!form.Agree) form.ErrorKey = "reg.errAgree";
+        if (form.ErrorKey != null) return View(form);
+
+        // Bitta manzildan soatiga ko'pi bilan 5 ta ariza
+        var ip = DeviceGuard.ClientIp(HttpContext) ?? "?";
+        var now = DateTime.UtcNow;
+        var hits = RegHits.GetOrAdd(ip, _ => new List<DateTime>());
+        lock (hits)
+        {
+            hits.RemoveAll(t => now - t > TimeSpan.FromHours(1));
+            if (hits.Count >= 5) { form.ErrorKey = "reg.errMany"; return View(form); }
+            hits.Add(now);
+        }
+
+        if (await db.RegistrationRequests.AnyAsync(r => r.Phone == phone && r.Status == "pending"))
+            return RedirectToAction(nameof(Registered), new { again = true });
+
+        db.RegistrationRequests.Add(new RegistrationRequest
+        {
+            FullName = form.FullName!,
+            Phone = phone!,
+            Username = form.Username,
+            Note = string.IsNullOrWhiteSpace(form.Note) ? null : form.Note.Trim()[..Math.Min(form.Note.Trim().Length, 500)],
+            Ip = ip,
+            CreatedAt = now,
+        });
+        await db.SaveChangesAsync();
+        var admins = await db.Users.AsNoTracking().Where(u => u.Role == Roles.SuperAdmin && u.IsActive).Select(u => u.Id).ToListAsync();
+        await notify.NotifyUsersAsync(admins, "regNew", new { name = form.FullName, phone = UserService.FormatPhone(phone) }, "/Users/Requests");
+        return RedirectToAction(nameof(Registered));
+    }
+
+    [HttpGet]
+    public IActionResult Registered(bool again = false)
+    {
+        ViewBag.Again = again;
+        return View();
+    }
+
+    private IActionResult RedirectAfterLogin(bool isSuperAdmin, string? returnUrl)
+    {
+        if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+            return LocalRedirect(returnUrl);
+
+        return isSuperAdmin
+            ? RedirectToAction("Index1", "Question")
+            : RedirectToAction("Index", "Home");
+    }
+}
+
+public class RegisterForm
+{
+    public string? FullName { get; set; }
+    public string? Phone { get; set; }
+    public string? Username { get; set; }
+    public string? Note { get; set; }
+    public bool Agree { get; set; }
+    /// <summary>Botlar uchun tuzoq (odam ko'rmaydi).</summary>
+    public string? Website { get; set; }
+    public string? ErrorKey { get; set; }
+}

@@ -1,0 +1,48 @@
+@model List<LessonTopicRow>
+@* Admin: video darslar — mavzular. Mavzuga kirib, savollarni belgilab video qo'shiladi. *@
+@{
+    Layout = "_AdminLayout";
+    ViewData["TitleKey"] = "ls.adminTitle";
+    ViewData["Title"] = L["ls.adminTitle"];
+    var tot = (LessonTotals)ViewBag.Totals;
+    var allQ = Model.Sum(r => r.QuestionCount);
+    var msg = TempData["LsMsg"] as string;
+}
+<link rel="stylesheet" href="~/css/learn.css" asp-append-version="true" />
+
+<div class="ca-body-embed">
+    <div class="ca-page-head">
+        <div>
+            <div class="ca-eyebrow" data-i18n="admin.panel">@L["admin.panel"]</div>
+            <h1 class="ca-h1" data-i18n="ls.adminTitle">@L["ls.adminTitle"]</h1>
+            <p class="ca-sub" data-i18n="ls.adminSub2">@L["ls.adminSub2"]</p>
+        </div>
+    </div>
+    @if (msg != null) { <div class="ca-alert ca-alert-info" data-i18n="@msg">@L[msg]</div> }
+
+    <div class="ca-grid ca-grid-kpi">
+        <div class="ca-card ca-card-hover"><div class="ca-kpi"><div class="ca-kpi-icon brand">@Icons.Play</div><div><div class="ca-kpi-label" data-i18n="ls.kpiVideos">@L["ls.kpiVideos"]</div><div class="ca-kpi-value">@tot.Videos <small>· @tot.Published <span data-i18n="ls.kpiPublishedShort">@L["ls.kpiPublishedShort"]</span></small></div></div></div></div>
+        <div class="ca-card ca-card-hover"><div class="ca-kpi"><div class="ca-kpi-icon ok">@Icons.Check</div><div><div class="ca-kpi-label" data-i18n="ls.kpiCovered">@L["ls.kpiCovered"]</div><div class="ca-kpi-value">@tot.CoveredQuestions <small>/ @allQ</small></div></div></div></div>
+        <div class="ca-card ca-card-hover"><div class="ca-kpi"><div class="ca-kpi-icon info">@Icons.Users</div><div><div class="ca-kpi-label" data-i18n="ls.kpiViewers">@L["ls.kpiViewers"]</div><div class="ca-kpi-value">@tot.Viewers</div></div></div></div>
+        <div class="ca-card ca-card-hover"><div class="ca-kpi"><div class="ca-kpi-icon warn">@Icons.Clock</div><div><div class="ca-kpi-label" data-i18n="ls.kpiHours">@L["ls.kpiHours"]</div><div class="ca-kpi-value">@((tot.WatchSeconds / 3600.0).ToString("0.#"))</div></div></div></div>
+    </div>
+
+    <div class="al-grid ca-section">
+        @foreach (var r in Model)
+        {
+            var pct = r.QuestionCount > 0 ? (int)Math.Round(100.0 * r.Covered / r.QuestionCount) : 0;
+            var state = r.Published > 0 ? "pub" : r.Videos > 0 ? "draft" : "none";
+            <a class="al-card" href="/Lessons/Topic?topic=@Uri.EscapeDataString(r.Topic)">
+                <div class="al-card-top">
+                    <span class="al-card-name" data-i18n-pick data-uz="@Topics.Display(r.Topic, Lang.Uz)" data-ru="@Topics.Display(r.Topic, Lang.Ru)" data-uzk="@r.Topic">@L.Topic(r.Topic)</span>
+                    <span class="al-status @state">🎬 @r.Videos</span>
+                </div>
+                <div class="al-card-meta">
+                    <span><b>@r.QuestionCount</b> <span data-i18n="ls.mQuestions">@L["ls.mQuestions"]</span></span>
+                    <span><b>@r.Covered</b> <span data-i18n="ls.mExplained">@L["ls.mExplained"]</span></span>
+                </div>
+                <div class="ca-bar @Score.BarClass(pct)" style="margin-top:8px;"><i data-w="@pct"></i></div>
+            </a>
+        }
+    </div>
+</div>

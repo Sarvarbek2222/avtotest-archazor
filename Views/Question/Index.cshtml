@@ -1,0 +1,277 @@
+﻿@model QuestionListModel
+@* Savollar bazasi: qidiruv va filtrlar serverda (minglab savol bilan ham tez), sahifalash, har bir savol holati. *@
+@{
+    Layout = "_AdminLayout";
+    ViewData["TitleKey"] = "qs.pageTitle";
+    ViewData["Title"] = L["qs.pageTitle"];
+    var f = Model.Filter;
+    string PageUrl(int page) => "?" + string.Join("&", new (string, string?)[] {
+        ("q", f.Q), ("id", f.Id?.ToString()), ("topic", f.Topic), ("bilet", f.Bilet?.ToString()), ("pool", f.Pool), ("img", f.Img),
+        ("lang", f.Lang), ("video", f.Video), ("sort", f.Sort), ("size", f.Size == 25 ? null : f.Size.ToString()), ("page", page == 1 ? null : page.ToString()) }
+        .Where(p => !string.IsNullOrEmpty(p.Item2)).Select(p => p.Item1 + "=" + Uri.EscapeDataString(p.Item2!)));
+    var from = Model.Total == 0 ? 0 : (f.Page - 1) * f.Size + 1;
+    var to = Math.Min(Model.Total, f.Page * f.Size);
+    var anyFilter = !string.IsNullOrWhiteSpace(f.Q) || f.Id != null || f.Topic != null || f.Bilet != null || f.Pool != null || f.Img != null || f.Lang != null || f.Video != null;
+}
+<div class="ca-body-embed qx">
+    <div class="ca-page-head">
+        <div>
+            <div class="ca-eyebrow" data-i18n="admin.panel">@L["admin.panel"]</div>
+            <h1 class="ca-h1" data-i18n-html="qs.title">@L.Html("qs.title")</h1>
+            <p class="ca-sub" data-i18n="qs.subtitle">@L["qs.subtitle"]</p>
+        </div>
+        <a asp-action="Create" class="ca-btn ca-btn-primary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+            <span data-i18n="qs.new">@L["qs.new"]</span>
+        </a>
+    </div>
+
+    @if (TempData["QsMsgKey"] is string qsMsg)
+    {
+        <div class="ca-alert ca-alert-info qs-flash" role="status" data-i18n="@qsMsg">@L[qsMsg]</div>
+    }
+
+    @if (ViewBag.StatsPending is true)
+    {
+        <div class="ca-alert ca-alert-info" data-i18n="qs.statsPending">@L["qs.statsPending"]</div>
+    }
+
+    <div class="qx-kpis">
+        <a class="qx-kpi" href="?"><b>@Model.KpiTotal</b><span data-i18n="qs.total">@L["qs.total"]</span></a>
+        <a class="qx-kpi" href="?pool=bilet&sort=bilet"><b>@Model.KpiInBilets</b><span data-i18n="qs.kInBilets">@L["qs.kInBilets"]</span></a>
+        <a class="qx-kpi" href="?img=yes"><b>@Model.KpiWithImage</b><span data-i18n="qs.withImage">@L["qs.withImage"]</span></a>
+        <a class="qx-kpi @(Model.KpiNoRu > 0 ? "warn" : "")" href="?lang=noru"><b>@Model.KpiNoRu</b><span data-i18n="qs.kNoRu">@L["qs.kNoRu"]</span></a>
+        <a class="qx-kpi @(Model.KpiNoUzk > 0 ? "warn" : "")" href="?lang=nouzk"><b>@Model.KpiNoUzk</b><span data-i18n="qs.kNoUzk">@L["qs.kNoUzk"]</span></a>
+        <a class="qx-kpi" href="?video=yes"><b>@Model.KpiWithVideo</b><span data-i18n="qs.kVideo">@L["qs.kVideo"]</span></a>
+    </div>
+
+    <form method="get" class="qx-filters" id="qxForm">
+        <label class="ca-search qx-q">
+            @Icons.Search
+            <input type="search" name="q" value="@f.Q" placeholder="@L["qs.searchText"]" data-i18n-placeholder="qs.searchText" autocomplete="off" />
+        </label>
+        <input class="ca-input qx-id" type="number" name="id" value="@f.Id" placeholder="ID" min="1" />
+        <select class="ca-input" name="topic">
+            <option value="" data-i18n="qs.allTopics">@L["qs.allTopics"]</option>
+            @foreach (var t in Model.Topics)
+            {
+                <option value="@t.Topic" selected="@(f.Topic == t.Topic)">@L.Topic(t.Topic) (@t.Count)</option>
+            }
+        </select>
+        <select class="ca-input" name="bilet">
+            <option value="" data-i18n="qs.allBilets">@L["qs.allBilets"]</option>
+            @for (int i = 1; i <= Model.BiletCount; i++)
+            {
+                <option value="@i" selected="@(f.Bilet == i)">@L.F("bilet.item", ("n", i))</option>
+            }
+        </select>
+        <details class="qx-more" @(f.Img != null || f.Lang != null || f.Video != null || f.Pool != null ? "open" : "")>
+            <summary class="ca-btn ca-btn-ghost ca-btn-sm">⚙ <span data-i18n="qs.moreFilters">@L["qs.moreFilters"]</span></summary>
+            <div class="qx-more-body">
+                <select class="ca-input" name="pool">
+                    <option value="" data-i18n="qs.poolAll">@L["qs.poolAll"]</option>
+                    <option value="bilet" selected="@(f.Pool == "bilet")" data-i18n="qs.poolBilet">@L["qs.poolBilet"]</option>
+                    <option value="other" selected="@(f.Pool == "other")" data-i18n="qs.poolOther">@L["qs.poolOther"]</option>
+                </select>
+                <select class="ca-input" name="img">
+                    <option value="" data-i18n="qs.imgAll">@L["qs.imgAll"]</option>
+                    <option value="yes" selected="@(f.Img == "yes")" data-i18n="qs.imgYes">@L["qs.imgYes"]</option>
+                    <option value="no" selected="@(f.Img == "no")" data-i18n="qs.imgNo">@L["qs.imgNo"]</option>
+                </select>
+                <select class="ca-input" name="lang">
+                    <option value="" data-i18n="qs.langAll">@L["qs.langAll"]</option>
+                    <option value="noru" selected="@(f.Lang == "noru")" data-i18n="qs.kNoRu">@L["qs.kNoRu"]</option>
+                    <option value="nouzk" selected="@(f.Lang == "nouzk")" data-i18n="qs.kNoUzk">@L["qs.kNoUzk"]</option>
+                </select>
+                <select class="ca-input" name="video">
+                    <option value="" data-i18n="qs.videoAll">@L["qs.videoAll"]</option>
+                    <option value="yes" selected="@(f.Video == "yes")" data-i18n="qs.videoYes">@L["qs.videoYes"]</option>
+                    <option value="no" selected="@(f.Video == "no")" data-i18n="qs.videoNo">@L["qs.videoNo"]</option>
+                </select>
+            </div>
+        </details>
+        <select class="ca-input" name="sort" title="@L["qs.sort"]">
+            <option value="" data-i18n="qs.sortNew">@L["qs.sortNew"]</option>
+            <option value="old" selected="@(f.Sort == "old")" data-i18n="qs.sortOld">@L["qs.sortOld"]</option>
+            <option value="bilet" selected="@(f.Sort == "bilet")" data-i18n="qs.sortBilet">@L["qs.sortBilet"]</option>
+            <option value="hard" selected="@(f.Sort == "hard")" data-i18n="qs.sortHard">@L["qs.sortHard"]</option>
+        </select>
+        <button class="ca-btn ca-btn-primary" type="submit" data-i18n="bill.filter">@L["bill.filter"]</button>
+        @if (anyFilter)
+        {
+            <a class="ca-btn ca-btn-ghost" href="?" data-i18n="qs.reset">@L["qs.reset"]</a>
+        }
+    </form>
+
+    <div class="ca-card qx-card">
+        <div class="qx-head">
+            <b data-i18n="qs.found" data-i18n-args='{"n":@Model.Total,"a":@from,"b":@to}'>@L.F("qs.found", ("n", Model.Total), ("a", from), ("b", to))</b>
+            <select class="ca-input ca-btn-sm" name="size" form="qxForm" onchange="this.form.submit()" style="width:auto;">
+                @foreach (var s in new[] { 25, 50, 100 }) { <option value="@s" selected="@(f.Size == s)">@s / @L["qs.perPage"]</option> }
+            </select>
+        </div>
+
+        @if (Model.Rows.Count == 0)
+        {
+            <div class="ca-empty" style="padding:40px;"><div class="ca-empty-icon">🔍</div><p data-i18n="qs.empty">@L["qs.empty"]</p></div>
+        }
+        <div class="qx-list">
+            @foreach (var r in Model.Rows)
+            {
+                var q = r.Q;
+                var correct = q.Options.FirstOrDefault(x => x.IsCorrect);
+                var hasRu = !string.IsNullOrWhiteSpace(q.QuestionRU);
+                var hasUzk = !string.IsNullOrWhiteSpace(q.QuestionUZK);
+                <article class="qx-row">
+                    <div class="qx-img">
+                        <img loading="lazy" decoding="async" src="@(string.IsNullOrEmpty(q.ImageUrl) ? "/images/archazor-car.jpg" : "/uploads/" + q.ImageUrl + "?w=160")" alt="" />
+                        <span class="qx-id">#@q.Id</span>
+                    </div>
+                    <div class="qx-body">
+                        <div class="qx-tags">
+                            @if (q.BiletNumber is int bn)
+                            {
+                                <a class="qx-tag bilet" href="?bilet=@bn&sort=bilet">🎫 @L.F("sv.bilet", ("n", bn))@(q.BiletOrder is int bo ? " · " + bo : "")</a>
+                            }
+                            @if (r.Topic != null)
+                            {
+                                <a class="qx-tag" href="?topic=@Uri.EscapeDataString(r.Topic)">📚 @L.Topic(r.Topic)</a>
+                            }
+                            @if (r.HasVideo) { <span class="qx-tag video">🎬 <span data-i18n="qs.hasVideo">@L["qs.hasVideo"]</span></span> }
+                        </div>
+                        <a class="qx-text" asp-action="Edit" asp-route-id="@q.Id">@L.Pick(q.QuestionUZ, q.QuestionRU, q.QuestionUZK)</a>
+                        @if (correct != null)
+                        {
+                            <div class="qx-answer">✓ @L.Pick(correct.OptionUZ, correct.OptionRU, correct.OptionUZK)</div>
+                        }
+                        else
+                        {
+                            <div class="qx-answer bad" data-i18n="qs.noCorrect">@L["qs.noCorrect"]</div>
+                        }
+                    </div>
+                    <div class="qx-side">
+                        <div class="qx-langs">
+                            <span class="qx-lang ok">UZ</span>
+                            <span class="qx-lang @(hasRu ? "ok" : "miss")" title="@(hasRu ? "" : L["qs.missing"])">RU</span>
+                            <span class="qx-lang @(hasUzk ? "ok" : "miss")" title="@(hasUzk ? "" : L["qs.missing"])">ЎЗ</span>
+                        </div>
+                        @if (r.Answers > 0)
+                        {
+                            <div class="qx-stat" title="@L.F("qs.statHint", ("n", r.Answers), ("w", r.Wrong))">
+                                <div class="ca-bar @(r.WrongPct >= 50 ? "bad" : r.WrongPct >= 25 ? "warn" : "ok")"><i style="width:@r.WrongPct%"></i></div>
+                                <small><b>@r.WrongPct%</b> <span data-i18n="qs.wrongShort">@L["qs.wrongShort"]</span> · @r.Answers</small>
+                            </div>
+                        }
+                        else
+                        {
+                            <small class="ca-muted" data-i18n="qs.noStats">@L["qs.noStats"]</small>
+                        }
+                        <div class="qx-acts">
+                            <a asp-action="Edit" asp-route-id="@q.Id" class="qx-btn" title="@L["qs.edit"]" data-i18n-title="qs.edit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@q.Id" class="qx-btn del" title="@L["qs.delete"]" data-i18n-title="qs.delete">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" /><path d="M10 11v6M14 11v6" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+
+        @if (Model.Pages > 1)
+        {
+            <nav class="qx-pager">
+                <a class="qx-pg @(f.Page <= 1 ? "off" : "")" href="@(f.Page > 1 ? PageUrl(f.Page - 1) : "#")">‹</a>
+                @{
+                    var pages = new SortedSet<int> { 1, Model.Pages };
+                    for (int i = Math.Max(1, f.Page - 2); i <= Math.Min(Model.Pages, f.Page + 2); i++) pages.Add(i);
+                    var prev = 0;
+                }
+                @foreach (var pg in pages)
+                {
+                    if (pg - prev > 1) { <span class="qx-pg gap">…</span> }
+                    <a class="qx-pg @(pg == f.Page ? "on" : "")" href="@PageUrl(pg)">@pg</a>
+                    prev = pg;
+                }
+                <a class="qx-pg @(f.Page >= Model.Pages ? "off" : "")" href="@(f.Page < Model.Pages ? PageUrl(f.Page + 1) : "#")">›</a>
+            </nav>
+        }
+    </div>
+</div>
+
+<style>
+    .qx-kpis { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+    .qx-kpi { display: grid; gap: 2px; padding: 14px 16px; border-radius: 16px; background: var(--ca-surface); border: 1px solid var(--ca-border); color: inherit; text-decoration: none; transition: transform .15s, border-color .15s; }
+    .qx-kpi:hover { transform: translateY(-2px); border-color: var(--ca-border-strong); }
+    .qx-kpi b { font-size: 1.5rem; font-weight: 900; font-variant-numeric: tabular-nums; }
+    .qx-kpi span { font-size: 12px; color: var(--ca-muted); }
+    .qx-kpi.warn b { color: var(--ca-warn); }
+    .qx-filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; padding: 12px; border-radius: 16px; background: var(--ca-surface); border: 1px solid var(--ca-border); position: sticky; top: 70px; z-index: 5; }
+    .qx-filters .ca-input { width: auto; min-width: 140px; max-width: 260px; }
+    .qx-q { flex: 1 1 260px; }
+    .qx-id { width: 90px !important; min-width: 90px !important; }
+    .qx-more { position: relative; }
+    .qx-more-body { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .qx-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--ca-border); }
+    .qx-card { padding: 14px 16px; }
+    .qx-list { display: grid; }
+    .qx-row { display: grid; grid-template-columns: 132px minmax(0, 1fr) 190px; gap: 16px; padding: 14px 4px; border-bottom: 1px solid var(--ca-border); align-items: center; transition: background .15s; }
+    .qx-row:hover { background: rgba(255,255,255,.02); }
+    .qx-img { position: relative; }
+    .qx-img img { width: 132px; height: 84px; object-fit: cover; border-radius: 12px; background: var(--ca-surface-2); display: block; }
+    .qx-img .qx-id { position: absolute; left: 6px; top: 6px; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: 8px; background: rgba(0,0,0,.7); color: #fff; }
+    .qx-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+    .qx-tag { font-size: 11.5px; padding: 2px 9px; border-radius: 999px; background: var(--ca-surface-2); border: 1px solid var(--ca-border); color: var(--ca-muted); text-decoration: none; }
+    .qx-tag:hover { color: #fff; }
+    .qx-tag.bilet { color: #fcd34d; border-color: rgba(252,211,77,.3); }
+    .qx-tag.video { color: #ff8095; border-color: rgba(36,71,230,.35); }
+    .qx-text { display: block; color: var(--ca-text); text-decoration: none; font-weight: 600; line-height: 1.45; overflow-wrap: anywhere; }
+    .qx-text:hover { color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,.3); }
+    .qx-answer { margin-top: 6px; font-size: 13px; color: var(--ca-ok); }
+    .qx-answer.bad { color: var(--ca-bad); }
+    .qx-side { display: grid; gap: 8px; justify-items: end; }
+    .qx-langs { display: flex; gap: 4px; }
+    .qx-lang { font-size: 10.5px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
+    .qx-lang.ok { color: var(--ca-ok); background: var(--ca-ok-soft); }
+    .qx-lang.miss { color: var(--ca-bad); background: var(--ca-bad-soft); }
+    .qx-stat { width: 100%; }
+    .qx-stat small { display: block; text-align: right; color: var(--ca-muted); margin-top: 3px; }
+    .qx-stat .ca-bar.bad i { background: var(--ca-bad); }
+    .qx-stat .ca-bar.warn i { background: var(--ca-warn); }
+    .qx-stat .ca-bar.ok i { background: var(--ca-ok); }
+    .qx-acts { display: flex; gap: 6px; }
+    .qx-btn { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; background: var(--ca-surface-2); border: 1px solid var(--ca-border); color: var(--ca-text); transition: background .15s, color .15s, border-color .15s; }
+    .qx-btn svg { width: 16px; height: 16px; }
+    .qx-btn:hover { border-color: var(--ca-border-strong); background: var(--ca-surface-3); }
+    .qx-btn.del:hover { color: #fff; background: var(--ca-bad); border-color: var(--ca-bad); }
+    .qx-pager { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+    .qx-pg { min-width: 38px; height: 38px; display: grid; place-items: center; padding: 0 10px; border-radius: 10px; background: var(--ca-surface-2); border: 1px solid var(--ca-border); color: var(--ca-text); text-decoration: none; font-weight: 700; }
+    .qx-pg.on { background: linear-gradient(135deg, #2447e6, #4f7cff); border-color: transparent; color: #fff; }
+    .qx-pg.off { opacity: .35; pointer-events: none; }
+    .qx-pg.gap { background: none; border: 0; }
+    @@media (max-width: 1100px) { .qx-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @@media (max-width: 760px) {
+        .qx-row { grid-template-columns: 92px minmax(0, 1fr); }
+        .qx-img img { width: 92px; height: 64px; }
+        .qx-side { grid-column: 1 / -1; grid-template-columns: auto 1fr auto; align-items: center; justify-items: stretch; }
+        .qx-filters { position: static; }
+        .qx-filters .ca-input { max-width: none; flex: 1 1 140px; }
+        .qx-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+</style>
+<script>
+    // Filtr o'zgarsa — darhol qo'llanadi (qidiruv matni — Enter yoki biroz to'xtagach)
+    (function () {
+        var form = document.getElementById("qxForm"), t = null;
+        form.querySelectorAll("select").forEach(function (s) { s.addEventListener("change", function () { form.submit(); }); });
+        var q = form.querySelector('input[name="q"]');
+        q.addEventListener("input", function () { clearTimeout(t); t = setTimeout(function () { if (q.value.trim().length === 0 || q.value.trim().length >= 3) form.submit(); }, 700); });
+        // "/" — qidiruvga o'tish
+        document.addEventListener("keydown", function (e) {
+            var tag = document.activeElement ? document.activeElement.tagName : "";
+            if (e.key === "/" && !/INPUT|TEXTAREA|SELECT/.test(tag)) { e.preventDefault(); q.focus(); q.select(); }
+        });
+        if (q.value) { q.focus(); var v = q.value; q.value = ""; q.value = v; }
+    })();
+</script>
